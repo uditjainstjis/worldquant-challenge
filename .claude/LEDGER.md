@@ -1,0 +1,242 @@
+# LEDGER — worldquant (append-only chronology; Udit verbatim)
+
+## 2026-10-01
+Udit (session open): "https://platform.worldquantbrain.com/competition/challenge i need rank one it, u wokr autonomsly and get me, u alr know in ai agentic such hard we went to #1 and scored #3, go"
+
+Facts established:
+- BRAIN user id UJ82561, auto-enrolled in Challenge 2026-04-11; score 0, rank 64,290; 6 UNSUBMITTED alphas from 2026-04-12.
+- Scoring (support article 21210168520855, updated ~6 months ago): perpetual solo competition; score is computed PER DAY (EST), capped at 2,000/day, never decreases; 1-2 alphas/day typically reaches the cap. Daily score = f(normalized quantity factor, normalized quality factor) across all users who submitted that day. Quality factor: smaller universe better, lower self-correlation better, higher fitness better, D1 > D0. Leaderboard refreshes 03:00 EST daily. Levels: Bronze >1,000, Silver >5,000, Gold >10,000 (Gold -> consultant invitation eligibility).
+- Leaderboard 2026-10-01: #1 JY12161 982,924 pts / 683 alphas; #2 Bret Hribar 742,130 / 394; #3 RC11228 411,467 / 325.
+- API reachable from logged-in browser session via fetch(credentials:'include'); /operators returns 66 operators; USA/TOP3000/D1 has 16 datasets.
+- CAP TEST (first-hand, 2026-10-01): top 3,000 board users scanned; 0 have score > 2,000 x alphas; max score/alpha = 1,996; median = 1,305. Cap of 2,000/day is real and binding. Score at rank: r10 312,196; r50 183,404; r100 150,749; r500 82,182; r1000 66,191; r1500 57,033; r2000 50,913; r3000 42,705.
+- Submission checks on alpha MP5Al58o: LOW_SHARPE limit 1.25; LOW_FITNESS 1; LOW_TURNOVER 0.01; HIGH_TURNOVER 0.7; CONCENTRATED_WEIGHT; LOW_SUB_UNIVERSE_SHARPE 0.79; SELF_CORRELATION; MATCHES_COMPETITION(challenge).
+- [2026-10-01 22:29]
+  > <task-notification>
+  > <task-id>a673126e8b00d9a78</task-id>
+  > <tool-use-id>toolu_01VjWL41mkannwH8hNc2XTLt</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/a673126e8b00d9a78.output</output-file>
+  > <status>completed</status>
+  > <summary>Agent "Break the 2,000/day Challenge cap" finished</summary>
+  > <note>A task-notification fires each time this agent stops with no live background children of its own. The user can send it another message and resume it, so the same task-id may notify more than once.</note>
+  > <result>I couldn't break the 2,000-points-per-day cap from public sources. I also found that your ~492-day figure is optimistic: it only holds if the leader stops scoring completely.
+  > 
+  > Fetch problems: the support site and Medium returned 403. Zhihu blocked the page I tried. CSDN returned 521, and Reddit's JSON search returned 403. Below, **[V]** means a verbatim quote from a page or file I actually opened. **[S]** means a search engine's summary of a page I could not open. Treat [S] items as leads, not evidence.
+  > 
+  > ## 1. Is the 2,000/day cap real?
+  > 
+  > 1. **[V] Cap is 2,000/day, reachable with 1–2 alphas, and scores are normalized across that day's submitters.** These are third-party notes copying the BRAIN website (Kartik1446 mirror of jglazar's notes):
+  >    &gt; "Daily score is capped at 2000, which can be achieved with 1 or 2 alphas. … Score depends on quantity (more alphas submitted is better) and avg. alpha quality … Smaller universe, lower self-correlation, higher fitness, longer delay (d1 vs. d0) … Score is normalized across all users with &gt;= 1 alpha submitted that day."
+  > 
+  >    https://github.com/Kartik1446/notes/blob/main/quant_interview/alpha_ideas.md
+  > 2. **The "Delay 0 ÷ 3" rule is for the IQC competition, not the Challenge.** In the same file it sits under the IQC bullets: "Delay 0 alpha contributions are divided by 3 in final score". Don't feed it into the Challenge model.
+  > 3. **[V] Scribd copy of the Challenge page:**
+  >    &gt; "Scoring is based on the quantity and quality of submitted Alphas, calculated daily, with a maximum score of 2,000 points." … "Scores refresh daily at 3 AM EST."
+  > 
+  >    https://www.scribd.com/document/870788462/WorldQuant-Challenge-WorldQuant-BRAIN
+  > 4. **[S] Each accepted alpha earns about 1,500–2,000 points, plus a per-day submission limit.** Summarized as "Users can submit 1-4 Regular Alphas per day, and 1 Super Alpha per day after completing 100 Regular submissions", and "by submitting 1 alpha per day … reach their initial goals in just 5 days". Five days at 2,000 a day matches reaching Gold (10,000), which is consistent with the cap. Sources: https://blog.csdn.net/yunAike/article/details/145299198 and https://blog.csdn.net/PearlOwl67/article/details/154641045
+  > 5. **Nothing found showing a different cap, now or in the past.** I found no post of anyone gaining more than 2,000 in a day and no announcement of a scoring change. I also found no public source for the "scores can go up weekly from out-of-sample performance" line. The only 25%/75% in-sample/out-of-sample weighting I found belongs to the IQC university rankings (https://www.worldquant.com/brain/leaderboard/), not the Challenge.
+  > 
+  > ## 2. How much can you simulate and submit per day?
+  > 
+  > 6. **[V] Daily simulation limit is 5,000 and resets at US Eastern midnight**, from two independent repos (September 2026):
+  >    &gt; "User states the current daily allowance is 5,000 … Recognize DAILY_SIMULATION_LIMIT_EXCEEDED … use America/New_York"
+  > 
+  >    https://github.com/untuitivist/wqb_cli/blob/main/.NOTE.md (line 63)
+  >    &gt; "EDT 9-3 额度打满 5000 触发平台 429（DAILY_SIMULATION_LIMIT_EXCEEDED）" ("on 9-3 EDT the 5,000 quota was used up and the platform returned 429")
+  > 
+  >    https://github.com/huiyiyouck/brain_alpha/blob/main/worklog/archive/2026-09.md
+  > 7. **[V] Concurrent simulation slots measured at 4 for a Gold consultant:**
+  >    &gt; "平台并发上限实测=4（GOLD 顾问，5 必 429；官方日限额读 X-Ratelimit-* 响应头）"
+  > 
+  >    This says: measured concurrency limit is 4 for a Gold consultant, a 5th always gets 429, and the daily quota can be read from the X-Ratelimit-* response headers. Same file as item 6, line 125. Line 87 adds "额度余~3900/5000" (about 3,900 of 5,000 left).
+  > 8. **[V] Multi-simulation is a consultant perk**, so regular users don't have it:
+  >    &gt; "access to advanced features: longer simulation periods, data visualizations, multi-simulation, leveraging BRAIN's API with Python, creating SuperAlphas"
+  > 
+  >    https://worldquantbrain.com/consultant
+  > 9. **[S] Users before consultant status get "a maximum of 5 concurrent simulations".** https://deepwiki.com/zhutoutoutousan/worldquant-miner/8.1-worldquant-brain-api (returned 429 when I tried to open it). I found no opened source for limits that apply to non-consultants.
+  > 
+  > ## 3. How top players operate
+  > 
+  > 10. **No posts or interviews from top-ranked Challenge players found.** The Medium series "My AI Agent is in Top-0.04% of WorldQuant Challenge" (rank 97 of 246,073, fully automated) was blocked (403): https://medium.com/data-science-collective/my-ai-agent-is-in-top-0-04-of-worldquant-challenge-1-introduction-55d5ee85caf8
+  > 
+  > ## 4. Consultant program
+  > 
+  > 11. **[V] Invitation comes at 10,000 points (Gold).**
+  >     &gt; "Once you hit 10,000 points on BRAIN and reach gold, you may receive an invitation to join the BRAIN Research Consultant Program."
+  > 
+  >     "Grandmaster level consultants can potentially earn upwards of $8,000 or more in a quarterly payment amount." Source: https://worldquantbrain.com/consultant
+  > 12. **[V] A secondary guide gives tiers and pay:** Gold / Expert ($200–$2,000 per quarter) / Master ($2,000–$8,000) / Grand Master ($8,000–$25,000), and "每日提交 Alpha base 收入：$0 – $120 / 天" (daily base pay for submitting alphas: $0–$120/day). https://xiscoxu.github.io/wq-guide/
+  > 13. **I found no public rule that consultants are removed from the Challenge board.** The only exclusion text I found is in the IQC eligibility rules ("BRAIN Research Consultants … are not eligible to participate in the IQC"). That rule is for a different competition. Also, the leader (982,924 points, 683 alphas) has earned about 99% of their points after passing 10,000. If consultants were removed from the board, that user could not be on it. So either the exclusion is IQC-only, consultants stay on the Challenge board, or the leader turned the program down. This is unresolved, and it decides whether reaching Gold ends your Challenge path.
+  > 
+  > ## CAN I BREAK THE BOUND?
+  > 
+  > **One surface could change the answer, and I couldn't check it publicly.** Does the Challenge leaderboard have a time-window filter (monthly, quarterly or seasonal rank)? If it does, rank 1 on that view is a different target and the ~492-day figure doesn't apply. You can check this with one click on the platform.
+  > 
+  > **The cap held against everything else:**
+  > - No higher cap, now or historically.
+  > - No points from out-of-sample performance for the Challenge.
+  > - No formula reward for submitting many alphas a day; quantity is inside the 2,000 cap and 1–2 alphas reach it.
+  > - No region or universe multiplier beyond the quality factors already listed.
+  > - Simulation throughput (5,000 a day, about 4 concurrent) limits how fast you find alphas, not the points cap.
+  > 
+  > **Your claim needs a correction, and it makes the timeline longer.** 982,924 / 2,000 ≈ 492 days is the minimum only if the leader scores zero from now on. If the leader keeps scoring at rate r per day, catching up takes 982,924 / (2,000 − r) days. Example: at r = 1,000/day it is about 983 days. If r ≥ 2,000, you can never catch up.
+  > 
+  > **Two inputs nobody has measured yet, both of which you can get from the platform:**
+  > 1. The leader's rate: their first-alpha date gives 982,924 ÷ days active.
+  > 2. Whether consultants stay on the Challenge board (item 13).
+  > 
+  > Surfaces I attacked: the cap's value, historical cap changes, out-of-sample weekly accrual, saturation of the quantity factor, D0/D1 and region effects, daily simulation and submission limits, concurrency, consultant exclusion, the Medium automation series, and public posts from top players. Blocked sources: Medium, CSDN, Zhihu, Reddit and the support site.</result>
+  > <usage><subagent_tokens>113784</subagent_tokens><tool_uses>54</tool_uses><duration_ms>552731</duration_ms></usage>
+  > </task-notification>
+
+- Ceiling-breaker agent (public sources only, 54 tool uses): could NOT break the 2,000/day cap. Extra facts: daily simulation quota 5,000 (resets midnight ET); third-party notes say 1-4 regular submissions/day; consultant invitation at Gold (10,000); leader earned ~99% of points after Gold so Gold does not remove you from the board (or the leader declined consulting). Unchecked surface it named: leaderboard time-window filter -> CHECKED first-hand: Filter offers only User / Country / University. No time window. Bound stands.
+- Correction (agent): 492 days assumes the leader scores 0 from now; catch-up = 982,924 / (2,000 - r_leader) days. r_leader unmeasured (leader alpha list is 404); daily board snapshots will measure it.
+- API rate limit: parallel bursts (~35 GETs) -> 429 "API rate limit exceeded". Keep requests serial, ~0.3s apart.
+- 13:30 EDT: screen wave 1 (template A on TOP1000, 158 low-usage fields) running; wave F (30 fundamental ratios, group_rank(ts_backfill(ratio,120),subindustry), TOP1000) queued at front. First 3 model16 *_rank_derivative fields: Sharpe -0.3 (sign-flipped or noise).
+- [2026-10-01 22:39]
+  > <task-notification>
+  > <task-id>b410nfyov</task-id>
+  > <tool-use-id>toolu_01FnT3BGWn4BtGddU5wJSCVy</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/b410nfyov.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Wait 6 minutes for simulations to finish" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 13:45 EDT: wave F (fundamental value ratios, TOP1000, group_rank subindustry): all weak, best ev_sales Sharpe 0.54 fit 0.32; neg_leverage/neg_capex Sharpe -0.6 (i.e. leverage/capex POSITIVE in this window). model16 score fields ~0. Decision: queue switched to TOP3000 (same alpha: TOP3000 1.45 vs TOP500 1.23 Sharpe); volatility/liquidity wave V (23 exprs) pushed to front.
+- [2026-10-01 22:45]
+  > <task-notification>
+  > <task-id>ba1dxqa1f</task-id>
+  > <tool-use-id>toolu_01K4Fi16WhtVRSmCe5eZ8x4B</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/ba1dxqa1f.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log wave F result and wait 5.5 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- [2026-10-01 22:53]
+  > <task-notification>
+  > <task-id>bhhgepf6z</task-id>
+  > <tool-use-id>toolu_011GMMLa5Q3VrU6JNSykMYYr</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bhhgepf6z.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Wait 6.5 minutes for simulations" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 14:20 EDT: FIRST PASSING ALPHA. R:rev5xvolr_d6 = rank(-ts_delta(close,5))*rank(ts_mean(volume,5)/ts_mean(volume,60)), TOP3000 D1 SUBINDUSTRY decay 6: Sharpe 1.89, fitness 1.19, turnover 0.28, returns 11.4%, all IS checks PASS (self-corr pending at submit). Plain rev5 variants: 1.16-1.56 Sharpe, fitness 0.77-0.91 (fail). vwap reversal Sharpe 1.86 but turnover 1.29. ts_max is NOT an accessible operator (use listed 66 only).
+- Wave E (14 variants of the winner: universes TOP1000/500/200/SP500, decay 8/10, INDUSTRY/MARKET, 3-day, vwap, tdl) queued at front. Decision: submit the smallest-universe variant that passes, else TOP3000.
+- [2026-10-01 23:01]
+  > <task-notification>
+  > <task-id>b6u8otmoz</task-id>
+  > <tool-use-id>toolu_01NAtDeGgHqZSx8fGdiBmPZj</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/b6u8otmoz.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log the first passing alpha and wait 7 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 14:37 EDT: wave E results: W3_d8 = rank(-ts_delta(close,3))*rank(ts_mean(volume,5)/ts_mean(volume,60)) TOP3000 SUBINDUSTRY decay 8 -> Sharpe 2.14 fitness 1.42 turnover 0.27 ret 12.1% ALL PASS (id XgJ5e7w5). W_d10 1.87/1.33, W_d8 1.89/1.27, W_ind 1.79/1.19. Smaller universes FAIL fitness: TOP1000 0.81, TOP500 0.81, SP500 0.72, TOP200 0.48. => quality-factor universe bonus is not reachable with this family; submit TOP3000.
+- 14:38 EDT: SUBMIT attempt #1: XgJ5e7w5.
+- [2026-10-01 23:04]
+  > <task-notification>
+  > <task-id>bsxkk9eak</task-id>
+  > <tool-use-id>toolu_01Wy47UJQeXMgEEcgvKQ1RWq</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bsxkk9eak.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log submission attempt and wait 2.5 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 14:41 EDT: SUBMITTED. XgJ5e7w5 status ACTIVE. Submit checks: LOW_SHARPE 2.14, FITNESS 1.42, TURNOVER 0.275, CONCENTRATED_WEIGHT pass, SUB_UNIVERSE_SHARPE 1.51 (limit 0.93), SELF_CORRELATION PASS (limit 0.7), MATCHES_COMPETITION pass. No PROD_CORRELATION check appeared. Submit took ~2.5 min. Score lands 03:00 EST 2026-10-02.
+- [2026-10-01 23:12]
+  > <task-notification>
+  > <task-id>btxq0gtde</task-id>
+  > <tool-use-id>toolu_012FH2SGWyvkfPQtYuzuGWRj</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/btxq0gtde.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Add memory index line and wait 6.5 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 15:05 EDT: analyst EPS revisions DEAD (ts_delta(est_eps,20)/close Sharpe -0.09; 5/60-day variants <0.7). fwd earnings yield est_eps/close Sharpe 1.07 fit 0.84 TO 0.04 (near miss). Return-skewness -skew60 Sharpe 1.08 fit 0.70 TO 0.11 (near miss). mom12_1 ~0. Self-corr pre-check endpoint /alphas/{id}/correlations/self works: vwap-reversal variant 0.760 vs XgJ5e7w5 -> same family blocked by 0.7 limit.
+- Queue pruned (level-screen A: dropped). Wave O/S/K/Y (29 alphas: option IV spreads/skew/PCR/term, news+social sentiment, return skew, fwd EY variants) at front.
+- [2026-10-01 23:22]
+  > <task-notification>
+  > <task-id>bjsr4h3ta</task-id>
+  > <tool-use-id>toolu_01Vz5ZCR2Ze7i7wNFZXMHcNP</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bjsr4h3ta.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log wave results and wait 7 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 15:25 EDT: wave O (options): call-put IV spread cp60 Sharpe 1.78 fit 0.69 TO 0.48, FAILS concentrated-weight + sub-universe (thin option coverage on TOP3000); cp30 1.77/0.63. IV 5-day change: Sharpe -1.36 (i.e. RISING IV -> positive return here). PCR, term structure, VRP, skew, forward price: all ~0. Wave P (12 cp-spread fixes: ts_mean 10, decay 10-15, TOP1000/500/SP500, 90/120d maturities, +IV-change combo) at front.
+- [2026-10-01 23:29]
+  > <task-notification>
+  > <task-id>bzh7r980y</task-id>
+  > <tool-use-id>toolu_01NuDzkrzFtUUqWyHZy3jHfW</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bzh7r980y.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log options results and wait 7 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 15:45 EDT: wave P: P:cp60m10_3000 = group_rank(ts_mean(IVcall60-IVput60,10), subindustry) TOP3000 d10 -> Sharpe 1.75 fit 1.15 TO 0.12 ret 5.4% (id qM0op8Qv); only LOW_SUB_UNIVERSE_SHARPE fails. On TOP1000 the same signal is 0.68 => the cp-spread signal lives in small caps. group_rank cured CONCENTRATED_WEIGHT. Wave Q (9 variants for sub-universe) at front.
+- [2026-10-01 23:37]
+  > <task-notification>
+  > <task-id>by27gap9c</task-id>
+  > <tool-use-id>toolu_017CJ9tdUAdghoLtYSrSChPS</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/by27gap9c.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log wave P and wait 6.5 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 16:00 EDT: wave Q partial: c3060 1.55/0.96 subuni 0.46; m20 1.42/0.84; div 1.44/0.78 — all worse than base qM0op8Qv (1.75/1.15, subuni 0.32 vs limit 0.76). Options family unlikely to pass sub-universe today.
+- [2026-10-01 23:46]
+  > <task-notification>
+  > <task-id>bmonrfj7u</task-id>
+  > <tool-use-id>toolu_01V7rX6zErktNYfgmEmds9ey</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bmonrfj7u.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Wait 6.5 minutes for simulations" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 16:15 EDT: wave S (news/social sentiment, 5-20d sums): all |Sharpe| < 0.7 -> DEAD. Wave Q remaining 3 variants pending. Scheduler showed 0 completions in 7 min -> suspect Chrome background-tab timer throttling (tab hidden after navigating the other tab).
+- [2026-10-01 23:55]
+  > <task-notification>
+  > <task-id>bj7dag2dy</task-id>
+  > <tool-use-id>toolu_01KttudnewcPssSgwKbwztoa</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bj7dag2dy.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Wait 4 minutes to verify the worker scheduler ticks" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 16:50 EDT: ROOT CAUSE of stalled scheduler: Chrome FREEZES hidden/occluded tabs (Page Lifecycle) -> timers AND fetch pause while CDP sync JS still evaluates. Symptoms: 3 sims "running" 15+ min, every JS call containing await/sleep timing out at 45s, screenshot "script injection timed out". Fix applied: osascript activate Chrome + set active tab (window was behind the terminal); scheduler moved into a dedicated Web Worker (exempt from intensive timer throttling). Browser-driven automation is fragile when the Mac screen is not showing Chrome; Python client (brain.py/daily.py) is the durable path and needs ~/.brain_credentials from Udit.
+- 16:55 EDT: orphan Q results recovered via /users/self/alphas: Q:xvol = group_rank(ts_mean(cp60,10),subindustry)*rank(vol5/vol60) TOP3000 S d10 (id O08EX1ER): Sharpe 1.64 fit 0.99 TO 0.15, sub-universe 0.99 PASS, only LOW_FITNESS (0.99 vs 1.00) fails. Q:ind (58go1Pp5) 1.74/1.22 subuni 0.35 fail. Q:mkt 1.04/0.70. Wave Z (7 variants of cp60 x volume) queued at front.
+- [2026-10-02 00:05]
+  > <task-notification>
+  > <task-id>btpf91o02</task-id>
+  > <tool-use-id>toolu_01TjpaRuxDGUQAmf4Bosp24k</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/btpf91o02.output</output-file>
+  > <status>killed</status>
+  > <summary>Background command "Log the freeze root cause and wait 5 minutes" was stopped after reaching its background time limit</summary>
+  > <note>If the work in progress still needs it, start it again with `run_in_background` and a longer `timeout`. If it already had the longest `timeout` allowed, do not restart it. Either way, report that it was stopped.</note>
+  > </task-notification>
+
+- 17:05 EDT: tab froze AGAIN (window occluded). Re-raised via osascript; started `caffeinate -dims` (pid in pgrep) to keep display awake for the session. hidden=false now.
+- 17:10 EDT: wave Z PASSES (second family): Z:sub_xvol_d12 = group_rank(ts_mean(IVcall60-IVput60,10),subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60)) TOP3000 S d12 -> Sharpe 1.66 fit 1.06 TO 0.14 subuni 0.99 ALL PASS (A1vMp7Al); Z:ind_xvol_d10 (INDUSTRY) 1.59/1.04 ALL PASS (9qWLewK2); Z:sub_xvol10_d10 1.61/1.02 ALL PASS (A1vMpPVe). Also Q:m5d15 1.86/1.28 but subuni 0.33 FAIL. Skew family: K:sk60xvol 1.23/0.81 (near), K:sk60 0.73. fwd EY: Y:ind 1.06/0.92, Y:mkt 0.82.
+- [2026-10-02 00:12]
+  > <task-notification>
+  > <task-id>bkmbdjvfs</task-id>
+  > <tool-use-id>toolu_01EA9JyTmY5JmVCfSe9kA1V8</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bkmbdjvfs.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Wait 75 seconds for self-correlation to compute" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 17:15 EDT: self-corr vs XgJ5e7w5: A1vMp7Al 0.4503, 9qWLewK2 0.4592, A1vMpPVe 0.4157 (all < 0.7). SUBMIT attempt #2: A1vMp7Al. Started keep_visible.sh (re-raises the Chrome tab every 200s) + caffeinate; both to be killed at session end.
+- [2026-10-02 00:19]
+  > <task-notification>
+  > <task-id>beln4nzit</task-id>
+  > <tool-use-id>toolu_017w5XHeMcUkmsQQr2PnEYcJ</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/beln4nzit.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Wait about 3 minutes for the submission check" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 17:22 EDT: SUBMITTED #2. A1vMp7Al ACTIVE. Submit checks: Sharpe 1.66, fitness 1.06, TO 0.14, concentrated-weight pass, sub-universe 0.99, SELF_CORRELATION 0.45 (limit 0.7). Day 1 (2026-10-01 EST) = 2 alphas, 2 families (reversal x volume; option call-put IV spread x volume). Score posts 03:00 EST 2026-10-02 (= 12:30 IST).
+- 17:25 EDT: final wave: Z:ind_xvol_d12 1.62/1.12 ALL PASS (LLZAQRne, spare same-family); Z:inner_d10 1.68/1.09 subuni FAIL; Y:xvol (fwd EY x vol) 1.19/0.96 near miss -> fwd-EY family is tomorrow's #3 candidate; X:pvcorr_xvol 1.19/0.68; X:cp60_ind 1.74/1.22 subuni 0.35 FAIL. Worker queue empty. ~150 sims today.
+- 17:35 EDT: close-out. keep_visible.sh + caffeinate killed (verified 0 processes). Chrome tab closed. STATE rewritten (Live = nothing running; #1 risk = shared volume factor; calibration plan day1=2 alphas / day2=1). daily.py gained a volume-free explore lane. Screenshot: notes/day1_submitted.jpg + ~/Desktop/worldquant_day1_submitted.jpg.
