@@ -1,0 +1,29 @@
+[
+ {
+  "tag": "SHELF:skew60_v5_adv_d10",
+  "expr": "group_rank(-ts_mean(power(returns,3),60)/power(ts_std_dev(returns,60),3), subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 10,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "measured": {
+   "date": "2026-10-03",
+   "sharpe": 1.29,
+   "fitness": 1.0,
+   "turnover": 0.11,
+   "selfcorr_max": 0.549,
+   "alpha_id": "vR2xOrRz"
+  },
+  "status": "ready"
+ }
+]

@@ -44,3 +44,5 @@
 - #1 RISK: both submitted alphas and every daily.py candidate share rank(ts_mean(volume,5)/ts_mean(volume,60)). Self-corr is checked against EVERY prior submission (max), so it climbs daily; daily.py likely runs dry within ~a week without volume-free lanes. Seeds for volume-free families: IV 5-day change (+1.36 Sharpe, TO 0.59, needs decay), fwd EY with industry neutralization (1.06/0.92), reversal with INDUSTRY/MARKET neutralization, other regions (EUR/ASI/CHN universes untested).
 - CALIBRATION: day 1 (10-01) = 2 alphas. Day 2 target = 1 alpha. Compare the two daily scores (board 03:00 EST) before fixing the standing daily target.
 - OPEN FORK (Udit's call): Gold (10,000 pts, ~5 days) may trigger a consultant invitation; whether accepting removes him from the Challenge board is unresolved (leader kept scoring past Gold, so probably not).
+## Data quirks
+- `dateSubmitted` on alphas reads 1-3 h EARLIER than the real submit time (XgJ5e7w5 13:32 vs real 14:41 EDT; QPKq3a2Q 09:30 vs real 09:53). daily.py's submitted_today keys off it: safe at 05:00/16:00 EDT fires, NEVER schedule a run within 3 h of midnight Eastern.

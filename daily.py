@@ -70,8 +70,27 @@ def family_explore(day):
     return pool[:2] + vol_free[:1]
 
 
+SHELF = pathlib.Path(__file__).parent / "shelf.json"   # pre-measured, not-yet-submitted alphas; research sessions append here
+
+
+def shelf_items():
+    """Ready shelf items first (measured to pass + self-corr < 0.65 at measurement time)."""
+    if not SHELF.exists(): return []
+    return [dict(tag=i["tag"], expr=i["expr"], settings=i["settings"]) for i in json.load(open(SHELF)) if i.get("status") == "ready"]
+
+
+def shelf_mark(tag, status):
+    if not SHELF.exists(): return
+    items = json.load(open(SHELF))
+    for i in items:
+        if i["tag"] == tag: i["status"] = status
+    json.dump(items, open(SHELF, "w"), indent=1)
+
+
 def candidates(day):
-    return family_reversal_volume(day) + family_options(day) + family_explore(day)
+    shelf = shelf_items()
+    if len(shelf) >= 2: return shelf                      # shelf is the plan; explore only when it runs low
+    return shelf + family_reversal_volume(day) + family_options(day) + family_explore(day)
 
 
 def submitted_today(b):
@@ -110,13 +129,14 @@ def run_day(b, n_target=1, dry=False):
     for rec in passing:
         if have >= n_target: break
         sc = self_corr_max(b, rec["id"]); log(f"  self-corr {rec['tag']} = {sc}")
-        if sc is None or sc >= SELF_CORR_MAX: continue
+        if sc is None or sc >= SELF_CORR_MAX:
+            shelf_mark(rec["tag"], f"blocked:selfcorr={sc}"); continue
         if dry: log(f"  DRY: would submit {rec['id']} {rec['expr']}"); have += 1; continue
         res = b.submit(rec["id"]); a = b.alpha(rec["id"])
         ok = a.get("status") == "ACTIVE"
         log(f"  SUBMIT {rec['id']} -> {a.get('status')} :: {json.dumps(res)[:300]}")
         c = db(); c.execute("insert into submissions values(?,?,?,?,?)", (dt.datetime.utcnow().isoformat(), rec["id"], rec["expr"], json.dumps(rec["settings"]), json.dumps(res)[:2000])); c.commit(); c.close()
-        if ok: have += 1
+        if ok: have += 1; shelf_mark(rec["tag"], f"submitted:{rec['id']}:{dt.datetime.now(EST).date()}")
     if have == 0: log("!! NO SUBMISSION TODAY — all candidates failed. Extend families.")
 
 
