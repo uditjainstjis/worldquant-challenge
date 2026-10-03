@@ -336,3 +336,4 @@ Udit: "there's a thing in my subscription plan for free, spinning claude on clou
   > <usage><subagent_tokens>97803</subagent_tokens><tool_uses>6</tool_uses><duration_ms>39834</duration_ms></usage>
   > </task-notification>
 
+- 09:00 EDT: routine created trig_01LgLcSGdbdf3vjBbXv55YnQ (cron 0 9,20 * * * UTC, Opus 5.5, env env_011ymAd..., connectors cleared). Repo made PUBLIC (GitHub App not installed -> no authenticated clone/push). Auto-mode classifier denied clicking inside claude.ai environment settings -> environment config (network allowlist + credentials) is Udit's step.

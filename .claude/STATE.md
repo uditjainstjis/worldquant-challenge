@@ -30,10 +30,12 @@
 - Self-correlation between the two submitted families: 0.45. Same-family variants (vwap/rel reversal) are 0.76 vs #1 -> blocked.
 - DEAD (|Sharpe|<0.7): value ratios, model16 scores, low-volatility (~0), size/amihud (liquid wins), leverage/capex, analyst EPS revisions (ts_delta(est_eps,20)/close -0.09), news/social sentiment sums (all <0.7), momentum 12-1 (~0), PCR / IV term structure / VRP / IV skew level (~0).
 - Plain reversal rev5 without volume: Sharpe 1.2-1.6 but fitness 0.77-0.91 -> fails. vwap reversal Sharpe 1.86 at turnover 1.29.
-## Live (as of 17:35 EDT 2026-10-01 / 03:05 IST 2026-10-02)
-- NOTHING running. Browser session closed; keep_visible.sh and caffeinate killed. All ~150 simulations done; 2 alphas ACTIVE (table above). Score posts 03:00 EST 2026-10-02 = 12:30 IST.
-- brain.py (API client) + daily.py (daily loop) written and syntax-checked, NOT yet run: needs ~/.brain_credentials = ["email","password"] created by Udit (never by Claude). GPU box unreachable (ssh timeout) -> loop host = Mac via launchd (with caffeinate) or a cloud VM.
-- Browser-driven path is FRAGILE: Chrome freezes hidden/occluded tabs (timers+fetch pause) — cost ~1 hour today. Use it only when the screen shows Chrome.
+## Live (as of 2026-10-03 09:00 EDT)
+- CLOUD ROUTINE created: "WorldQuant Challenge daily alpha", id trig_01LgLcSGdbdf3vjBbXv55YnQ, cron `0 9,20 * * *` UTC (05:00 + 16:00 EDT retry), model Opus 5.5, env env_011ymAdCoHhzXYV4xpqmmVrq, no MCP connectors. https://claude.ai/code/routines/trig_01LgLcSGdbdf3vjBbXv55YnQ . It clones the PUBLIC repo github.com/uditjainstjis/worldquant-challenge and runs daily.py --n 1.
+- BLOCKED until Udit sets, in the cloud environment (claude.ai/code -> environment "Default" -> edit): Network access = Custom + `api.worldquantbrain.com`; Environment variables `BRAIN_EMAIL`, `BRAIN_PASSWORD`, `BASH_DEFAULT_TIMEOUT_MS=600000`. Claude must never enter these.
+- Repo is PUBLIC (needed for an unauthenticated clone; GitHub App not installed). Pushes from the cloud will fail until Udit installs the Claude GitHub App; then flip the repo private. Alpha expressions are therefore visible publicly for now.
+- BRAIN browser session expired; Mac has no credentials; GPU box unreachable. 2026-10-02 EST scored 0 (no submission). 2026-10-03 EST: open, routine's first fire 20:06 UTC today if env is configured.
+- Debug a run: RemoteTrigger list_runs -> get_run_log.
 ## Design risks / plan
 - #1 RISK: both submitted alphas and every daily.py candidate share rank(ts_mean(volume,5)/ts_mean(volume,60)). Self-corr is checked against EVERY prior submission (max), so it climbs daily; daily.py likely runs dry within ~a week without volume-free lanes. Seeds for volume-free families: IV 5-day change (+1.36 Sharpe, TO 0.59, needs decay), fwd EY with industry neutralization (1.06/0.92), reversal with INDUSTRY/MARKET neutralization, other regions (EUR/ASI/CHN universes untested).
 - CALIBRATION: day 1 (10-01) = 2 alphas. Day 2 target = 1 alpha. Compare the two daily scores (board 03:00 EST) before fixing the standing daily target.
