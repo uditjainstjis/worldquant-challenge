@@ -1,5 +1,4 @@
 db.sqlite
-log/
 notes/*.jpg
 __pycache__/
 .claude/parked.md

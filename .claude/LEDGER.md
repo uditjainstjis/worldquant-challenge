@@ -240,3 +240,99 @@ Facts established:
 - 17:22 EDT: SUBMITTED #2. A1vMp7Al ACTIVE. Submit checks: Sharpe 1.66, fitness 1.06, TO 0.14, concentrated-weight pass, sub-universe 0.99, SELF_CORRELATION 0.45 (limit 0.7). Day 1 (2026-10-01 EST) = 2 alphas, 2 families (reversal x volume; option call-put IV spread x volume). Score posts 03:00 EST 2026-10-02 (= 12:30 IST).
 - 17:25 EDT: final wave: Z:ind_xvol_d12 1.62/1.12 ALL PASS (LLZAQRne, spare same-family); Z:inner_d10 1.68/1.09 subuni FAIL; Y:xvol (fwd EY x vol) 1.19/0.96 near miss -> fwd-EY family is tomorrow's #3 candidate; X:pvcorr_xvol 1.19/0.68; X:cp60_ind 1.74/1.22 subuni 0.35 FAIL. Worker queue empty. ~150 sims today.
 - 17:35 EDT: close-out. keep_visible.sh + caffeinate killed (verified 0 processes). Chrome tab closed. STATE rewritten (Live = nothing running; #1 risk = shared volume factor; calibration plan day1=2 alphas / day2=1). daily.py gained a volume-free explore lane. Screenshot: notes/day1_submitted.jpg + ~/Desktop/worldquant_day1_submitted.jpg.
+
+## 2026-10-03 (IST) / 2026-10-03 08:50 EDT
+Udit: "there's a thing in my subscription plan for free, spinning claude on cloud by claude we can use that"
+- 2026-10-02 EST: NO submission (session had ended) -> 2,000 points forfeited. Lesson: the loop must exist before the next day boundary, not after.
+- BRAIN browser session EXPIRED (platform redirects to /sign-up). No credentials on the Mac. Browser path dead until Udit logs in.
+- Decision: daily loop runs as a Claude Code CLOUD ROUTINE (Udit's plan includes it). Code pushed to private repo github.com/uditjainstjis/worldquant-challenge (brain.py reads BRAIN_EMAIL/BRAIN_PASSWORD env vars in the cloud; ~/.brain_credentials locally).
+- [2026-10-03 18:21]
+  > <task-notification>
+  > <task-id>a7f7f0449088ff5f3</task-id>
+  > <tool-use-id>toolu_01W1gUppi7gbUDfGsPK9HCDB</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/a7f7f0449088ff5f3.output</output-file>
+  > <status>completed</status>
+  > <summary>Agent "Cloud routine env vars and secrets" finished</summary>
+  > <note>A task-notification fires each time this agent stops with no live background children of its own. The user can send it another message and resume it, so the same task-id may notify more than once.</note>
+  > <result>Based on the official Claude Code documentation, here are the facts about cloud routines and the cloud environment:
+  > 
+  > ## 1. Environment variables &amp; secrets
+  > 
+  > **URL for configuration:** https://code.claude.com/docs/en/cloud-environments.md
+  > 
+  > **How to set them:**
+  > - **Web UI path:** [claude.ai/code](https://claude.ai/code) → Cloud icon above message box → "Add cloud environment" or edit existing → **Environment variables** section
+  > - **Format:** `.env` format, one `KEY=value` per line
+  > - **Visibility:** ⚠️ **Values are visible to anyone who uses that environment** (per the dialog note)
+  > - **Encryption:** Not encrypted. Documentation explicitly states "anyone who uses the environment can read the values"
+  > 
+  > **For secrets (API keys/passwords):**
+  > - **Pro/Max plans only:** Use **API credentials** feature instead (separate section in same dialog)
+  > - **How it works:** Credentials are stored without visibility; Anthropic's agent proxy injects them into requests for specified hosts—they never reach Claude, the script, or environment variables
+  > - **Team/Enterprise:** API credentials "aren't available yet" per the docs
+  > - **Plain environment variables:** Don't use for secrets—document says "don't include secrets in them"
+  > 
+  > ---
+  > 
+  > ## 2. Outbound internet access
+  > 
+  > **Default:** **Trusted** access — only [default allowlist](#) of package registries, GitHub, cloud SDKs
+  > 
+  > **Custom access:**
+  > - [Edit environment](#) → **Network access** → select **Custom** → list allowed domains
+  > - For `api.worldquantbrain.com`: add it to **Allowed domains** (one per line)
+  > - No proxy configuration needed; you whitelist the domain directly
+  > 
+  > **Path outside network allowlist:**
+  > - GitHub goes through a [dedicated proxy](#github-proxy), doesn't need allowlist
+  > - MCP connectors route through Anthropic's servers, don't need allowlist
+  > 
+  > ---
+  > 
+  > ## 3. Git push to private GitHub repo
+  > 
+  > **Auth method:** Routines use the [GitHub proxy](#github-proxy)
+  > - Sessions authenticate via the method you configured in [GitHub authentication options](/docs/en/claude-code-on-the-web#github-authentication-options) 
+  > - Your real token stays out of the session VM
+  > - **Branch restrictions:** The proxy rejects tag pushes and branch deletions; respects GitHub branch protection rules
+  > 
+  > **Commits:** Include a `Claude-Session: &lt;url&gt;` git trailer (can disable with [`attribution.sessionUrl: false`](/docs/en/settings-reference#attribution-sessionurl))
+  > 
+  > ---
+  > 
+  > ## 4. Python &amp; pip
+  > 
+  > **Python:** Pre-installed: Python 3.x with pip, poetry, uv
+  > **pip install:** Yes, works in cloud sessions
+  > **Confirmation:** Can install packages mid-session or via [setup script](#setup-scripts)
+  > 
+  > ---
+  > 
+  > ## 5. Runtime duration limits
+  > 
+  > **Command timeout:** Default 2 minutes, max 10 minutes (per Bash tool)
+  >   - Can raise globally: set `BASH_DEFAULT_TIMEOUT_MS` in [environment variables](#set-environment-variables)
+  >   - Example: `BASH_DEFAULT_TIMEOUT_MS=600000` → 10 min default
+  >   - Commands exceeding timeout move to background with 30-minute additional limit
+  > 
+  > **No explicit routine-level duration cap mentioned** in the routines.md or cloud-environments.md pages — only per-command limits apply. For a 30–60 min polling loop: break into multiple commands or set `BASH_DEFAULT_TIMEOUT_MS` high.
+  > 
+  > **Setup script:** Must complete in ~5 minutes or caching won't work
+  > 
+  > ---
+  > 
+  > ## Summary
+  > 
+  > | Question | Answer |
+  > |----------|--------|
+  > | **Secrets storage** | API credentials (Pro/Max only) hidden from transcript; plain env vars visible to all environment users |
+  > | **UI path for secrets** | claude.ai/code → Cloud icon → Edit environment → "API credentials" or "Environment variables" |
+  > | **Network access** | **Custom** allowlist—add `api.worldquantbrain.com` per line |
+  > | **Git push auth** | GitHub proxy (transparent; token never in VM) |
+  > | **Python/pip** | Yes, pre-installed |
+  > | **Runtime limit** | Per-command default 2 min / max 10 min; raise with `BASH_DEFAULT_TIMEOUT_MS` env var |
+  > 
+  > **Not found in docs:** explicit mention of whether plain environment variables are end-to-end encrypted in transit or at rest (only that they're visible in the environment config).</result>
+  > <usage><subagent_tokens>97803</subagent_tokens><tool_uses>6</tool_uses><duration_ms>39834</duration_ms></usage>
+  > </task-notification>
+
