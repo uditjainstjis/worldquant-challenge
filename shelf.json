@@ -104,7 +104,7 @@
    "turnover": 0.1,
    "selfcorr_max": 0.589,
    "alpha_id": "YPMAJogl",
-   "note": "PnL corr 0.67 with SHELF:asset_turn -> submit on a DIFFERENT day than asset_turn only after re-checking self-corr; prefer a de-correlated variant (W8 wave)"
+   "note": "PnL corr 0.67 with SHELF:asset_turn (INDUSTRY variant RR6rPpEj 1.44/1.19 also 0.668; grouping does not separate them). Submit only on a day when asset_turn is NOT the previous submission, and only after the live self-corr check reads < 0.68."
   },
   "status": "ready"
  }

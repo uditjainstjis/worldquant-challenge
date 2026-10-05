@@ -72,3 +72,12 @@ Cap 2,000/day, never decreases. #1 holds ~985k from ~684 alphas and adds ~1,000/
 1. Run Lesson 3's formula with `3` → `10`. Explain the Sharpe drop (hint: reversal fades with horizon).
 2. Take `group_rank(est_eps/close, industry)` and add `* rank(ts_mean(volume,5)/ts_mean(volume,60))`. Watch Sharpe move 1.06 → ~1.21.
 3. Invent one new conditioning factor (not volume) and test it on the reversal alpha. Report sign and Sharpe.
+
+## Lesson 10 — the calibration (measured 10-01 vs 10-03)
+Two alphas in one day scored 2,000 (the cap). One alpha scored 1,910. So one good alpha is 95% of the day; the second is worth ~90 points. Never risk tomorrow's lane for today's 90.
+
+## Lesson 11 — self-correlation measures WHEN you make money, not what the formula says
+Five different-looking formulas (1-day reversal, intraday reversal, close-position-in-range, volatility-scaled reversal, reversal x value) all correlated 0.80–0.95 with the submitted 3-day reversal: same bet, different costume. The option-spread, forward-earnings, skewness and asset-turnover alphas correlated 0.41–0.62 with it: different reasons the money arrives. Pre-check: GET /alphas/{id}/correlations/self (needs ~60 s to compute). For two alphas that are not yet submitted, pull /recordsets/pnl for both and correlate the daily PnL differences yourself.
+
+## Lesson 12 — the shelf
+A measured, uncorrelated, not-yet-submitted alpha is the scarcest asset in this game. shelf.json holds them with their measured numbers; the daily loop submits from the shelf first and explores only when the shelf runs low. Research days fill the shelf; submission days spend it. Today's research (≈60 simulations) found 2 lanes (asset turnover, tangibility) and killed ~45 ideas. Slow information (earnings drift, analyst surprise, customer momentum, quality ratios) is priced in this window; what survives is fast noise (reversal), positioning (options), forecasts relative to price, and behavioural tilts (skewness), each needing the attention factor rank(vol5/vol60) and the liquidity tilt rank(adv20) to clear fitness.

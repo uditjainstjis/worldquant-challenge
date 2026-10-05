@@ -521,3 +521,34 @@ Udit: "lgoged u into claude chrome, and set one schedule to rise up urself 1hour
   > </task-notification>
 
 - 15:20 EDT: tangibility YPMAJogl self-corr vs board 0.589 (OK) but PnL corr with shelved asset_turn 3qVAPoYQ = 0.67 (computed from /recordsets/pnl daily diffs, 1,235 days). DECISION: do NOT submit tonight (+90) — would put tomorrow's lane 0.03 under the limit. Shelf = asset_turn (10-06) + tangibility (later). Wave W8 (6 de-correlation variants: INDUSTRY/MARKET grouping, no-adv, no-vol) running.
+- [2026-10-06 00:20]
+  > <task-notification>
+  > <task-id>b3arxa6lj</task-id>
+  > <tool-use-id>toolu_01HzanWGV1yaV87kv6rMAVgK</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/b3arxa6lj.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Shelve tangibility, log the decision, push, wait 5.5 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 15:32 EDT: wave W8: tangibility INDUSTRY-grouped x vol x adv d10 1.44/1.19 TO 0.09 PASS (RR6rPpEj); asset_turn INDUSTRY 1.26/0.92 fail; no-vol / no-adv variants all fail fitness (the vol x adv pair is load-bearing for fitness).
+- [2026-10-06 00:22]
+  > <task-notification>
+  > <task-id>bwxzn4qpm</task-id>
+  > <tool-use-id>toolu_01JG5GRd2i9uLWfVH86Gn6Lf</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bwxzn4qpm.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log wave W8 and wait 70 seconds" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 15:40 EDT: tang_ind RR6rPpEj self-corr board 0.628; PnL corr vs asset_turn 0.668, vs tang_sub 0.95 => grouping does not de-correlate the pair. Shelf: asset_turn (10-06), tangibility (later, borderline). Probing pv13 relationship data + model77 factor model for a different-reason lane.
+- 15:50 EDT: pv13 has lead-lag fields rel_ret_cust / rel_ret_part / rel_ret_comp / rel_ret_all (avg 1-day return of linked firms) + pv13 grouping fields; model77 has abnormal_return_earnings_release (PEAD), change_in_eps_surprise, coefficient_variation_fy1_eps, consensus_analyst_rating, distress_risk_measure, earnings_torpedo_indicator, forward_cash_flow_to_price, earnings_momentum_composite_score, credit_risk_premium_indicator, cash_burn_rate. Wave W9 (16) running.
+- [2026-10-06 00:31]
+  > <task-notification>
+  > <task-id>ba6pw6msq</task-id>
+  > <tool-use-id>toolu_0185QZbDnWdjWaKDkBoRmmzW</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/ba6pw6msq.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log the new datasets and wait 7 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 16:05 EDT: wave W9: NO passer. peer_gap (peers' 5d return minus own) 1.39/0.97; PEAD 0.94; torpedo 0.93; fwd CF/price 0.93; surprise chg 0.97; partner mom 1.10; customer mom 0.87-0.96; competitor mom 0.98; rating 0.74; earnings-momentum score 0.48; -dispersion 0.35. Slow information is priced in this window. keep_visible killed; session close-out.
