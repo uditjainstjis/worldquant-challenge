@@ -24,6 +24,60 @@
    "selfcorr_max": 0.549,
    "alpha_id": "vR2xOrRz"
   },
+  "status": "submitted:vR2xOrRz:2026-10-05"
+ },
+ {
+  "tag": "SHELF:asset_turn_v_adv_d10",
+  "expr": "group_rank(sales/assets, subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 10,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "measured": {
+   "date": "2026-10-05",
+   "sharpe": 1.61,
+   "fitness": 1.22,
+   "turnover": 0.1,
+   "selfcorr_max": 0.622,
+   "alpha_id": "3qVAPoYQ"
+  },
   "status": "ready"
+ },
+ {
+  "tag": "SHELF:sales_cap_v_adv_d10",
+  "expr": "group_rank(sales/cap, subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 10,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "measured": {
+   "date": "2026-10-05",
+   "sharpe": 1.38,
+   "fitness": 1.29,
+   "turnover": 0.09,
+   "selfcorr_max": 0.801,
+   "alpha_id": "ZYAoMY23"
+  },
+  "status": "blocked:selfcorr=0.801 vs QPKq3a2Q"
  }
 ]

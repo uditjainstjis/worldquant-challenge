@@ -2,7 +2,7 @@
 
 ## Objective (Udit, 2026-10-01): rank 1 on the WorldQuant BRAIN Challenge leaderboard. Autonomous.
 ## Governing numbers (2026-10-03)
-- Me: UJ82561, score 2,000 (day 1 = the cap, with 2 alphas), rank 27,092, BRONZE. Day 2 missed (0). Day 3: 1 alpha submitted (calibration vs day 1's 2).
+- Me: UJ82561, score 3,910 on 10-05 (day1 2,000 + day3 1,910), rank 24,984, BRONZE. Missed days: 10-02, 10-04 (0 each). Day 5: 1 alpha ACTIVE (skew lane).
 - #1 JY12161 (JP) 984,924 / 684 on 10-03 (982,924 / 683 on 10-01) => leader rate ~1,000/day => catch-up ~983 days at 2,000/day. #2 EC33137 745,952 / 396.
 - Scoring: PER DAY (EST), cap 2,000/day, never decreases, 1-2 alphas/day typically hits cap.
   Quality factor: smaller universe ↑, self-corr ↓, fitness ↑, D1 > D0. Quantity factor: more alphas/day ↑.
@@ -25,7 +25,9 @@
 | 2026-10-01 | XgJ5e7w5 | rank(-ts_delta(close,3))*rank(ts_mean(volume,5)/ts_mean(volume,60)) | USA TOP3000 D1 SUBINDUSTRY decay 8 trunc 0.08 | 2.14 | 1.42 | 0.27 | ACTIVE |
 | 2026-10-01 | A1vMp7Al | group_rank(ts_mean((implied_volatility_call_60-implied_volatility_put_60),10), subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60)) | USA TOP3000 D1 SUBINDUSTRY decay 12 | 1.66 | 1.06 | 0.14 | ACTIVE (self-corr 0.45) |
 | 2026-10-02 | — | NO SUBMISSION (session ended) | | | | | 0 points |
-| 2026-10-03 | QPKq3a2Q | group_rank(est_eps/close, industry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20) | USA TOP3000 D1 INDUSTRY decay 8 | 1.30 | 1.14 | 0.10 | ACTIVE (self-corr 0.41) |
+| 2026-10-03 | QPKq3a2Q | group_rank(est_eps/close, industry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20) | USA TOP3000 D1 INDUSTRY decay 8 | 1.30 | 1.14 | 0.10 | ACTIVE (self-corr 0.41) -> scored 1,910 |
+| 2026-10-04 | — | NO SUBMISSION (extension down, no creds, env unconfigured) | | | | | 0 points |
+| 2026-10-05 | vR2xOrRz | group_rank(-ts_mean(power(returns,3),60)/power(ts_std_dev(returns,60),3), subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20) | USA TOP3000 D1 SUBINDUSTRY decay 10 | 1.29 | 1.00 | 0.11 | ACTIVE (self-corr 0.55) |
 ## Families measured (TOP3000 D1 unless noted) — what works in this IS window (2019-)
 - WORKS: (3) forward earnings yield group_rank(est_eps/close, industry) x volume burst x rank(adv20) liquidity tilt, decay 8: Sharpe 1.30 fit 1.14 TO 0.10 (without adv20: 1.21/1.08 fails Sharpe; trailing EY added HURTS 0.76; sector neutralization 1.02). (1) short-term reversal x abnormal volume (rev3/rev5 * vol5/vol60), decay 6-10: Sharpe 1.9-2.1, fit 1.2-1.4. Smaller universes FAIL fitness (TOP1000 0.81). (2) option call-put IV spread (60d) 10-day mean x abnormal volume, decay 10-12: Sharpe 1.6-1.7, fit 1.02-1.06; without the volume factor it fails sub-universe Sharpe (0.32 vs 0.76) because the spread signal lives in small caps.
 - NEAR MISS (next targets): return skewness x volume 1.23/0.81; fwd earnings yield est_eps/close 1.07/0.84 (TO 0.04); IV 5-day CHANGE positive 1.36 (TO 0.59); vwap reversal 1.86 at TO 1.29. Abnormal-volume factor rank(vol5/vol60) is the universal fitness booster here.
@@ -42,7 +44,7 @@
 - Debug a run: RemoteTrigger list_runs -> get_run_log.
 ## Design risks / plan
 - #1 RISK: both submitted alphas and every daily.py candidate share rank(ts_mean(volume,5)/ts_mean(volume,60)). Self-corr is checked against EVERY prior submission (max), so it climbs daily; daily.py likely runs dry within ~a week without volume-free lanes. Seeds for volume-free families: IV 5-day change (+1.36 Sharpe, TO 0.59, needs decay), fwd EY with industry neutralization (1.06/0.92), reversal with INDUSTRY/MARKET neutralization, other regions (EUR/ASI/CHN universes untested).
-- CALIBRATION: day 1 (10-01) = 2 alphas. Day 2 target = 1 alpha. Compare the two daily scores (board 03:00 EST) before fixing the standing daily target.
+- CALIBRATION DONE: day 1 (2 alphas, fit 1.42+1.06) = 2,000; day 3 (1 alpha, fit 1.14) = 1,910. => one alpha ~ 95% of the cap; a second alpha is worth ~90 pts/day. Standing target: 1/day guaranteed, 2nd only if a low-self-corr passer is already on the shelf.
 - OPEN FORK (Udit's call): Gold (10,000 pts, ~5 days) may trigger a consultant invitation; whether accepting removes him from the Challenge board is unresolved (leader kept scoring past Gold, so probably not).
 ## Data quirks
 - `dateSubmitted` on alphas reads 1-3 h EARLIER than the real submit time (XgJ5e7w5 13:32 vs real 14:41 EDT; QPKq3a2Q 09:30 vs real 09:53). daily.py's submitted_today keys off it: safe at 05:00/16:00 EDT fires, NEVER schedule a run within 3 h of midnight Eastern.

@@ -448,3 +448,56 @@ Udit: "there's a thing in my subscription plan for free, spinning claude on clou
   > </task-notification>
 
 - 10:55 EDT: daily.py gained a SHELF (shelf.json: pre-measured ready candidates simulated first; explore only when shelf < 2). Shelf seeded with skew60 x vol5 x adv d10 (vR2xOrRz, 1.29/1.00, self-corr 0.549) for 10-04. Wave K2 (9 skew variants) completed server-side; browser extension disconnected before results were read -> read via /users/self/alphas when the session is back.
+- [2026-10-04 00:31]
+  > listen, work autonomusly, and make the submission for today not msisin that
+
+- [2026-10-05 23:48]
+  > listen, i will learn from you, for now go autonomus make a quick submission and steal 2000 points of today with no fail
+
+- [2026-10-05 23:52]
+  > lgoged u into claude chrome, and set one schedule to rise up urself 1hour before deadline if nto submitted anyday for wakeup
+
+
+## 2026-10-05 (IST evening) / 14:20 EDT
+Udit: "listen, i will learn from you, for now go autonomus make a quick submission and steal 2000 points of today with no fail"
+Udit: "lgoged u into claude chrome, and set one schedule to rise up urself 1hour before deadline if nto submitted anyday for wakeup"
+- Routine runs 10-03 20:06Z, 10-04 09:08Z, 10-04 20:08Z, 10-05 09:09Z all ~25 s => NO CREDENTIALS every time (env still unconfigured). 2026-10-04 EST: NO submission (extension was down, no creds) => 0 points. Second missed day.
+- Routine cron -> 0 3,9,20 * * * UTC (adds 23:00 EDT wake-up, 1 h before the Eastern day ends).
+- [2026-10-05 23:54]
+  > logged in
+
+- 14:30 EDT: Udit logged in to BRAIN. BOARD: score 3,910 rank 24,984 => day 3 (ONE alpha, fitness 1.14) scored 1,910 vs day 1 (TWO alphas) 2,000. CALIBRATION: 1 alpha ~= 95% of cap; the 2nd alpha is worth ~90 points/day. 10-04 = 0 (missed). SUBMIT attempt #4 (day 5, 2026-10-05 EST): vR2xOrRz (skew60 x vol5 x adv d10).
+- [2026-10-05 23:57]
+  > nope, find some soln for that, i gotta do my work right, u maybe change screen every 4mins urself for that or someway round
+
+- 14:40 EDT: Udit: "nope, find some soln for that, i gotta do my work right, u maybe change screen every 4mins urself for that or someway round" -> keep_visible.sh v2: every 240 s raise the BRAIN tab for 1.5 s then restore the previously frontmost app. Running (nohup).
+- [2026-10-05 23:58]
+  > <task-notification>
+  > <task-id>bwbo8ofy3</task-id>
+  > <tool-use-id>toolu_01FMenzwVwGb4V1TP3uiomhk</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bwbo8ofy3.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log the calibration result and submission attempt, wait about 3 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 14:45 EDT: SUBMITTED #4 (day 5). vR2xOrRz ACTIVE: Sharpe 1.29, fitness 1.00, TO 0.11, sub-universe 0.92, self-corr 0.55, 2x UNITS warning (non-blocking). Shelf -> submitted. Wave W6 (15 candidates) running for 2nd alpha today / tomorrow's shelf.
+- [2026-10-06 00:03]
+  > <task-notification>
+  > <task-id>bxne37ovu</task-id>
+  > <tool-use-id>toolu_01RhMguZSNPDngbugyJjHq38</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bxne37ovu.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Record day-5 submission and calibration in STATE and ledger, wait 5 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 14:55 EDT: wave W6 PASSERS: asset turnover group_rank(sales/assets,subindustry) x vol x adv d10 1.61/1.22 TO 0.10 (3qVAPoYQ); sales yield group_rank(sales/cap,subindustry) x vol x adv d10 1.38/1.29 TO 0.09 (ZYAoMY23). DEAD: gross profitability 0.90, ROA 0.48, EBITDA/assets 0.47, CFO/assets 0.69, income growth 0.79, seasonality 0.27, attention-only 0.70, vol change 0.65, PCR change 0.89, IV-skew change 0.93, breakeven 0.68, fwd price 0.72, MAX-return (kth_element) pending/err.
+- [2026-10-06 00:05]
+  > <task-notification>
+  > <task-id>bjv8vms98</task-id>
+  > <tool-use-id>toolu_01S51U6Byj3YoBHLjKiraVkm</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bjv8vms98.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log wave W6 and wait 80 seconds" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 15:00 EDT: SELF-CORR: asset turnover 0.622 (vs QPKq3a2Q) -> NEW LANE #5, SHELVED for 2026-10-06 (tomorrow guaranteed > +90 today). sales yield 0.801 vs QPKq3a2Q -> blocked. Wave W7 (12 more fundamental/structure ideas) running for a possible 2nd alpha today.
