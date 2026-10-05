@@ -79,5 +79,33 @@
    "alpha_id": "ZYAoMY23"
   },
   "status": "blocked:selfcorr=0.801 vs QPKq3a2Q"
+ },
+ {
+  "tag": "SHELF:tangibility_v_adv_d10",
+  "expr": "group_rank(ppent/assets, subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 10,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "measured": {
+   "date": "2026-10-05",
+   "sharpe": 1.41,
+   "fitness": 1.08,
+   "turnover": 0.1,
+   "selfcorr_max": 0.589,
+   "alpha_id": "YPMAJogl",
+   "note": "PnL corr 0.67 with SHELF:asset_turn -> submit on a DIFFERENT day than asset_turn only after re-checking self-corr; prefer a de-correlated variant (W8 wave)"
+  },
+  "status": "ready"
  }
 ]
