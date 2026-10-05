@@ -104,8 +104,8 @@
    "turnover": 0.1,
    "selfcorr_max": 0.589,
    "alpha_id": "YPMAJogl",
-   "note": "PnL corr 0.67 with SHELF:asset_turn (INDUSTRY variant RR6rPpEj 1.44/1.19 also 0.668; grouping does not separate them). Submit only on a day when asset_turn is NOT the previous submission, and only after the live self-corr check reads < 0.68."
+   "note": "PnL corr 0.67 with asset_turn; self-corr is vs ALL prior submissions, so after asset_turn is submitted this stays 0.67 forever. Only a variant measuring < 0.65 vs 3qVAPoYQ revives the lane."
   },
-  "status": "ready"
+  "status": "burnt-after-asset_turn"
  }
 ]
