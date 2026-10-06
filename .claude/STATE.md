@@ -2,7 +2,8 @@
 
 ## Objective (Udit, 2026-10-01): rank 1 on the WorldQuant BRAIN Challenge leaderboard. Autonomous.
 ## Governing numbers (2026-10-03)
-- Me: UJ82561, score 3,910 on 10-05 (day1 2,000 + day3 1,910), rank 24,984, BRONZE. Missed days: 10-02, 10-04 (0 each). Day 5: 1 alpha ACTIVE (skew lane).
+- Me: 10-06: score 5,788, rank 22,997, SILVER; day 6 alpha 3qVAPoYQ ACTIVE. SHELF NOW EMPTY (tangibility burnt) -> next session = research day.
+- (older) Me: UJ82561, score 3,910 on 10-05 (day1 2,000 + day3 1,910), rank 24,984, BRONZE. Missed days: 10-02, 10-04 (0 each). Day 5: 1 alpha ACTIVE (skew lane).
 - #1 JY12161 (JP) 984,924 / 684 on 10-03 (982,924 / 683 on 10-01) => leader rate ~1,000/day => catch-up ~983 days at 2,000/day. #2 EC33137 745,952 / 396.
 - Scoring: PER DAY (EST), cap 2,000/day, never decreases, 1-2 alphas/day typically hits cap.
   Quality factor: smaller universe ↑, self-corr ↓, fitness ↑, D1 > D0. Quantity factor: more alphas/day ↑.
@@ -27,6 +28,7 @@
 | 2026-10-02 | — | NO SUBMISSION (session ended) | | | | | 0 points |
 | 2026-10-03 | QPKq3a2Q | group_rank(est_eps/close, industry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20) | USA TOP3000 D1 INDUSTRY decay 8 | 1.30 | 1.14 | 0.10 | ACTIVE (self-corr 0.41) -> scored 1,910 |
 | 2026-10-04 | — | NO SUBMISSION (extension down, no creds, env unconfigured) | | | | | 0 points |
+| 2026-10-06 | 3qVAPoYQ | group_rank(sales/assets, subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20) | USA TOP3000 D1 SUBINDUSTRY decay 10 | 1.61 | 1.22 | 0.10 | ACTIVE (self-corr 0.62) |
 | 2026-10-05 | vR2xOrRz | group_rank(-ts_mean(power(returns,3),60)/power(ts_std_dev(returns,60),3), subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20) | USA TOP3000 D1 SUBINDUSTRY decay 10 | 1.29 | 1.00 | 0.11 | ACTIVE (self-corr 0.55) |
 ## Families measured (TOP3000 D1 unless noted) — what works in this IS window (2019-)
 - WORKS (lanes, all TOP3000 D1 x rank(vol5/vol60) x rank(adv20)): (4) return SKEWNESS 60d, subindustry, d10: 1.29/1.00, self-corr 0.55 (submitted 10-05). (5) ASSET TURNOVER sales/assets, subindustry, d10: 1.61/1.22, self-corr 0.62 -> SHELF for 10-06. (6) TANGIBILITY ppent/assets, subindustry, d10: 1.41/1.08, self-corr 0.59 vs board BUT 0.67 PnL-corr with (5). Self-corr is checked against EVERY prior submission, so once (5) is on the board (6) faces 0.67 permanently -> treat (6) as BURNT unless a variant measures < 0.65 against 3qVAPoYQ (INDUSTRY grouping did not help: 0.668). Blocked by self-corr: every reversal costume (1-day, intraday, range-position, vol-scaled: 0.80-0.95 vs #1), sales/cap 0.80 vs #3, fwdEY+cp60 0.88, skew+cp60 0.78, cp60 INDUSTRY 0.95 vs #2.

@@ -552,3 +552,26 @@ Udit: "lgoged u into claude chrome, and set one schedule to rise up urself 1hour
   > </task-notification>
 
 - 16:05 EDT: wave W9: NO passer. peer_gap (peers' 5d return minus own) 1.39/0.97; PEAD 0.94; torpedo 0.93; fwd CF/price 0.93; surprise chg 0.97; partner mom 1.10; customer mom 0.87-0.96; competitor mom 0.98; rating 0.74; earnings-momentum score 0.48; -dispersion 0.35. Slow information is priced in this window. keep_visible killed; session close-out.
+- [2026-10-06 23:02]
+  > submit for today autonomiusly
+
+- [2026-10-06 23:21]
+  > work autonomusly
+
+- [2026-10-06 23:22]
+  > done
+
+
+## 2026-10-06 13:55 EDT
+Udit: "submit for today autonomiusly" / "work autonomusly". BRAIN session had expired (401, password-only sign-in) -> Udit logged in ("done").
+- BOARD: score 5,788 (day 5 = 1,878), rank 22,997, SILVER. SUBMIT attempt #5 (day 6): 3qVAPoYQ asset turnover, self-corr 0.6218.
+- [2026-10-06 23:25]
+  > <task-notification>
+  > <task-id>b9uyp251q</task-id>
+  > <tool-use-id>toolu_01ByEsDggeh4trczm8JFTQcA</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/b9uyp251q.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log the submission and wait about 3 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 14:00 EDT: SUBMITTED #5 (day 6). 3qVAPoYQ ACTIVE, all checks PASS, self-corr 0.62. Shelf empty.
