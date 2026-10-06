@@ -107,5 +107,59 @@
    "note": "PnL corr 0.67 with asset_turn; self-corr is vs ALL prior submissions, so after asset_turn is submitted this stays 0.67 forever. Only a variant measuring < 0.65 vs 3qVAPoYQ revives the lane."
   },
   "status": "burnt-after-asset_turn"
+ },
+ {
+  "tag": "SHELF:debt_assets_v_adv_d10",
+  "expr": "group_rank(debt/assets, subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 10,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "measured": {
+   "date": "2026-10-06",
+   "sharpe": 1.5,
+   "fitness": 1.21,
+   "turnover": 0.1,
+   "selfcorr_max": 0.6947,
+   "alpha_id": "786zkWWv",
+   "note": "BORDERLINE: 0.695 vs QPKq3a2Q, platform limit 0.70. Re-check live self-corr before submitting; if >= 0.70, do not submit."
+  },
+  "status": "ready"
+ },
+ {
+  "tag": "SHELF:ev_sales",
+  "expr": "group_rank(sales/enterprise_value, subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 10,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "measured": {
+   "date": "2026-10-06",
+   "sharpe": 1.25,
+   "fitness": 1.07,
+   "selfcorr_max": 0.8025,
+   "alpha_id": "O08G1mJY"
+  },
+  "status": "blocked:selfcorr=0.80 vs QPKq3a2Q"
  }
 ]
