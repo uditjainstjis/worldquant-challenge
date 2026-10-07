@@ -188,7 +188,7 @@
    "alpha_id": "d51bjNxX",
    "note": "anl4_bvps_flag = book value per share forecast type (revision/new). Lane = all bv variants (mutually ~0.9). Backup volume-free: npPd7Lgq 1.26/1.14 self-corr 0.39."
   },
-  "status": "ready"
+  "status": "submitted:d51bjNxX:2026-10-07"
  },
  {
   "tag": "SHELF:bvflag_alone_d10",
@@ -215,6 +215,6 @@
    "selfcorr_max": 0.39,
    "alpha_id": "npPd7Lgq"
   },
-  "status": "backup-same-lane-as-bvflag_adv"
+  "status": "burnt-same-lane-as-d51bjNxX"
  }
 ]

@@ -681,3 +681,26 @@ Udit: "submit todays autonomusly mine all points"
   > </task-notification>
 
 - 17:15 EDT: SELF-CORR bv variants: alone 0.390, xA 0.567, xV 0.604, xspike 0.512, ind xVxA 0.737 (blocked), bv+part xV 0.628. SHELF: bvflag x adv (d51bjNxX 1.69/1.41) READY for 10-08; bv alone backup. Decision: shelve (lane in hand > +90 today); Y5 may still give today's #2.
+- [2026-10-08 02:20]
+  > we want to mine all score points and never stop
+
+- 17:20 EDT: Udit: "we want to mine all score points and never stop" -> standing order: 2 alphas/day whenever a passer exists, never shelve for tomorrow at the cost of today; research continuously. SUBMIT attempt #7 (day 7, 2nd alpha): d51bjNxX bvps_flag x adv d10 (1.69/1.41, self-corr 0.567).
+- [2026-10-08 02:23]
+  > <task-notification>
+  > <task-id>b7zmk2678</task-id>
+  > <tool-use-id>toolu_011dEmE9y9xSZFdJ79S9TuSV</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/b7zmk2678.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Record the standing order and wait about 3 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- [2026-10-08 02:24]
+  > <task-notification>
+  > <task-id>bw4b44xb3</task-id>
+  > <tool-use-id>toolu_0176fG7XCx11XRhzFNhvH63v</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bw4b44xb3.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Shelve the book-value lane, log, push, wait 5.5 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 17:25 EDT: SUBMITTED #7 (day 7, 2nd). d51bjNxX ACTIVE, all PASS. Day 7 = 2 alphas. Page reloaded itself -> worker lost; Y5 results read from alpha list.
