@@ -594,3 +594,30 @@ Udit: "submit for today autonomiusly" / "work autonomusly". BRAIN session had ex
   > </task-notification>
 
 - 14:20 EDT: wave X1 (15 balance-sheet ratios x vol x adv): LEVERAGE debt/assets 1.50/1.21 PASS, self-corr 0.6947 (vs QPKq3a2Q) -> SHELF for 10-07, BORDERLINE (limit 0.70). sales/EV 1.25/1.07 blocked 0.80. capex/assets 1.33/0.98 near. Dead: current ratio, -debt, -capex, div payout, fin/inv CF, B/P, COGS/sales, emp/sales, D&A. keep_visible killed.
+- [2026-10-08 01:41]
+  > submit todays autonomusly mine all points
+
+
+## 2026-10-07 16:15 EDT
+Udit: "submit todays autonomusly mine all points"
+- BOARD: score 7,663 (day 6 = 1,875), rank 21,622, SILVER. #1 992,568 / 688. Session alive. Candidate 786zkWWv (leverage) no fails; self-corr re-check firing. Wave Y1 (14) for a 2nd alpha today. keep_visible restarted.
+- [2026-10-08 01:44]
+  > <task-notification>
+  > <task-id>bmr3mbruh</task-id>
+  > <tool-use-id>toolu_012qN3uxu3XLDTBHiYz6WbMb</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bmr3mbruh.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Restart the tab flash, log, wait 80 seconds" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 16:20 EDT: self-corr 786zkWWv 0.6947 (<0.70). SUBMIT attempt #6 (day 7, 2026-10-07): 786zkWWv leverage debt/assets x vol x adv d10.
+- [2026-10-08 01:47]
+  > <task-notification>
+  > <task-id>b2ovtc087</task-id>
+  > <tool-use-id>toolu_01VxX1GqUN8AKMqXuRvycX9b</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/b2ovtc087.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log the submission attempt and wait about 3 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 16:25 EDT: SUBMITTED #6 (day 7). 786zkWWv ACTIVE, all PASS, self-corr 0.69. Wave Y1 so far: capex/assets x vol10 x adv 1.35/0.99, d8 1.31/0.96, industry 1.22/0.92 (all LOW_FITNESS); intraday-rev20 1.05, autocorr 0.88, overnight mom 0.79, vol-of-vol 0.24, days-since-high 0. Wave Y2 (7 capex variants) queued for a 2nd alpha today.

@@ -2,6 +2,7 @@
 
 ## Objective (Udit, 2026-10-01): rank 1 on the WorldQuant BRAIN Challenge leaderboard. Autonomous.
 ## Governing numbers (2026-10-03)
+- Me: 10-07: score 7,663 (day 6 = 1,875), rank 21,622, SILVER; day 7 alpha 786zkWWv ACTIVE. #1 992,568/688 (+7,644 in 6 days = 1,274/day). Shelf EMPTY.
 - Me: 10-06: score 5,788, rank 22,997, SILVER; day 6 alpha 3qVAPoYQ ACTIVE. SHELF NOW EMPTY (tangibility burnt) -> next session = research day.
 - (older) Me: UJ82561, score 3,910 on 10-05 (day1 2,000 + day3 1,910), rank 24,984, BRONZE. Missed days: 10-02, 10-04 (0 each). Day 5: 1 alpha ACTIVE (skew lane).
 - #1 JY12161 (JP) 984,924 / 684 on 10-03 (982,924 / 683 on 10-01) => leader rate ~1,000/day => catch-up ~983 days at 2,000/day. #2 EC33137 745,952 / 396.
@@ -28,6 +29,7 @@
 | 2026-10-02 | — | NO SUBMISSION (session ended) | | | | | 0 points |
 | 2026-10-03 | QPKq3a2Q | group_rank(est_eps/close, industry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20) | USA TOP3000 D1 INDUSTRY decay 8 | 1.30 | 1.14 | 0.10 | ACTIVE (self-corr 0.41) -> scored 1,910 |
 | 2026-10-04 | — | NO SUBMISSION (extension down, no creds, env unconfigured) | | | | | 0 points |
+| 2026-10-07 | 786zkWWv | group_rank(debt/assets, subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20) | USA TOP3000 D1 SUBINDUSTRY decay 10 | 1.50 | 1.21 | 0.10 | ACTIVE (self-corr 0.69) |
 | 2026-10-06 | 3qVAPoYQ | group_rank(sales/assets, subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20) | USA TOP3000 D1 SUBINDUSTRY decay 10 | 1.61 | 1.22 | 0.10 | ACTIVE (self-corr 0.62) |
 | 2026-10-05 | vR2xOrRz | group_rank(-ts_mean(power(returns,3),60)/power(ts_std_dev(returns,60),3), subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20) | USA TOP3000 D1 SUBINDUSTRY decay 10 | 1.29 | 1.00 | 0.11 | ACTIVE (self-corr 0.55) |
 ## Families measured (TOP3000 D1 unless noted) — what works in this IS window (2019-)
