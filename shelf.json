@@ -161,5 +161,60 @@
    "alpha_id": "O08G1mJY"
   },
   "status": "blocked:selfcorr=0.80 vs QPKq3a2Q"
+ },
+ {
+  "tag": "SHELF:bvflag_adv_d10",
+  "expr": "group_rank(anl4_bvps_flag, subindustry)*rank(adv20)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 10,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "measured": {
+   "date": "2026-10-07",
+   "sharpe": 1.69,
+   "fitness": 1.41,
+   "turnover": 0.03,
+   "selfcorr_max": 0.567,
+   "alpha_id": "d51bjNxX",
+   "note": "anl4_bvps_flag = book value per share forecast type (revision/new). Lane = all bv variants (mutually ~0.9). Backup volume-free: npPd7Lgq 1.26/1.14 self-corr 0.39."
+  },
+  "status": "ready"
+ },
+ {
+  "tag": "SHELF:bvflag_alone_d10",
+  "expr": "group_rank(anl4_bvps_flag, subindustry)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 10,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "measured": {
+   "date": "2026-10-07",
+   "sharpe": 1.26,
+   "fitness": 1.14,
+   "turnover": 0.02,
+   "selfcorr_max": 0.39,
+   "alpha_id": "npPd7Lgq"
+  },
+  "status": "backup-same-lane-as-bvflag_adv"
  }
 ]
