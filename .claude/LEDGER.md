@@ -725,3 +725,23 @@ Udit: "submit todays autonomusly mine all points"
   > </task-notification>
 
 - 17:50 EDT: SELF-CORR: totassets_flag xA 0.610 -> SHELF for 10-08 (today already at 2-alpha cap). ptpr_flag 0.79, sales/cap xA 0.715, rel_num_part xA 0.85 blocked (vs d51bjNxX / 786zkWWv). cp60 xA 1.39/0.98 fails. Wave Z2 (9) for a 2nd 10-08 lane.
+- [2026-10-08 02:41]
+  > <task-notification>
+  > <task-id>brzhslkc3</task-id>
+  > <tool-use-id>toolu_011qrCPdMQgTz8wAtMSrQkDp</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/brzhslkc3.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Shelve the lane, update STATE and ledger, push, wait about 7 minutes" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 18:00 EDT: wave Z2: totassets_flag ALONE 1.27/1.25 TO 0.03 PASS (QPKbbpbG); tot+cff xA 1.40/1.18 PASS (9qWjjnM9); tot xA d8 1.30/1.04 PASS. cff_flag alone 1.15/1.00 (LOW_SHARPE); netdebt 1.26/0.90; cp60 xA d12 1.38/0.98; fwdEY xA ind 1.22/0.99. No second lane; all passers are the totassets-flag lane.
+- [2026-10-08 02:43]
+  > <task-notification>
+  > <task-id>bixkhagy3</task-id>
+  > <tool-use-id>toolu_01WrT95GU7P11dbj5jRHuP3c</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/bixkhagy3.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log wave Z2 and wait 70 seconds" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 18:05 EDT: SELF-CORR tot_alone 0.473 (vs d51bjNxX) -> PRIMARY shelf for 10-08; tot+cff xA 0.634; tot xA d8 0.61 backups. Session close-out: keep_visible killed, tab closed. Day 7 = 2 alphas (cap). ~75 simulations today.

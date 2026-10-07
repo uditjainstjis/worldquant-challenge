@@ -2,7 +2,7 @@
 
 ## Objective (Udit, 2026-10-01): rank 1 on the WorldQuant BRAIN Challenge leaderboard. Autonomous.
 ## Governing numbers (2026-10-03)
-- 10-07 close: day 7 = 2 alphas (786zkWWv leverage + d51bjNxX bv flag x adv). SHELF for 10-08: totassets_flag x adv (N1Vaa6mX 1.30/1.04, self-corr 0.61). Blocked today: ptpr_flag 0.79, rel_num_part xA 0.85, sales/cap xA 0.715, capex (0.73-0.74 vs leverage), tangibility.
+- 10-07 close: day 7 = 2 alphas (786zkWWv leverage + d51bjNxX bv flag x adv). SHELF for 10-08: totassets_flag ALONE (QPKbbpbG 1.27/1.25, self-corr 0.47) primary; same-lane backups 9qWjjnM9, N1Vaa6mX. Second 10-08 lane NOT found yet (cff/netdebt flags, fwdEY xA, cp60 xA all fail fitness by <0.1). Blocked today: ptpr_flag 0.79, rel_num_part xA 0.85, sales/cap xA 0.715, capex (0.73-0.74 vs leverage), tangibility.
 - Me: 10-07: score 7,663 (day 6 = 1,875), rank 21,622, SILVER; day 7 alpha 786zkWWv ACTIVE. #1 992,568/688 (+7,644 in 6 days = 1,274/day). Shelf EMPTY.
 - Me: 10-06: score 5,788, rank 22,997, SILVER; day 6 alpha 3qVAPoYQ ACTIVE. SHELF NOW EMPTY (tangibility burnt) -> next session = research day.
 - (older) Me: UJ82561, score 3,910 on 10-05 (day1 2,000 + day3 1,910), rank 24,984, BRONZE. Missed days: 10-02, 10-04 (0 each). Day 5: 1 alpha ACTIVE (skew lane).
