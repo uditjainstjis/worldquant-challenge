@@ -704,3 +704,24 @@ Udit: "submit todays autonomusly mine all points"
   > </task-notification>
 
 - 17:25 EDT: SUBMITTED #7 (day 7, 2nd). d51bjNxX ACTIVE, all PASS. Day 7 = 2 alphas. Page reloaded itself -> worker lost; Y5 results read from alpha list.
+- 17:30 EDT: Y5 partial (3 ran before reload): fwd EBITDA/EV xA 1.06/0.85, alone 0.76, fwd CFO/cap xA 1.12/0.92 -> fail. Worker reinstalled; wave Z1 (16, adv-only: 10 other anl4 *_flag fields + capex/sales_cap/tang/part/fwdEY/cp60 x A) for 10-08 lane.
+- [2026-10-08 02:32]
+  > <task-notification>
+  > <task-id>but3mcezt</task-id>
+  > <tool-use-id>toolu_016L7mtG8NVWHDxh2ZE2egRX</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/but3mcezt.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log and wait 7 minutes for the wave" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 17:40 EDT: wave Z1 (adv-only) PASSERS: anl4_ptpr_flag xA 1.62/1.29 (88PjjaJo); sales/cap xA 1.25/1.11 (omWLLKAv); anl4_totassets_flag xA 1.30/1.04 (N1Vaa6mX); rel_num_part xA 1.44/1.03 (JjQNNGWE). Near: fwdEY xA 1.26/0.98, cff_flag 1.25/0.97, netdebt_flag 1.25/0.89. Dead: tang xA, capex xA, cfo/capex/gric/erbfintax/ffo flags. Self-corr pending.
+- [2026-10-08 02:34]
+  > <task-notification>
+  > <task-id>btn5bm0v0</task-id>
+  > <tool-use-id>toolu_01G6jnwf2Rupbe2SXe2th1td</tool-use-id>
+  > <output-file>/private/tmp/claude-501/-Users-uditjain/d851a524-cb73-4efc-9bd6-df097c109743/tasks/btn5bm0v0.output</output-file>
+  > <status>completed</status>
+  > <summary>Background command "Log wave Z1 and wait 75 seconds" completed (exit code 0)</summary>
+  > </task-notification>
+
+- 17:50 EDT: SELF-CORR: totassets_flag xA 0.610 -> SHELF for 10-08 (today already at 2-alpha cap). ptpr_flag 0.79, sales/cap xA 0.715, rel_num_part xA 0.85 blocked (vs d51bjNxX / 786zkWWv). cp60 xA 1.39/0.98 fails. Wave Z2 (9) for a 2nd 10-08 lane.
