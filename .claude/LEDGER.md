@@ -774,3 +774,13 @@ Udit: "submit todays autonomusly mine all points"
   KPrr6rr8 (ptp flag) ACTIVE 11:30 EDT stamp. Day 10 = 2 alphas. Score 9,663 -> ~11,663 expected 10-11 12:30 IST (GOLD).
   Wave 2 (flags, 10): cff INDUSTRY d2 1.28/1.17 PASS but pnl-corr 0.901 vs QPKbbpbG -> burnt; cfi d0/d2/d5/ind/mkt 0.87-1.22 (Sharpe miss), cfi_ind 0.899 vs QPKbbpbG -> burnt; sums of weak flags worse than parts. Wave 3 (analyst-count change, 6): dead 0.16-0.62; guidance 2 ERROR.
   Wave 4 enqueued at close: 12 model77 analyst-model ranks alone (d5) + 3 cfi lifts.
+- [2026-10-10 21:37]
+  > WQ RETRY (timer, every 3 h). If the current IST time is between 06:30 and 12:30, reply "skip (window closed)" and stop. Otherwise, in the BRAIN Chrome tab (tabs_context_mcp; create+navigate to platform.worldquantbrain.com/competition/challenge if none), GET /users/self with credentials:'include'. If 401: PushNotification "BRAIN login expired - log in to platform.worldquantbrain.com in Chrome and say in" plus one chat line; stop. If 200: count ACTIVE alphas with dateSubmitted on today's EST date. If already 2: reply "day done: 2/2" in one line and stop. If fewer: run the WQ DAILY RUN procedure now (shelf first, pnl-corr < 0.68, submit, poll, mark; then research; then update files and push; then the 5-line checkpoint).
+
+- [2026-10-10 21:53]
+  > wtf bro kill ur shit which opens chrome tab every 4 min
+
+- [2026-10-10 21:45 IST] Udit: "wtf bro kill ur shit which opens chrome tab every 4 min" -> keep_visible.sh killed, permanently.
+  Wave 4 (15): cfi ind d2/d5/sec 1.18-1.23 Sharpe miss; model77 ranks alone dead (shortfall -0.65, alertrank -0.19, qgp_alert 0.17, qsa_eff -0.72, mgtsig -0.1, dvm -0.32, roefcf -0.48, tobins_q 0.95/0.78, voldiff_pc 1.34/0.44 TO 0.44, lend_supply 0.56, dmd_supply 1.13/0.80, chginv -0.33).
+  Wave 5 (10): revisions of anl4 mean estimates (bvps, totassets, ptp, netdebt, cff, cfo, fcf, ebitda, netprofit; /abs(mean) and /close) all |Sharpe| <= 0.65 -> DEAD.
+  Wave 6 (11) enqueued 21:50: dmd_supply x adv / d2 / INDUSTRY, lend x adv, voldiff ts_mean 10/20, guidance probe x2, put_breakeven/close, news novelty, entity relevance.
