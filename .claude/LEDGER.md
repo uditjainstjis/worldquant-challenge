@@ -770,3 +770,7 @@ Udit: "submit todays autonomusly mine all points"
   Decay lever (fitness floors TO at 12.5%): netdebt d2 1.27/1.09 PASS (9qWW69M9) vs d10 fail; cff d0/d2 1.15/1.00 (Sharpe miss); totassets d0 = d10 (1.27/1.25). Vol tilt rank(ts_std_dev(returns,20)) DESTROYS flags (0.35-0.60); IV30 tilt same + concentrated weight. Tilt hypothesis for flags = DEAD.
   10-10 submissions: QPKbbpbG (totassets flag alone) self-corr 0.473 -> ACTIVE 11:28 EDT stamp (real 11:37). KPrr6rr8 (ptp flag alone) POST submit 11:30 EDT; pnl-corr 0.602 vs QPKbbpbG, 0.373 vs board. netdebt_d2 9qWW69M9 shelved as 10-11 primary (0.605 vs QPKbbpbG, 0.355 vs ptp).
   RULE (new): never block on a question while a submission is pending; submit first, ask after. Session death while waiting cost 2 days.
+- [2026-10-10 21:50 IST] AskUserQuestion (operator) -> Udit: "iwill keep this chat open, u can put timers". Timers created: 9636e874 (12:47 daily), 29474bc9 (3-hourly :23), 219d5edc (21:41 daily); all session-only, expire 10-17.
+  KPrr6rr8 (ptp flag) ACTIVE 11:30 EDT stamp. Day 10 = 2 alphas. Score 9,663 -> ~11,663 expected 10-11 12:30 IST (GOLD).
+  Wave 2 (flags, 10): cff INDUSTRY d2 1.28/1.17 PASS but pnl-corr 0.901 vs QPKbbpbG -> burnt; cfi d0/d2/d5/ind/mkt 0.87-1.22 (Sharpe miss), cfi_ind 0.899 vs QPKbbpbG -> burnt; sums of weak flags worse than parts. Wave 3 (analyst-count change, 6): dead 0.16-0.62; guidance 2 ERROR.
+  Wave 4 enqueued at close: 12 model77 analyst-model ranks alone (d5) + 3 cfi lifts.
