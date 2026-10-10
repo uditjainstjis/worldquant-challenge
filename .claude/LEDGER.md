@@ -745,3 +745,28 @@ Udit: "submit todays autonomusly mine all points"
   > </task-notification>
 
 - 18:05 EDT: SELF-CORR tot_alone 0.473 (vs d51bjNxX) -> PRIMARY shelf for 10-08; tot+cff xA 0.634; tot xA d8 0.61 backups. Session close-out: keep_visible killed, tab closed. Day 7 = 2 alphas (cap). ~75 simulations today.
+- [2026-10-08 09:53]
+  > bro why score did not increase, it increases randomly sometime, it takes some days to update?
+
+- [2026-10-08 10:19]
+  > listen, i shall wakeup always everyday and make powerful submission scoring all maximum poassible points,
+
+- [2026-10-08 10:27]
+  > my friend has 90k score, he started not quite long ago ;(
+
+- [2026-10-08 10:27]
+  > my friend has 90k score, he started not quite long ago ;(
+
+- [2026-10-08 10:27]
+  > my friend has 140k score, he started not quite long ago ;(
+
+- [2026-10-10 20:57]
+  > done
+
+
+- [2026-10-10 21:00 IST] Udit: "wtf bro, did u miss yesterday? do today's submissions" then "done" (logged in).
+  FACT: 10-08 and 10-09 = 0 points each. The 10-08 session ended at 10:30 IST while blocked on AskUserQuestion (operator fork + friend start date), before the 12:30 IST window; no session on 10-09. Score 9,663 on 10-10 (day 7 = 2,000 landed), rank 20,650.
+  Wave 1 (10-08, read back from localStorage on 10-10): 12 untested anl4 flags alone d10 -> ptp 1.44/1.39 TO 0.033 PASS (KPrr6rr8); cfi 1.18/1.06 (Sharpe miss); cfo 1.10/0.80; rest dead (ebitda, epsa, epsr, fcf, fcfps, ffo, gric, netprofit, rd_exp).
+  Decay lever (fitness floors TO at 12.5%): netdebt d2 1.27/1.09 PASS (9qWW69M9) vs d10 fail; cff d0/d2 1.15/1.00 (Sharpe miss); totassets d0 = d10 (1.27/1.25). Vol tilt rank(ts_std_dev(returns,20)) DESTROYS flags (0.35-0.60); IV30 tilt same + concentrated weight. Tilt hypothesis for flags = DEAD.
+  10-10 submissions: QPKbbpbG (totassets flag alone) self-corr 0.473 -> ACTIVE 11:28 EDT stamp (real 11:37). KPrr6rr8 (ptp flag alone) POST submit 11:30 EDT; pnl-corr 0.602 vs QPKbbpbG, 0.373 vs board. netdebt_d2 9qWW69M9 shelved as 10-11 primary (0.605 vs QPKbbpbG, 0.355 vs ptp).
+  RULE (new): never block on a question while a submission is pending; submit first, ask after. Session death while waiting cost 2 days.

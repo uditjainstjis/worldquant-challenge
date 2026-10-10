@@ -1,7 +1,12 @@
 # STATE — worldquant Challenge. Canonical, current. Rewritten 2026-10-01.
 
 ## Objective (Udit, 2026-10-01): rank 1 on the WorldQuant BRAIN Challenge leaderboard. Autonomous.
-## Governing numbers (2026-10-03)
+## Governing numbers (2026-10-10)
+- 10-10 (Sat): score 9,663 (day 7 = 2,000 landed), rank 20,650. 10-08 AND 10-09 = 0 (session died blocked on a question at 10:30 IST 10-08; nothing ran 10-09). Day 10 = 2 alphas ACTIVE: QPKbbpbG totassets flag alone (1.27/1.25, self-corr 0.473) + KPrr6rr8 ptp flag alone (1.44/1.39, pnl-corr 0.60 vs QPKbbpbG). SHELF for 10-11: netdebt flag d2 9qWW69M9 (1.27/1.09; 0.605 vs QPKbbpbG, 0.355 vs ptp). Second 10-11 lane: wave running.
+- RULE (10-10, cost 2 days): a pending submission is never parked behind a question. Submit first, ask after. If the window is not open yet, keep working (research) and submit at 12:30 IST; never end the turn on AskUserQuestion while the day is unsubmitted.
+- SAFE WINDOW: 12:30 IST -> 06:30 IST next day (EDT). dateSubmitted read 9 min early today (11:28 vs 11:37 EDT).
+- FLAGS (anl4_*_flag, 18 fields, all tested alone d10): PASS alone = totassets 1.27/1.25, ptp 1.44/1.39, bvps 1.26/1.14, netdebt@d2 1.27/1.09. Near: cfi 1.18/1.06, cff 1.15/1.00 (d0-d2), cfo 1.10/0.80. Dead: ebitda, epsa, epsr, fcf, fcfps, ffo, gric, netprofit, rd_exp, capex(0.73 vs leverage), ptpr(0.79 vs bv). Family members correlate ~0.37-0.60 with each other -> 1 flag/day is sustainable, 2/day is not.
+- LEVERS: decay is free below TO 12.5% (fitness floors turnover at 0.125): netdebt d10 fail -> d2 pass. Vol tilt rank(ts_std_dev(returns,20)) and IV30 tilt DESTROY flags (0.35-0.67) -> tilt hypothesis dead for this family.
 - 10-07 close: day 7 = 2 alphas (786zkWWv leverage + d51bjNxX bv flag x adv). SHELF for 10-08: totassets_flag ALONE (QPKbbpbG 1.27/1.25, self-corr 0.47) primary; same-lane backups 9qWjjnM9, N1Vaa6mX. Second 10-08 lane NOT found yet (cff/netdebt flags, fwdEY xA, cp60 xA all fail fitness by <0.1). Blocked today: ptpr_flag 0.79, rel_num_part xA 0.85, sales/cap xA 0.715, capex (0.73-0.74 vs leverage), tangibility.
 - Me: 10-07: score 7,663 (day 6 = 1,875), rank 21,622, SILVER; day 7 alpha 786zkWWv ACTIVE. #1 992,568/688 (+7,644 in 6 days = 1,274/day). Shelf EMPTY.
 - Me: 10-06: score 5,788, rank 22,997, SILVER; day 6 alpha 3qVAPoYQ ACTIVE. SHELF NOW EMPTY (tangibility burnt) -> next session = research day.
