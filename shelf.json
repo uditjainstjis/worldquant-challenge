@@ -319,6 +319,37 @@
   "turnover": 0.023,
   "self_corr": "0.55 vs bv flag; 0.605 vs QPKbbpbG; 0.355 vs ptp (pnl) -> PRIMARY for 10-11",
   "alpha_id": "9qWW69M9",
-  "status": "ready"
+  "status": "submitted:9qWW69M9:2026-10-11",
+  "measured": {
+   "platform_selfcorr": 0.6247
+  }
+ },
+ {
+  "tag": "SHELF:shortint_dmd_sqrtadv_d5",
+  "expr": "group_rank(ts_backfill(mdl77_shortsentimentfactor_dmd_supply,20), subindustry)*power(rank(adv20),0.5)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 5,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR"
+  },
+  "measured": {
+   "date": "2026-10-10",
+   "sharpe": 1.41,
+   "fitness": 1.05,
+   "turnover": 0.033,
+   "pnlcorr_max": "0.674 vs d51bjNxX",
+   "platform_selfcorr": 0.6752
+  },
+  "alpha_id": "d51v5wpJ",
+  "status": "submitted:d51v5wpJ:2026-10-11",
+  "note": "wave 7 10-10; siblings QPK6PlrG/d51v5xgg/blOAlLoM 0.736-0.738 vs d51bjNxX -> burnt (same lane)"
  }
 ]
