@@ -351,5 +351,33 @@
   "alpha_id": "d51v5wpJ",
   "status": "submitted:d51v5wpJ:2026-10-11",
   "note": "wave 7 10-10; siblings QPK6PlrG/d51v5xgg/blOAlLoM 0.736-0.738 vs d51bjNxX -> burnt (same lane)"
+ },
+ {
+  "tag": "SHELF:news_m10chg_x_av_d20",
+  "expr": "group_rank(ts_backfill(news_mins_10_chg,10), subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 20,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR"
+  },
+  "measured": {
+   "date": "2026-10-13",
+   "sharpe": 1.65,
+   "fitness": 1.14,
+   "turnover": 0.36,
+   "pnlcorr_max": "0.21 vs KPrr6rr8",
+   "platform_selfcorr": 0.2331
+  },
+  "alpha_id": "VkdvzZa5",
+  "status": "submitted:VkdvzZa5:2026-10-13",
+  "note": "news12 dataset: fastest minute-bucket reaction after news (news_mins_10_chg) x abnormal volume. First alpha from a new information source; family = news reaction fields"
  }
 ]
