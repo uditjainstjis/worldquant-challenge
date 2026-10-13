@@ -379,5 +379,113 @@
   "alpha_id": "VkdvzZa5",
   "status": "submitted:VkdvzZa5:2026-10-13",
   "note": "news12 dataset: fastest minute-bucket reaction after news (news_mins_10_chg) x abnormal volume. First alpha from a new information source; family = news reaction fields"
+ },
+ {
+  "tag": "SHELF:news_eodvwap_bf20_av_d40",
+  "expr": "group_rank(ts_backfill(news_eod_vwap/close-1,20), subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "decay": 40
+  },
+  "measured": {
+   "date": "2026-10-14",
+   "sharpe": 1.61,
+   "fitness": 1.15,
+   "turnover": 0.129,
+   "pnlcorr_max": "0.57 vs XgJ5e7w5"
+  },
+  "alpha_id": "zqrKP3lV",
+  "status": "ready",
+  "note": "backup; same lane as LL5Vgolv (primary)"
+ },
+ {
+  "tag": "SHELF:news_eodvwap_bf20_av_d30",
+  "expr": "group_rank(ts_backfill(news_eod_vwap/close-1,20), subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "decay": 30
+  },
+  "measured": {
+   "date": "2026-10-14",
+   "sharpe": 1.58,
+   "fitness": 1.05,
+   "turnover": 0.143,
+   "pnlcorr_max": "0.60 vs XgJ5e7w5"
+  },
+  "alpha_id": "leMpQa6e",
+  "status": "ready",
+  "note": "backup; same lane as LL5Vgolv (primary)"
+ },
+ {
+  "tag": "SHELF:news_eodvwap_bf20_av_ind_d20",
+  "expr": "group_rank(ts_backfill(news_eod_vwap/close-1,20), industry)*rank(ts_mean(volume,5)/ts_mean(volume,60))",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "neutralization": "INDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "decay": 20
+  },
+  "measured": {
+   "date": "2026-10-14",
+   "sharpe": 1.53,
+   "fitness": 1.0,
+   "turnover": 0.16,
+   "pnlcorr_max": "0.648 vs XgJ5e7w5"
+  },
+  "alpha_id": "omo83qEb",
+  "status": "ready",
+  "note": "backup; same lane as LL5Vgolv (primary)"
+ },
+ {
+  "tag": "SHELF:news_eodvwap_bf20_sqrtav_d40",
+  "expr": "group_rank(ts_backfill(news_eod_vwap/close-1,20), subindustry)*power(rank(ts_mean(volume,5)/ts_mean(volume,60)),0.5)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 40,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR"
+  },
+  "measured": {
+   "date": "2026-10-14",
+   "sharpe": 1.81,
+   "fitness": 1.27,
+   "turnover": 0.139,
+   "pnlcorr_max": "0.567 vs XgJ5e7w5; 0.21 vs VkdvzZa5"
+  },
+  "alpha_id": "LL5Vgolv",
+  "status": "ready",
+  "note": "PRIMARY for 10-14 (first slot). Same lane as zqrKP3lV/leMpQa6e/omo83qEb/e76kdMQN (~0.95 with each other): submit ONE of the lane only."
  }
 ]
