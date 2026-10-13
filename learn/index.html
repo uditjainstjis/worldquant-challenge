@@ -74,7 +74,7 @@ footer{max-width:1100px;margin:30px auto 0;color:var(--muted);font-size:15px}
 <header>
   <h1>Alpha Zero → Hero</h1>
   <span class="sub">Udit's WorldQuant BRAIN course, built from 13 days of real submissions. One screen per level. Swipe the rows.</span>
-  <span id="progress">0 / 8 levels</span>
+  <span id="progress">0 / 16 levels</span>
 </header>
 <nav class="levels" id="nav"></nav>
 <main id="main">
@@ -286,6 +286,217 @@ POST /alphas/{id}/submit   201; then GET the same URL until the body has "checks
 <label class="chk"><input type="checkbox" data-done="7" onchange="done(this)"> I submitted an alpha of my own</label>
 </div>
 </section>
+<!-- ===== L8 ===== -->
+<section class="level" data-l="8">
+<h2>Level 8 · How to think: the operating system</h2>
+<p class="lead">Everything before this level is technique. This level is the part tutors never teach because they never had to earn it: the seven rules that decide, before you type anything, whether the next hour is worth something.</p>
+<div class="row">
+<div class="card"><h4>1 · Name the loser</h4><p>An alpha is a claim that someone is wrong and stays wrong long enough for you to be paid. Forced sellers, slow readers, over-reactors, index funds, option hedgers. If you cannot say who is on the other side of your trade, you are fitting noise.</p><p class="tag">Tell: you describe the formula, not the person.</p></div>
+<div class="card"><h4>2 · Source beats shape</h4><p>Payoff order, measured on our board: new dataset (arrives at 0.2 correlation) ≫ new event type ≫ new shaping (tilt, decay, backfill) ≫ parameter tweak. Spend your hours in that proportion.</p><p class="tag">Tell: your last ten sims differ by one number.</p></div>
+<div class="card"><h4>3 · Predict, then measure</h4><p>Write the number you expect before the simulation returns. Our "this will help" predictions ran optimistic every time. A prediction you did not write down is a story you will revise after the fact.</p><p class="tag">Tell: you say "as expected" and cannot show where you wrote it.</p></div>
+<div class="card"><h4>4 · A negative bounds the construction</h4><p>Momentum scored 0.0 in a sub-industry-neutral TOP3000 book. That bounds <i>that</i> construction. It says nothing about momentum. Before you call anything dead, name one materially different construction you have not tried.</p><p class="tag">Tell: the word "ceiling" appears in your notes.</p></div>
+<div class="card"><h4>5 · Design for the scorer as it is</h4><p>The scorer rewards fitness with a turnover floor, a correlation gate, a uniqueness average, and a days dial. It does not reward elegance. It changed under us once; read it daily.</p><p class="tag">Tell: a number on the board looks "wrong" and you shrug.</p></div>
+<div class="card"><h4>6 · Sims per insight</h4><p>Three slots, one to three minutes each. The unit of progress is not a good alpha, it is a decided question. Queue the simulation whose answer changes what you do next.</p><p class="tag">Tell: a slot is idle while you think.</p></div>
+<div class="card"><h4>7 · The day is asymmetric</h4><p>The first submission of the day protects the calendar; everything after must be clean. Secure, then explore. Never park a submission behind a question.</p><p class="tag">Tell: it is 05:00 IST and you are still "almost done".</p></div>
+</div>
+<h3>The thought process, verbatim, for the alpha that passed on 10-13</h3>
+<pre>The scorer changed. Uniqueness is now a third of the score. My board is 0.64.
+→ What is uncorrelated by construction? A dataset I have never used.
+→ news12: 875 fields, 75 are plain matrices. Screen all 75 with one wrapper. Hour one.
+→ 74 dead. One at Sharpe 1.35, fitness 0.82, turnover 0.37. Fails on fitness only.
+→ Fitness = Sharpe × √(ret / TO). Two levers: turnover down or returns up.
+→ Turnover first (cheaper): decay 20, decay 30. TO 0.37 → 0.36. Did not move.
+→ So turnover is churn (names enter and leave the news set), not signal change. Decay cannot fix churn.
+→ Returns, then. What raises returns on a price-reaction signal? Volume confirmation. Multiply by abnormal volume.
+→ 1.65 / 1.14. Passes. Correlation against my twelve: 0.21. Submit, then write down the 74 dead.</pre>
+<p>Read the arrows, not the numbers. Each arrow is a question whose answer was a single simulation. That is the whole skill.</p>
+<div class="test"><h4>Test 8 · First five sims on an unknown dataset</h4>
+<p>You are handed a dataset you have never seen, 400 fields. Write the first five simulations you would run and the one question each answers.</p>
+<textarea rows="4" data-k="t8" placeholder="1. ... answers: ..."></textarea>
+<button onclick="reveal(this)">Reveal</button>
+<div class="ans"><p>Before any simulation: list the fields with their type and coverage (one API call). Drop vectors and anything under 50% coverage. Then: <b>(1)</b> the field with the most interpretable name, plain wrapper, decay 10: does this dataset carry any signal at all? <b>(2)</b> the same field with a 20-day backfill: is the raw turnover churn? <b>(3)</b> a ratio of two fields normalised by close or assets: does the dataset need scaling? <b>(4)</b> the same signal with INDUSTRY neutralization: does sub-universe coverage bite? <b>(5)</b> the best of the above times abnormal volume: does volume confirmation add return? Five sims, five decided questions, then a 60-field screen if (1) showed anything above 0.8.</p></div>
+<label class="chk"><input type="checkbox" data-done="8" onchange="done(this)"> I can state the seven rules and the tell for each</label>
+</div>
+</section>
+
+<!-- ===== L9 ===== -->
+<section class="level" data-l="9">
+<h2>Level 9 · Why signals exist: the taxonomy that generates ideas</h2>
+<p class="lead">Every alpha that has ever worked belongs to one of five families. Knowing the family tells you the operator pattern, the turnover to expect, and who is losing. This is the difference between copying our twelve and writing your own two hundred.</p>
+<div class="row">
+<div class="card wide"><h4>Risk premium · "you are paid to hold what others hate"</h4><p>Skewness, leverage, illiquidity, volatility. Slow-moving, low turnover (2–10%). Pattern: <code>group_rank(risk_measure, subindustry)</code>, sometimes negated.</p><p><b>Ours:</b> vR2xOrRz (negative skew), 786zkWWv (leverage). <b>Failed for us:</b> low volatility (0.03): in a neutralised TOP3000 book the premium is already removed by the group mean.</p></div>
+<div class="card wide"><h4>Behavioural · "people over-react, then under-react"</h4><p>Short reversal (over-reaction, 1–5 days), post-event drift (under-reaction, 20–60 days). Pattern: <code>-ts_delta(close,n)</code> for reversal; <code>ts_backfill(event, n)</code> for drift. Turnover high for reversal, low for drift.</p><p><b>Ours:</b> XgJ5e7w5 (3-day reversal), VkdvzZa5 and the news VWAP lane (reaction and drift after news). <b>Failed:</b> 12-1 momentum (0.0) in this universe.</p></div>
+<div class="card wide"><h4>Information diffusion · "the slow readers"</h4><p>Analysts update late; the market absorbs updates over weeks. Pattern: an <i>event</i> field (a flag, a count change) held with backfill or low decay. Turnover 2–4%.</p><p><b>Ours:</b> the four analyst flags. <b>Failed:</b> the direction of the revision, the dispersion, the breadth. The information was that the forecast moved, not where it moved.</p></div>
+<div class="card wide"><h4>Attention and flows · "where the crowd is looking"</h4><p>Abnormal volume, short interest, option activity. Rarely an alpha alone; the best multiplier there is. Pattern: <code>rank(ts_mean(volume,5)/ts_mean(volume,60))</code> as a tilt.</p><p><b>Ours:</b> the tilt on seven alphas; short-interest demand (d51v5wpJ). <b>Warning:</b> a shared tilt makes different signals correlate (0.6–0.8).</p></div>
+<div class="card wide"><h4>Accounting quality · "the numbers that lie"</h4><p>Accruals, deferred taxes, issuance, buybacks, SBC. Quarterly, turnover 1–3%, usually need a tilt to clear the fitness floor.</p><p><b>Ours:</b> deferred tax assets reached 1.36 / 0.98 with tilts, then 0.78 correlation. <b>Failed alone:</b> accruals 0.46, issuance 0.24, buybacks 0.35. The signal exists; the floor eats it.</p></div>
+</div>
+<h3>How to use the taxonomy</h3>
+<p>Before you simulate a field, say its family out loud. The family tells you: the sign to expect (risk premia positive, reversal negative, events positive), the turnover to expect (and so whether fitness will be a problem), the right wrapper (backfill for events, decay for reversal, tilt for accounting), and who you are betting against. If a field fits no family, it is probably a level (a price, a VWAP, a count) and needs normalising by close, assets or history before it means anything.</p>
+<div class="test"><h4>Test 9 · Classify and predict the sign</h4>
+<p>Family and expected sign for each: (a) days since last earnings date, (b) ratio of put volume to call volume, (c) change in number of analysts covering, (d) after-hours VWAP divided by close, (e) 60-day return standard deviation, (f) goodwill divided by assets.</p>
+<textarea rows="4" data-k="t9" placeholder="(a) family, sign ..."></textarea>
+<button onclick="reveal(this)">Reveal</button>
+<div class="ans"><p>(a) behavioural drift, likely negative (returns fade as the event ages); (b) attention/flows, negative as a signal, better as a tilt; (c) information diffusion, positive if a flag, near zero as a count (we measured 0.2–0.6); (d) behavioural, the sign is an empirical question: a reaction can continue or reverse, and our measurement said the tilted version is positive at 1.8; (e) risk premium, negative or dead in a neutral book (ours: 0.03); (f) accounting quality, negative, low turnover, will need a tilt. Four of six you can call before running. That is the point.</p></div>
+<label class="chk"><input type="checkbox" data-done="9" onchange="done(this)"> I can place any field in a family and guess its sign</label>
+</div>
+</section>
+
+<!-- ===== L10 ===== -->
+<section class="level" data-l="10">
+<h2>Level 10 · Shaping: the five dials and the turnover test</h2>
+<p class="lead">A raw signal that shows 1.3 Sharpe and fails fitness is halfway to the board. Shaping is the second half, and it is a diagnosis, not a search. Five dials, one test, and you know which dial before you touch it.</p>
+<div class="kv">
+<b>Decay</b><span>Averages weights over n days. Cuts turnover that comes from the <i>signal changing</i>. Does nothing for churn. Free when turnover is already under 12.5%: there, lower decay often <i>raises</i> returns (netdebt: decay 10 fails, decay 2 passes).</span>
+<b>Backfill</b><span>Keeps a name's last value for n days after the field goes missing. Cuts turnover that comes from <i>names entering and leaving</i> a sparse set. The news VWAP lane went from fitness 0.55 to 1.15 on backfill alone.</span>
+<b>Neutralization</b><span>SUBINDUSTRY removes the group mean (tight peers, best for fundamentals). INDUSTRY is coarser and rescues sparse fields that fail the sub-universe check (deferred tax, the news VWAP at decay 20).</span>
+<b>Tilt power</b><span><code>rank(x)</code> is a full tilt, <code>power(rank(x),0.5)</code> a half tilt. Full tilts add return and add correlation with everything else that wears the same tilt. The half tilt took one alpha from 0.74 to 0.67 correlation and another from 1.61 to 1.81 Sharpe.</span>
+<b>Truncation</b><span>Caps any single weight (0.08). Lowering it did nothing for us (1.40 → 1.40). Raise it only if CONCENTRATED_WEIGHT fails.</span>
+</div>
+<h3>The turnover test</h3>
+<pre>Fails fitness? → compute ret/TO you need: (1/Sharpe)².
+Run decay ×2.  TO fell a lot?  → signal churn → keep raising decay until fitness clears (watch Sharpe).
+               TO barely moved? → name churn   → backfill 20, then 60. Decay was the wrong dial.
+Still short?  → returns: abnormal-volume tilt (full), then half tilt if correlation climbs.
+Sub-universe fails? → INDUSTRY neutralization, or longer backfill (coverage).</pre>
+<h3>A real dial sweep, from the ledger (news VWAP vs close)</h3>
+<table>
+<tr><th>Variant</th><th>Sharpe</th><th>Fitness</th><th>Turnover</th><th>Reading</th></tr>
+<tr><td style="text-align:left">backfill 5, decay 10</td><td>1.56</td><td>0.55</td><td>0.53</td><td style="text-align:left">signal, churned</td></tr>
+<tr><td style="text-align:left">backfill 5, decay 40</td><td>1.18</td><td>0.38</td><td>0.47</td><td style="text-align:left">decay failed → churn</td></tr>
+<tr><td style="text-align:left">backfill 5, decay 20, × volume</td><td>1.78</td><td>0.80</td><td>0.38</td><td style="text-align:left">returns up, TO still churn</td></tr>
+<tr><td style="text-align:left">backfill 20, decay 20, × volume</td><td>1.61</td><td>0.98</td><td>0.17</td><td style="text-align:left">backfill was the dial</td></tr>
+<tr><td style="text-align:left">backfill 20, decay 40, × volume</td><td>1.61</td><td>1.15</td><td>0.13</td><td style="text-align:left">passes</td></tr>
+<tr><td style="text-align:left">backfill 20, decay 40, × √volume</td><td>1.81</td><td>1.27</td><td>0.14</td><td style="text-align:left">best, lower correlation</td></tr>
+<tr><td style="text-align:left">backfill 20, decay 40, no tilt</td><td>0.61</td><td>0.24</td><td>0.16</td><td style="text-align:left">the tilt is the alpha</td></tr>
+</table>
+<div class="test"><h4>Test 10 · Predict the missing cells</h4>
+<p>Same lane. Predict Sharpe, fitness and turnover for: (a) backfill 20, decay 60, × volume; (b) backfill 20, decay 40, × volume × liquidity (adv20); (c) backfill 30, decay 20, × volume.</p>
+<textarea rows="3" data-k="t10" placeholder="(a) S F TO ..."></textarea>
+<button onclick="reveal(this)">Reveal</button>
+<div class="ans"><p>(a) 1.61 / 1.18 / 0.12: more decay, same Sharpe, fitness up a little. (b) 1.11 / 0.80 / 0.13: the liquidity tilt <i>hurt</i>; this signal lives in less liquid names, which is also why it is uncorrelated with our liquidity-tilted fundamentals. (c) 1.58 / 0.98 / 0.16: backfill 30 is not better than 20 here, the information has a 20-day life. If you predicted (b) would help, you have learned the most important thing on this page: a tilt is a hypothesis about where the information is, not a free lunch.</p></div>
+<label class="chk"><input type="checkbox" data-done="10" onchange="done(this)"> I run the turnover test before touching any dial</label>
+</div>
+</section>
+
+<!-- ===== L11 ===== -->
+<section class="level" data-l="11">
+<h2>Level 11 · Your board is a portfolio</h2>
+<p class="lead">From 10-12 the leaderboard scores the <i>set</i> of your alphas, not each one. Uniqueness is the mean, over your alphas, of each alpha's highest correlation with any other. Every submission moves that mean forever. Think like a portfolio manager, not a collector.</p>
+<h3>The arithmetic</h3>
+<pre>uniqueness = mean_i ( max_{j≠i} corr(PnL_i, PnL_j) )
+Adding alpha k with max-corr c:  new mean ≈ (n·old + c) / (n+1),  plus any row whose max rises because k is now its closest neighbour.
+Our board, 12 alphas, mean 0.606.   Add c = 0.30 → 0.582.   Add c = 0.59 → 0.605 (neutral).   Add c = 0.69 → 0.612 (worse).
+The break-even is the current mean. Anything above it is a permanent cost, anything below a permanent gain.</pre>
+<h3>The shared-factor trap</h3>
+<p>Three of our alphas carry the same two tilts (abnormal volume × adv20). Their signals are unrelated (earnings yield, asset turnover, leverage) and they still correlate 0.6 to 0.7 because the tilts dominate the weights. A fourth fundamental with those tilts came in at 0.78. Rule: a tilt pair is a factor; use it on <b>one</b> alpha per board.</p>
+<h3>Compute it yourself (the code we use)</h3>
+<pre>pnl = GET /alphas/{id}/recordsets/pnl   → records [[date, cumulativePnL], …]
+daily_i = diff(cumulative_i)             → Pearson(daily_a, daily_b)
+platform reads ≈ yours + 0.00 … 0.02     (0.605 → 0.6247, 0.674 → 0.6752, 0.21 → 0.2331)</pre>
+<h3>What a good board looks like</h3>
+<p>Ten to fifteen information sources, one or two alphas each, every pair under 0.5. The leaders of the country board sit at uniqueness 0.30–0.50 with 6–10 alphas. They did not find better formulas; they refused to submit the third variation of a working one.</p>
+<div class="test"><h4>Test 11 · Three candidates, one board</h4>
+<p>Your board has 12 alphas at mean 0.606. Candidates: A (Sharpe 1.9, max-corr 0.69), B (Sharpe 1.3, 0.55), C (Sharpe 1.26, 0.30). Compute the new uniqueness for each alone, then say which to submit today if the day is already secured.</p>
+<input type="text" data-k="t11" placeholder="A → ?, B → ?, C → ? ; submit: ...">
+<button onclick="reveal(this)">Reveal</button>
+<div class="ans"><p>A → (12·0.606 + 0.69)/13 = 0.612. B → 0.602. C → 0.582. Submit C. Hold B for a day that needs securing. Never submit A unless it is 05:00 IST with nothing in. Sharpe 1.9 is seductive and it is the wrong number to look at: the in-sample term is a percentile of a decaying sum, the uniqueness term is a permanent average.</p></div>
+<label class="chk"><input type="checkbox" data-done="11" onchange="done(this)"> I compute the new uniqueness before every submission</label>
+</div>
+</section>
+
+<!-- ===== L12 ===== -->
+<section class="level" data-l="12">
+<h2>Level 12 · The machine: operations that never miss a day</h2>
+<p class="lead">We lost four days in thirteen. Not to bad alphas: to a closed laptop, an expired login, a question left open, a browser restart. The days dial is a third of the score and it is pure operations. Build the machine once.</p>
+<div class="row">
+<div class="card"><h4>The clock</h4><p>The day is US Eastern. From India the safe window is 12:30 IST to 06:30 IST next morning. Submit in the first hour of the window, not the last. Login lasts about 11 hours and dies with a Chrome restart: log in at 12:15 IST, every day, before anything else.</p></div>
+<div class="card"><h4>The shelf</h4><p>Never enter a day with an empty shelf. Tonight's research exists to make tomorrow's first submission a one-minute job. A shelf item is: expression, settings, measured numbers, max correlation, alpha id, and a status.</p></div>
+<div class="card"><h4>The ledger</h4><p>Append-only, timestamped, every number. Dead results included. The day you skip writing the negatives is the day you re-run them. Quote the measured value, never "it failed".</p></div>
+<div class="card"><h4>Pre-registration</h4><p>Before a wave: what you expect, why, and what result would kill the idea. Three lines. Our optimism bias was consistent; the written prediction is the only cure.</p></div>
+<div class="card"><h4>Three failures we hit, and the fix</h4><p><b>Hidden tab freezes timers:</b> run the scheduler from a page with no background traffic and advance it from your own calls. <b>A timed-out submit executed anyway:</b> read status before re-posting. <b>Browser restart drops the cookie:</b> state lives in localStorage on the API origin, so the queue survives; the login does not.</p></div>
+<div class="card"><h4>The five-line checkpoint</h4><p>Objective · Done · Next · Parked · Blocked. Written at the end of every run, in that order, nothing else. If a reader cannot act from those five lines, the run is not finished.</p></div>
+</div>
+<h3>A day, minute by minute</h3>
+<pre>12:15  log in; check /users/self.
+12:30  count today's ACTIVE alphas. If 0: submit the shelf primary. Confirm ACTIVE. Write the line.
+12:40  queue a screen on a new source (60 sims). Tick every minute. Read negatives as they land.
+13:30  shape the two best survivors (decay, backfill, tilt). Correlate. Shelve.
+14:00  if a survivor is under 0.50: submit as #2. Otherwise shelve it as tomorrow's #1.
+14:10  ledger, STATE, commit. Five lines. Close the tab.
+Next day 12:15: again. Twenty-six times and the days dial is full.</pre>
+<div class="test"><h4>Test 12 · Write tomorrow's pre-registration</h4>
+<p>Three lines: the wave you will run, the number you expect from the best field, and the result that would make you drop the source.</p>
+<textarea rows="3" data-k="t12" placeholder="Wave: ... Expect: ... Kill if: ..."></textarea>
+<button onclick="reveal(this)">Example</button>
+<div class="ans"><pre>Wave: option8 term structure, 12 fields (IV call/put at 10, 20, 30, 60, 90, 180 days), plain wrapper, decay 10.
+Expect: best |Sharpe| 0.9 (IV slope was -0.18 last time; different maturities might carry a term-premium signal).
+Kill if: no field above 0.6 → options carry only skew for this universe; stop spending slots on them.</pre></div>
+<label class="chk"><input type="checkbox" data-done="12" onchange="done(this)"> I ran a full day solo with the checklist and wrote the five lines</label>
+</div>
+</section>
+
+<!-- ===== L13 ===== -->
+<section class="level" data-l="13">
+<h2>Level 13 · Twenty ways to be wrong</h2>
+<p class="lead">Each of these cost us something real. The format is the same every time: the mistake, how you notice it (the tell), and the fix. Learn the tells and you skip the cost.</p>
+<div class="row" id="mistakes"></div>
+<div class="test"><h4>Test 13 · Catch three in the wild</h4>
+<p>Open the ledger (LEDGER.md) at any date. Find three entries where one of these mistakes was being made at the time, and name the tell that was visible in the text.</p>
+<textarea rows="3" data-k="t13" placeholder="date · mistake · the tell ..."></textarea>
+<button onclick="reveal(this)">Example</button>
+<div class="ans"><p>10-07: "second lane NOT found" repeated across three days while every wave re-ran the same flag family at new decays: mistake 2 (tuning instead of changing source), tell: ten sims differing by one number. 10-10: "model77 ranks alone dead" asserted after one wrapper: mistake 4, tell: "dead" with no second construction. 10-13 12:52: the daily run opened to a 401 and the day drifted: mistake 14, tell: a timestamp with no submission next to it.</p></div>
+<label class="chk"><input type="checkbox" data-done="13" onchange="done(this)"> I can name five tells I have personally shown</label>
+</div>
+</section>
+
+<!-- ===== L14 ===== -->
+<section class="level" data-l="14">
+<h2>Level 14 · Constructions we have not built yet</h2>
+<p class="lead">Everything on the board uses nine operators. The language has more, and the datasets have 3,000 fields we never touched. This is the frontier: each card is a construction with a story, an expression to try, and the number that would make it real.</p>
+<div class="row">
+<div class="card wide"><h4>Vector fields: the 800 we skipped</h4><p>news12 and analyst4 carry per-item vectors (one value per news story, per broker estimate). They need vector operators before anything else: <code>vec_avg</code>, <code>vec_sum</code>, <code>vec_count</code>, <code>vec_max</code>. The count alone is attention; the dispersion across items is disagreement.</p><pre>group_rank(ts_backfill(vec_count(news_vector_field),10), subindustry)
+group_rank(vec_max(field)-vec_avg(field), subindustry)</pre><p>Make it real: any vector construction above 1.0 Sharpe with turnover under 0.3.</p></div>
+<div class="card wide"><h4>Event conditioning</h4><p>Trade a slow signal only when a fast one confirms. <code>if_else(cond, a, b)</code> and <code>trade_when(enter, alpha, exit)</code> let you hold a position from an event until a condition.</p><pre>trade_when(ts_backfill(anl4_ptp_flag,1)>0, group_rank(news_mins_10_chg, subindustry), ts_delta(close,20)<-0.1)</pre><p>Make it real: Sharpe above the unconditioned version and correlation under 0.5 with both parents.</p></div>
+<div class="card wide"><h4>Interactions of two sources</h4><p>Multiply two uncorrelated live signals. We tried one (news reaction × ptp flag): 1.43 / 0.92. The product focuses on stocks where both say yes. Correlation with each parent is usually 0.5–0.6: only worth it if it clears fitness and both parents are not on the board.</p><p>Make it real: fitness over 1.0 and under 0.5 against everything.</p></div>
+<div class="card wide"><h4>Multi-horizon blends</h4><p>Sum the rank of a signal at two horizons: <code>group_rank(x,sub) + group_rank(ts_mean(x,60),sub)</code>. Raises Sharpe, raises correlation with the single-horizon parent. Use when the parent is <i>not</i> submitted.</p></div>
+<div class="card wide"><h4>Cross-sectional alternatives to rank</h4><p><code>group_zscore</code> keeps magnitude (an extreme value gets an extreme weight); <code>ts_rank(x, n)</code> ranks a stock against its own history instead of its peers (a 52-week-high style signal; <code>ts_max</code> was not available to us, <code>ts_rank</code> is). Try both on any signal that passes with <code>group_rank</code>: a different weighting is a cheap decorrelation.</p></div>
+<div class="card wide"><h4>Open leads from our own ledger</h4><p>mins_20_chg plain 1.3 (never tilted gently). pct_30min × volume 1.10 (try backfill 20). deferred tax × √volume 1.33 / 0.81 (needs returns without adv20). news reaction × ptp flag 1.43 / 0.92 (try decay 20 with backfill 20). option maturities 10 to 1080 days, never screened as a set.</p></div>
+</div>
+<h3>Advanced ladder</h3>
+<div class="row" id="ladder2"></div>
+<div class="test"><h4>Test 14 · Five constructions, five numbers</h4>
+<p>Run five constructions from this level. For each, write the family, the prediction, the measurement, and the correlation against the board.</p>
+<textarea rows="4" data-k="t14" placeholder="1. family · predicted · measured · max corr ..."></textarea>
+<label class="chk"><input type="checkbox" data-done="14" onchange="done(this)"> Five run, five written</label>
+</div>
+</section>
+
+<!-- ===== L15 ===== -->
+<section class="level" data-l="15">
+<h2>Level 15 · The road from here</h2>
+<p class="lead">Ambition first, then arithmetic. The target is rank 1 of the country board. That is a number: 0.92 today. Here is what it costs, dial by dial, and the plan that pays it.</p>
+<div class="dial">
+  <div class="d"><div class="m">Days</div><div class="big">7 → 26</div><div class="m">19 consecutive submission days. Worth +0.29. No research needed, only the machine.</div></div>
+  <div class="d"><div class="m">Uniqueness</div><div class="big">0.64 → 0.45</div><div class="m">≈ 8 new alphas under 0.35 correlation. One new source every two days. Worth ≈ +0.12.</div></div>
+  <div class="d"><div class="m">In-sample percentile</div><div class="big">0.43 → 0.85</div><div class="m">A recency-weighted sum: it follows volume of recent passers. Two clean submissions a day keeps it rising. Worth ≈ +0.14.</div></div>
+</div>
+<p>Those three add to roughly 0.55 on top of 0.46. Rank 1 is reachable in about four weeks of the Level 12 routine, if no day is missed. Every missed day pushes the date and taxes the sum.</p>
+<h3>Four weeks</h3>
+<div class="kv">
+<b>Week 1</b><span>Machine first: login before 12:30 daily, shelf never empty, one new source screened per day. Sources in order: news vectors, option maturities, analyst vectors, fundamental ratios without the liquidity tilt.</span>
+<b>Week 2</b><span>Two submissions a day whenever the second is under 0.50. Start the advanced ladder. Re-fit the scorer once (it changed before).</span>
+<b>Week 3</b><span>Interactions and conditioning on the sources that worked. Board at 20+ alphas, uniqueness under 0.5.</span>
+<b>Week 4</b><span>Days dial full. Prune nothing (you cannot), but stop submitting anything above the uniqueness mean. Watch the rank.</span>
+</div>
+<h3>About "one lakh"</h3>
+<p>The 140,000-point scale belonged to the scorer that was replaced on 10-12. The country board scores 0 to 1 and the top of it is the gate to the consultant program (the FAQ: top rankers are invited to a written exam, then to the program). That is where alphas start being worth money, under its own scoring. Everything in these fifteen levels transfers there unchanged: source, shape, correlate, operate. The ambition is right; the unit has changed.</p>
+<div class="test"><h4>Final · Your own thirty days</h4>
+<p>Write the plan in numbers: days you will submit, sources you will open in order, the uniqueness you will reach, and the date you expect to pass 0.80.</p>
+<textarea rows="4" data-k="t15" placeholder="days ... sources ... uniqueness ... date ..."></textarea>
+<label class="chk"><input type="checkbox" data-done="15" onchange="done(this)"> Plan written and pinned where I log in from</label>
+</div>
+</section>
+
 </main>
 <footer>Built 2026-10-13 from the real ledger. Numbers are measured, not illustrative. Progress is saved in this browser only.</footer>
 <script>
@@ -329,11 +540,44 @@ const LADDER=[
 {t:'9 · One original field',q:'Pick any news_* field from Level 7\'s final test. Same wrapper, decay 10, then your own shaping. Goal: Sharpe above 1.25 and correlation under 0.50 against VkdvzZa5.',a:'No answer key. Our screen left mins_20_chg (1.3 plain, dead with the full volume tilt at 0.48) and pct_30min (1.10 tilted) as the open leads. A square-root tilt or INDUSTRY neutralization is untested.'},
 {t:'10 · Beat the board',q:'Submit it. Then write three lines: source, lever, correlation. Add them to LEARN.md.',a:'When this rung is done you have done everything this course can teach. The rest is sources you have not opened yet: 766 fundamental fields, 800 news vectors, option maturities from 10 to 1080 days.'}
 ];
+const MISTAKES=[
+['Fitting one construction, generalising to the task','"dead" or "ceiling" after a single wrapper','Name one materially different construction before the verdict (different operator, grouping, horizon).'],
+['Tuning instead of changing source','ten sims that differ by one parameter','Stop at three variants. Open a dataset you have not used.'],
+['Loving the Sharpe','submitting a 1.9 at 0.69 correlation','Compute the new uniqueness mean first. Above the current mean is a permanent cost.'],
+['Decay for churn','turnover unchanged after doubling decay','Churn is names entering and leaving; the dial is backfill, not decay.'],
+['Reading the formula, not the floor','fitness "should" rise when turnover falls under 12.5%','Below the floor turnover is free; only returns move fitness. Lower decay, add return.'],
+['Trusting a cached number','platform self-correlation unchanged right after a new submission','Compute PnL correlation yourself from daily differences.'],
+['Shared tilt, hidden factor','three unrelated signals at 0.6-0.7 with each other','One tilt pair per board. Half tilts for the rest.'],
+['Parking a submission behind a question','a day ends with a question in the chat and nothing ACTIVE','Submit first, ask after. The first alpha of the day is about the calendar.'],
+['Assuming access','a field that worked yesterday returns "invalid"','Catalogue datasets and regions at the start of every session.'],
+['Not reading the scorer','a score of 0.46 where 11,663 stood yesterday, and a shrug','Re-fit the board the day a number looks wrong. It takes thirty minutes.'],
+['Hidden-tab timers','sims "running" for ten minutes with no result','Drive the scheduler from your own calls on a page with no background traffic.'],
+['Re-posting a timed-out submit','a 45-second timeout and an immediate retry','Read the status first. The POST usually executed.'],
+['Unit errors in arithmetic','"incompatible unit for subtract"','Subtract only like units; use ratios (a/b - 1) across datasets.'],
+['The empty-shelf morning','12:47 with nothing ready and the login expired','Research exists to fill tomorrow\'s shelf. Never close a run with zero ready items.'],
+['Levels as signals','ranking a raw VWAP or a price','Normalise by close, assets or history first. A level is not a signal.'],
+['Sparse fields without backfill','turnover above 100% on an event field','ts_backfill(field, 10..60) before anything else.'],
+['Mean-estimate thinking on event data','consensus revisions at |Sharpe| < 0.65 across nine metrics','The information is the event (a flag), not the direction. Use the flag.'],
+['Wrong population for a ratio','a share measured inside a subset quoted as if it were the whole','Compute the ceiling directly over the full set (oracle minus class).'],
+['Predicting after the fact','"as expected" with no written prediction','Three lines before every wave: expect, why, kill-if.'],
+['Target-derived mechanisms','inventing what must be true because a friend has 140k','Targets are belief devices. Work from the scorer and the data, never backwards from a number.']];
+const LADDER2=[
+{t:'11 · Vector count as attention',q:'Pick one news12 vector field. group_rank(ts_backfill(vec_count(field),10), subindustry), decay 10. Predict Sharpe and turnover.',a:'No answer key: nobody has run it. Expect turnover around 0.3 (news churn) and a Sharpe under 1 unless tilted. If it is above 0.8, backfill 20 and tilt by volume.'},
+{t:'12 · Option maturities as a set',q:'Screen implied_volatility_call at 10, 20, 30, 60, 90, 180 as a term structure: each divided by the 60-day. Six sims.',a:'The 10-vs-60 slope scored -0.18 for us. The question is whether any pair clears 0.8. If none does, options on this universe carry skew only (A1vMp7Al).'},
+{t:'13 · Deferred tax without the liquidity tilt',q:'deferred_tax_assets_net_value / assets, backfill 60, × √(abnormal volume), decay 10, then decay 5. Target: fitness over 1.0 without adv20.',a:'We measured 1.33 / 0.81 at decay 10 and 1.24 / 0.73 at decay 2 with the half tilt; returns are the gap. Try INDUSTRY grouping and a full volume tilt without adv20.'},
+{t:'14 · Conditioning',q:'trade_when(ts_backfill(anl4_ptp_flag,1)>0, group_rank(ts_backfill(news_mins_10_chg,10), subindustry), ts_delta(close,20)<-0.1). Predict turnover.',a:'The unconditioned product scored 1.43 / 0.92. Conditioning should cut turnover; whether Sharpe survives is the open question.'},
+{t:'15 · ts_rank instead of group_rank',q:'Take the news VWAP lane (Level 10 table) and replace group_rank with ts_rank(x, 60). Measure correlation with the group_rank version.',a:'A different weighting of the same information. If correlation is under 0.7, it is a second submission from one source.'},
+{t:'16 · Rebuild the correlation matrix',q:'Fetch the PnL of all your ACTIVE alphas, compute the full matrix, find the pair with the highest value, and say which tilt or source they share.',a:'Ours: QPKq3a2Q and 786zkWWv at 0.69, sharing the volume × adv20 pair. Yours will differ. The exercise is the diagnosis, not the number.'},
+{t:'17 · One source, one week',q:'Pick an untouched dataset. Catalogue it, screen it, shape the survivors, submit at most one alpha from it. Log every number.',a:'This is the Level 12 routine applied to one source. The deliverable is the ledger page, not the alpha.'},
+{t:'18 · Re-fit the scorer',q:'Pull the whole country board and fit score on percentile ranks of the three components. Compare with Level 0.',a:'If the coefficients moved, the scorer moved. Rewrite the rules in Level 5 before submitting anything.'},
+{t:'19 · The uniqueness budget',q:'With your current board, list the maximum correlation a new alpha may have to lower the mean, and the sources most likely to deliver it.',a:'Break-even equals the current mean. Sources with no price component (analyst events, accounting) deliver the lowest correlations against a price-heavy board.'},
+{t:'20 · Teach it',q:'Explain Levels 8 to 11 to someone who has never traded, in ten minutes, without the words Sharpe or turnover.',a:'If they can tell you who loses money to a reversal alpha and why a second copy of a good idea is worthless, you are done with this course.'}
+];
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
 const LS=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}};
 const SS=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
 function render(){
-  const nav=document.getElementById('nav'); const names=['0 The game','1 The numbers','2 The language','3 Our 12 alphas','4 How we hunt','5 Submitting','6 Practice ladder','7 Playbook'];
+  const nav=document.getElementById('nav'); const names=['0 The game','1 The numbers','2 The language','3 Our 12 alphas','4 How we hunt','5 Submitting','6 Practice ladder','7 Playbook','8 How to think','9 Why signals exist','10 Shaping','11 Portfolio','12 The machine','13 Ways to be wrong','14 Frontier','15 The road'];
   nav.innerHTML=names.map((n,i)=>`<button data-go="${i}" onclick="go(${i})">${n}</button>`).join('');
   const al=document.getElementById('alphas'); al.innerHTML=ALPHAS.map((a,i)=>`<div class="card wide"><h4>${i+1}. ${a.id} <span class="tag">${a.d}</span><span class="tag ${a.sc>=0.6?'hot':''}">corr ${a.sc}</span></h4><pre>${esc(a.e)}</pre><div class="num"><span>${a.set}</span><span>Sharpe <b>${a.s}</b></span><span>fitness <b>${a.f}</b></span><span>turnover <b>${a.to}</b></span></div><p><b>Idea.</b> ${a.idea}</p><p><b>How it was found.</b> ${a.story}</p><p><b>Lesson.</b> ${a.lesson}</p></div>`).join('');
   const h=document.getElementById('heat'); let s='<div class="h"></div>'+IDS.map(x=>`<div class="h">${x}</div>`).join('');
@@ -341,6 +585,8 @@ function render(){
   h.innerHTML=s;
   const L=document.getElementById('ladder'); const dn=LS('rungs')||{};
   L.innerHTML=LADDER.map((r,i)=>`<div class="card wide"><h4>${r.t}</h4><p>${r.q}</p><input type="text" placeholder="My prediction" data-k="r${i}"><div><button onclick="reveal(this)">What we measured</button></div><div class="ans"><p>${r.a}</p></div><label class="chk"><input type="checkbox" data-rung="${i}" ${dn[i]?'checked':''} onchange="rung(this)"> Done</label></div>`).join('');
+  const mi=document.getElementById('mistakes'); if(mi) mi.innerHTML=MISTAKES.map((m,i)=>`<div class="card"><h4>${i+1} · ${m[0]}</h4><p><b>Tell.</b> ${m[1]}</p><p><b>Fix.</b> ${m[2]}</p></div>`).join('');
+  const L2=document.getElementById('ladder2'); const dn2=LS('rungs2')||{}; if(L2) L2.innerHTML=LADDER2.map((r,i)=>`<div class="card wide"><h4>${r.t}</h4><p>${r.q}</p><input type="text" placeholder="My prediction" data-k="r2${i}"><div><button onclick="reveal(this)">What we know</button></div><div class="ans"><p>${r.a}</p></div><label class="chk"><input type="checkbox" data-rung2="${i}" ${dn2[i]?'checked':''} onchange="rung2(this)"> Done</label></div>`).join('');
   const sig=[['NVDA',2.3],['AMD',1.1],['INTC',-0.4],['MU',0.6],['TXN',-1.2],['QCOM',0.1]]; const r=[...sig].sort((a,b)=>a[1]-b[1]); const rk={}; r.forEach((x,i)=>rk[x[0]]=i/(sig.length-1)); const w=sig.map(([n])=>[n,rk[n]-0.5]);
   document.getElementById('bars').innerHTML=w.map(([n,v])=>`<div>${n} <span style="color:var(--muted)">${v>0?'+':''}${(v*100).toFixed(0)}</span></div><div style="display:flex;justify-content:center"><div style="width:50%;display:flex;justify-content:flex-end">${v<0?`<div class="bar neg" style="width:${Math.abs(v)*200}%"></div>`:''}</div><div style="width:50%">${v>0?`<div class="bar" style="width:${v*200}%"></div>`:''}</div></div>`).join('');
   const rows=[['AAPL','Tech hardware',0.9],['DELL','Tech hardware',0.4],['HPQ','Tech hardware',0.6],['JPM','Banks',0.08],['BAC','Banks',0.11]]; const groups={};
@@ -350,11 +596,12 @@ function render(){
   const d=LS('done')||{}; document.querySelectorAll('[data-done]').forEach(c=>{ c.checked=!!d[c.dataset.done]; }); progress();
   go(LS('level')||0); calc();
 }
-function go(i){ document.querySelectorAll('section.level').forEach(s=>s.classList.toggle('on',+s.dataset.l===i)); document.querySelectorAll('nav.levels button').forEach(b=>b.classList.toggle('on',+b.dataset.go===i)); SS('level',i); window.scrollTo({top:0}); }
+function go(i){ document.querySelectorAll('section.level').forEach(s=>s.classList.toggle('on',+s.dataset.l===i)); document.querySelectorAll('nav.levels button').forEach(b=>b.classList.toggle('on',+b.dataset.go===i)); SS('level',i); window.scrollTo({top:0}); const b=document.querySelector('nav.levels button.on'); if(b&&b.scrollIntoView) b.scrollIntoView({inline:'center',block:'nearest'}); }
 function reveal(b){ const a=b.parentElement.querySelector('.ans')||b.parentElement.parentElement.querySelector('.ans'); a.classList.toggle('on'); }
 function done(c){ const d=LS('done')||{}; d[c.dataset.done]=c.checked; SS('done',d); progress(); }
+function rung2(c){ const d=LS('rungs2')||{}; d[c.dataset.rung2]=c.checked; SS('rungs2',d); }
 function rung(c){ const d=LS('rungs')||{}; d[c.dataset.rung]=c.checked; SS('rungs',d); }
-function progress(){ const d=LS('done')||{}; const n=Object.values(d).filter(Boolean).length; document.getElementById('progress').textContent=n+' / 8 levels'; document.querySelectorAll('nav.levels button').forEach(b=>b.classList.toggle('done',!!d[b.dataset.go])); }
+function progress(){ const d=LS('done')||{}; const n=Object.values(d).filter(Boolean).length; document.getElementById('progress').textContent=n+' / 16 levels'; document.querySelectorAll('nav.levels button').forEach(b=>b.classList.toggle('done',!!d[b.dataset.go])); }
 function calc(){ const S=+document.getElementById('iS').value, R=+document.getElementById('iR').value/100, T=+document.getElementById('iT').value/100; const E=Math.max(T,0.125); const F=S*Math.sqrt(R/E); document.getElementById('vS').textContent=S.toFixed(2); document.getElementById('vR').textContent=(R*100).toFixed(1)+'%'; document.getElementById('vT').textContent=(T*100).toFixed(1)+'%'; document.getElementById('vE').textContent=(E*100).toFixed(1)+'%'; document.getElementById('vF').textContent=F.toFixed(2); const p=document.getElementById('vP'); const ok=F>=1&&S>=1.25; p.textContent=ok?'passes both gates':(S<1.25?'Sharpe gate fails':'fitness gate fails'); p.className=ok?'pass':'fail'; }
 render();
 </script>
