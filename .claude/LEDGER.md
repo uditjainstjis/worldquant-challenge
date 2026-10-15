@@ -862,3 +862,8 @@ Udit: "submit todays autonomusly mine all points"
 - GET api.worldquantbrain.com/users/self -> 401 ("Authentication credentials were not provided."). Login expired (Udit logged in ~23:30 IST 10-13; ~13 h elapsed).
 - Action: PushNotification sent, tab closed, no submission. Shelf unchanged: LL5Vgolv primary (bar 0.68), backups zqrKP3lV/e76kdMQN/leMpQa6e/omo83qEb (same lane, submit one).
 - Retries 16:23 / 19:23 IST continue; "in" from Udit = run immediately.
+
+## 2026-10-15 20:38 IST — "do todays submissions" (Udit, verbatim)
+- Login live (200). 10-14 (EST) ended with ZERO submissions (12:47 run 401; no "in" that day). Days after 10-15 = 9.
+- 20:39 IST: POST /alphas/LL5Vgolv/submit -> 201; checks all PASS (sharpe 1.81, fitness 1.27, TO 0.1392, sub-universe 1.13); status ACTIVE, dateSubmitted 2026-10-15T11:09:37-04:00. shelf.json marked submitted.
+- Next inside this run: second alpha (< 0.50 vs 13 actives) from NEW sources; board read; drain queue (12 queued, 93 results stored).
