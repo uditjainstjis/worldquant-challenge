@@ -404,7 +404,7 @@
    "pnlcorr_max": "0.57 vs XgJ5e7w5"
   },
   "alpha_id": "zqrKP3lV",
-  "status": "ready",
+  "status": "dead:clone-of-LL5Vgolv:2026-10-15",
   "note": "backup; same lane as LL5Vgolv (primary)"
  },
  {
@@ -431,7 +431,7 @@
    "pnlcorr_max": "0.60 vs XgJ5e7w5"
   },
   "alpha_id": "leMpQa6e",
-  "status": "ready",
+  "status": "dead:clone-of-LL5Vgolv:2026-10-15",
   "note": "backup; same lane as LL5Vgolv (primary)"
  },
  {
@@ -458,7 +458,7 @@
    "pnlcorr_max": "0.648 vs XgJ5e7w5"
   },
   "alpha_id": "omo83qEb",
-  "status": "ready",
+  "status": "dead:clone-of-LL5Vgolv:2026-10-15",
   "note": "backup; same lane as LL5Vgolv (primary)"
  },
  {
@@ -513,7 +513,7 @@
    "turnover": 0.547,
    "pnlcorr_max": 0.533,
    "vs": "XgJ5e7w5",
-   "note": "FIRST-OF-DAY candidate only (bar 0.68); fails the 0.50 second-of-day bar. Reversal lane = XgJ5e7w5 (rank(-ts_delta(close,3))*rank(AV) d8). Quiet-tilted sibling zqrzkaZO 2.12/1.19 is 0.81 vs XgJ -> dead."
+   "note": "PRIMARY for 10-16 (first-of-day, bar 0.68; 0.533 vs XgJ5e7w5). FIRST-OF-DAY candidate only (bar 0.68); fails the 0.50 second-of-day bar. Reversal lane = XgJ5e7w5 (rank(-ts_delta(close,3))*rank(AV) d8). Quiet-tilted sibling zqrzkaZO 2.12/1.19 is 0.81 vs XgJ -> dead."
   },
   "status": "ready"
  }
