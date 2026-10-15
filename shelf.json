@@ -487,5 +487,34 @@
   "alpha_id": "LL5Vgolv",
   "status": "submitted:LL5Vgolv:2026-10-15",
   "note": "PRIMARY for 10-14 (first slot). Same lane as zqrKP3lV/leMpQa6e/omo83qEb/e76kdMQN (~0.95 with each other): submit ONE of the lane only."
+ },
+ {
+  "tag": "SHELF:ens_intra_rev3vs_d5",
+  "expr": "-(group_rank(close/open-1,subindustry)+group_rank(ts_sum(returns,3)/ts_std_dev(returns,20),subindustry))",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 5,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "alpha_id": "RRAL7X6b",
+  "measured": {
+   "date": "2026-10-15",
+   "sharpe": 1.88,
+   "fitness": 1.04,
+   "turnover": 0.547,
+   "pnlcorr_max": 0.533,
+   "vs": "XgJ5e7w5",
+   "note": "FIRST-OF-DAY candidate only (bar 0.68); fails the 0.50 second-of-day bar. Reversal lane = XgJ5e7w5 (rank(-ts_delta(close,3))*rank(AV) d8). Quiet-tilted sibling zqrzkaZO 2.12/1.19 is 0.81 vs XgJ -> dead."
+  },
+  "status": "ready"
  }
 ]
