@@ -602,7 +602,7 @@
    "pnlcorr_max": 0.555,
    "vs": "9qWW69M9",
    "others": "kqJb5XOL 0.542, vR2xOrRz 0.508",
-   "note": "RE-MEASURE vs bl8VV5Qq before submitting (shares news_vwap + skew terms). PRIMARY for 10-17 first-of-day (bar 0.68). Composite of netdebt flag + news vwap reaction + (-skew). Backup 2rjQkeV5 bvps+newsvwap+epsyield 1.42/1.24 max 0.659 (marginal)."
+   "note": "PRIMARY for 10-17 first-of-day (bar 0.68). Re-measured 00:18 IST 10-17 vs all 16 incl. bl8VV5Qq: max 0.555 (9qWW69M9), bl8VV5Qq < 0.42. PRIMARY for 10-17 first-of-day (bar 0.68). Composite of netdebt flag + news vwap reaction + (-skew). Backup 2rjQkeV5 bvps+newsvwap+epsyield 1.42/1.24 max 0.659 (marginal)."
   },
   "status": "ready"
  },
