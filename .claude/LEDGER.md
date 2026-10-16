@@ -927,3 +927,12 @@ Udit: "submit todays autonomusly mine all points"
 - 23:26 IST: POST /alphas/kqJb5XOL/submit 201; checks all PASS (1.78/1.30, TO 0.2102, sub-universe 0.99, SELF_CORRELATION 0.4535). bl8V5nkN marked dead (0.87 vs kqJb5XOL). Shelf for 10-17 EMPTY -> tomorrow: new lane-triple composite. STATE, Lesson 18 written.
 - 23:27 IST kqJb5XOL status ACTIVE, dateSubmitted 2026-10-16T13:53:09-04:00. Day 10-16 = 2 alphas. K1 queued for tomorrow: new lane-triples (netdebt+newsvwap-skew; ptp+news10-skew; bvps+newsvwap+epsyield).
 - 23:28 IST K1: netdebt+newsvwap-skew d10 3qj3WJgX 1.78/1.38 TO0.16 PASS, max-corr 0.555 (9qWW69M9)/0.542 (kqJb5XOL)/0.508 (vR2xOrRz) -> SHELVED PRIMARY for 10-17; ptp+news10-skew 1.32/0.91 fails fitness; bvps+newsvwap+epsyield 2rjQkeV5 1.42/1.24 max 0.659 (backup). Tab closed 23:29. Run total ~70 min across the usage-limit break; 70 sims.
+- [2026-10-16 23:42]
+  > will we win that challenge
+
+- [2026-10-16 23:51]
+  > [Image #1]  for this
+
+
+## 2026-10-16 23:40 IST — Udit: "will we win that challenge" then image + "for this" (verbatim). Image = QCAP NST-RU/NST-ADYPU "First surprise milestone": submit the LOWEST self-correlation alpha; top 3 across both campuses win JBL speakers; window from now until the Consultant background check is completed; only submitted alphas count (must clear checks). Our platform self-corr values: VkdvzZa5 0.2331 (lowest), kqJb5XOL 0.4535, RRAL7X6b 0.537, 9qWW69M9 0.6247, d51v5wpJ 0.6752.
+- Plan: wave O (orthogonal) now: wide composites excluding kqJb lanes, regression_neut chains against our actives signals; target platform self-corr < 0.15 with checks passing; submit tonight if found (value is frozen at submission time).
