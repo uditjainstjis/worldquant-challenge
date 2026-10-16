@@ -922,3 +922,4 @@ Udit: "submit todays autonomusly mine all points"
 - 23:13 IST C2: tot-pvc10-0.5*intra d10 58j3Wag5 1.80/1.27 TO0.23 PASS; tot-pvc10-pvc20-0.5*intra 1.47/1.03; tot-pvc10-intra(close/vwap) e76gRdV6 1.90/1.23 (fitness just under 1.25).
 - 23:15 IST pnl-corr: 58j3Wag5 (half intra) max 0.596 vs QPKbbpbG; e76gRdV6 (vwap intra) 0.54 vs QPKbbpbG, 0.365 vs RRAL7X6b. Trade-off: intraday weight up -> RRAL7X6b corr up; down -> QPKbbpbG (flag) corr up. C3 queued: 0.8*flag, 1.5*pvc, 0.75*intra.
 - 23:16 IST: tot-pvc10-intra d15 3qj3LXJX 1.97/1.51 TO0.22 PASS (best fitness so far); +pvc20 variant 1.69/1.20; mom6-1 0.04 dead.
+- 23:20 IST C3: 0.8*T-P10-I d10 E5VYJMgJ 2.02/1.37 (0.585 vs RRAL); T-P10-0.75*I omoAOXj5 1.96/1.38 (0.527 vs QPKb); T-1.5*P10-I d10 6XA3OQN5 1.84/1.22 TO0.26 -> max-corr 0.491 (RRAL) / 0.401 (QPKb): UNDER 0.50, fitness 1.22 just under 1.25. C4 queued: same at d15/d20 and 0.9*T d15 for fitness.
