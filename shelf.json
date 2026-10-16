@@ -515,6 +515,6 @@
    "vs": "XgJ5e7w5",
    "note": "PRIMARY for 10-16 (first-of-day, bar 0.68; 0.533 vs XgJ5e7w5). FIRST-OF-DAY candidate only (bar 0.68); fails the 0.50 second-of-day bar. Reversal lane = XgJ5e7w5 (rank(-ts_delta(close,3))*rank(AV) d8). Quiet-tilted sibling zqrzkaZO 2.12/1.19 is 0.81 vs XgJ -> dead."
   },
-  "status": "ready"
+  "status": "submitted:RRAL7X6b:2026-10-16"
  }
 ]

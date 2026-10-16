@@ -892,3 +892,9 @@ Udit: "submit todays autonomusly mine all points"
   > WQ RETRY (timer, 16:23 and 19:23 IST). Open one tab (tabs_context_mcp createIfEmpty -> navigate https://api.worldquantbrain.com/users/self, read body text). If "Authentication credentials were not provided": PushNotification "BRAIN login expired - log in to platform.worldquantbrain.com in Chrome and say in", one chat line, close the tab, stop. If logged in: count ACTIVE alphas stamped today's EST date. If >= 1: at 19:23 also confirm shelf.json has >= 1 "ready" item for tomorrow (if not, run one research wave inside this run via tick.js + cc.js and shelve). Then close the tab and reply in one line. If 0: run the WQ DAILY RUN procedure now (shelf primary, pnl-corr < 0.68 via window.__cc, submit, poll, confirm ACTIVE, mark shelf, STATE/LEDGER, push, checkpoint), then close the tab. A second alpha only if pnl-corr max < 0.50 AND fitness >= 1.25. Never submit 06:30-12:30 IST; never enter credentials; no tabs or waves outside timer runs.
 
 - 19:53 IST retry (16:23+19:23 fired together): still "Authentication credentials were not provided." Push sent, tab closed. 10-16 unsubmitted; window closes 06:30 IST 10-17.
+- [2026-10-16 21:33]
+  > did u do todays submission i logged u in, one thing is, also [Image #1], we need to be the winner the best ever to win
+
+
+## 2026-10-16 21:33 IST — "did u do todays submission i logged u in, one thing is, also [Image #1], we need to be the winner the best ever to win" (Udit, verbatim)
+- Login live. 21:35 IST POST /alphas/RRAL7X6b/submit -> 201; checks: sharpe 1.88, fitness 1.04, TO 0.5471, sub-universe 1.48, SELF_CORRELATION 0.537 (mine 0.533 -> platform +0.004), all PASS. ACTIVE confirmation + board read next.
