@@ -915,3 +915,4 @@ Udit: "submit todays autonomusly mine all points"
 ## 2026-10-16 23:01 IST — run resumed after usage reset
 - Login live. pvc_ens(10+20+40) 0.90/0.52 TO0.14; pvc20 INDUSTRY 0.94/0.57; news pct_120min-indx_perf 0.38. C1 queued: three-lane composites (ptp/totassets flag - pvcorr10 - intraday rev) to dilute max-corr below 0.68 for a first-of-day.
 - 23:05 IST: news_dividend_yield 0.37; atr_ratio -0.56; share_turnover -0.40 -> dead. E5VARZEr (intraday x quiet d5) 0.696 vs XgJ, 0.665 vs RRAL7X6b -> fails 0.68.
+- 23:08 IST C1 COMPOSITES: ptp_pvc_intra mLYJM1p2 = group_rank(anl4_ptp_flag)-group_rank(ts_corr(close,volume,10))-group_rank(close/open-1) d10: 2.07/1.37 TO0.29 ALL PASS; tot_pvc_intra bl8V5nkN (totassets flag) 2.06/1.44 TO0.28 ALL PASS; ptp_pvc (2 components) 1.40/0.78 fails. Mechanism: three uncorrelated lanes summed as ranks -> Sharpe adds, max-corr with any single active is diluted. pnl-corr pending.
