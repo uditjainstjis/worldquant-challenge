@@ -919,3 +919,4 @@ Udit: "submit todays autonomusly mine all points"
 - 23:10 IST pnl-corr: mLYJM1p2 0.712 vs RRAL7X6b (fail); bl8V5nkN 0.538 vs RRAL7X6b, 0.458 vs QPKbbpbG, 0.357 vs XgJ -> first-of-day candidate (shelved); composites 0.87 between themselves (only one can go). C2 queued: half-weight intraday, +pvc20, close/vwap intraday, d15 -> aiming < 0.50 for a second today.
 - 23:11 IST: low_beta -0.08 dead; ptp_flag x bf(news_mins_10_chg) 1.39/0.94 (fails fitness); totassets_flag x rank(bf20(news_eod_vwap/close)) d20 pwvoOmPq 1.80/1.41 TO0.16 ALL PASS -> flag x news interaction works; pnl-corr pending.
 - 23:12 IST: pwvoOmPq 0.847 vs QPKbbpbG -> dead (a flag x anything is the flag).
+- 23:13 IST C2: tot-pvc10-0.5*intra d10 58j3Wag5 1.80/1.27 TO0.23 PASS; tot-pvc10-pvc20-0.5*intra 1.47/1.03; tot-pvc10-intra(close/vwap) e76gRdV6 1.90/1.23 (fitness just under 1.25).
