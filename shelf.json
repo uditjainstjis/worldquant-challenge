@@ -545,6 +545,35 @@
    "others": "QPKbbpbG 0.458, XgJ5e7w5 0.357",
    "note": "PRIMARY for 10-17 first-of-day (bar 0.68) unless a C2 variant < 0.50 is submitted as 10-16 second (then this is DEAD: 0.87 between composites). Three-lane composite: flag + pvcorr + intraday reversal."
   },
-  "status": "ready"
+  "status": "dead:clone-of-kqJb5XOL(0.87):2026-10-16"
+ },
+ {
+  "tag": "SHELF:t_pvc15_intra_d15",
+  "expr": "group_rank(anl4_totassets_flag,subindustry)-1.5*group_rank(ts_corr(close,volume,10),subindustry)-group_rank(close/open-1,subindustry)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 15,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "alpha_id": "kqJb5XOL",
+  "measured": {
+   "date": "2026-10-16",
+   "sharpe": 1.78,
+   "fitness": 1.3,
+   "turnover": 0.21,
+   "pnlcorr_max": 0.456,
+   "vs": "QPKbbpbG",
+   "platform_selfcorr": 0.4535
+  },
+  "status": "submitted:kqJb5XOL:2026-10-16"
  }
 ]
