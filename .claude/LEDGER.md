@@ -905,3 +905,4 @@ Udit: "submit todays autonomusly mine all points"
 - 21:51 IST: eps_rev21 -0.19, eps_rev63 0.09, buy_share_chg 0.57 (analyst continuous revisions dead); season1y_d20 0.15, season2y -0.61 (calendar seasonality dead); pvcorr_ret 0.36.
 - 21:54 IST: pvcorr_close = -group_rank(ts_corr(close,volume,20)) d10 vROnW87r 0.93/0.50 TO0.15 (live, new mechanism: volume rising into falling prices); news_si -0.69 (flip +0.69, CONCENTRATED_WEIGHT fail); season1y_d10 0.18. PV2 variants queued (windows 10/40, d5/d20, adv tilt, vwap, 3-window ensemble, INDUSTRY).
 - 21:56 IST: news_open_gap 0.18 (CONCEN), max_up-max_dn -0.22, high/low_exc_stddev 0.14 -> news12 matrix extras dead.
+- 21:59 IST PV2: pvc10_d10 1.05/0.49 TO0.23; pvc40 0.46; pvc20_d5 0.99/0.49 -> real but weak (low returns); PV3 queued: pvc10 x AV / sqrt(AV), pvc10+20 x AV.
