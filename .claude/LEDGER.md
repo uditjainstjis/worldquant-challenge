@@ -907,3 +907,4 @@ Udit: "submit todays autonomusly mine all points"
 - 21:56 IST: news_open_gap 0.18 (CONCEN), max_up-max_dn -0.22, high/low_exc_stddev 0.14 -> news12 matrix extras dead.
 - 21:59 IST PV2: pvc10_d10 1.05/0.49 TO0.23; pvc40 0.46; pvc20_d5 0.99/0.49 -> real but weak (low returns); PV3 queued: pvc10 x AV / sqrt(AV), pvc10+20 x AV.
 - 22:01 IST PV2: pvc20_d20 0.87/0.51; pvc20 x adv 0.20 (size tilt kills it); pvc20_vwap 0.91/0.48.
+- 22:03 IST PV3: pvc10 x AV -0.03, x sqrt(AV) 0.14, pvc10+20 x AV -0.02 -> the loud tilt NEUTRALIZES price-volume correlation (it IS a volume construct). pvcorr family: real (~1.0 Sharpe, fitness 0.5), no booster found. Run cut by usage limit at 22:04 IST: 7 queued + 3 running (pvc_ens, pvc20_ind, rel_idx; queue: div_yield, atr_ratio, share_turnover, low_beta, ptp x news10, totassets x newsvwap, mom6_1) -> tomorrows first tick collects them (wq_running/wq_queue in api-origin localStorage). SHELF FOR 10-17: EMPTY. Tab closed.
