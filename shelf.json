@@ -516,5 +516,35 @@
    "note": "PRIMARY for 10-16 (first-of-day, bar 0.68; 0.533 vs XgJ5e7w5). FIRST-OF-DAY candidate only (bar 0.68); fails the 0.50 second-of-day bar. Reversal lane = XgJ5e7w5 (rank(-ts_delta(close,3))*rank(AV) d8). Quiet-tilted sibling zqrzkaZO 2.12/1.19 is 0.81 vs XgJ -> dead."
   },
   "status": "submitted:RRAL7X6b:2026-10-16"
+ },
+ {
+  "tag": "SHELF:tot_pvc_intra_d10",
+  "expr": "group_rank(anl4_totassets_flag,subindustry)-group_rank(ts_corr(close,volume,10),subindustry)-group_rank(close/open-1,subindustry)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 10,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "alpha_id": "bl8V5nkN",
+  "measured": {
+   "date": "2026-10-16",
+   "sharpe": 2.06,
+   "fitness": 1.44,
+   "turnover": 0.28,
+   "pnlcorr_max": 0.538,
+   "vs": "RRAL7X6b",
+   "others": "QPKbbpbG 0.458, XgJ5e7w5 0.357",
+   "note": "PRIMARY for 10-17 first-of-day (bar 0.68) unless a C2 variant < 0.50 is submitted as 10-16 second (then this is DEAD: 0.87 between composites). Three-lane composite: flag + pvcorr + intraday reversal."
+  },
+  "status": "ready"
  }
 ]
