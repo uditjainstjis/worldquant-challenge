@@ -575,5 +575,35 @@
    "platform_selfcorr": 0.4535
   },
   "status": "submitted:kqJb5XOL:2026-10-16"
+ },
+ {
+  "tag": "SHELF:netdebt_newsvwap_skew_d10",
+  "expr": "group_rank(anl4_netdebt_flag,subindustry)+group_rank(ts_backfill(news_eod_vwap/close,20),subindustry)-group_rank(ts_mean(power(returns,3),60)/power(ts_std_dev(returns,60),3),subindustry)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 10,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "alpha_id": "3qj3WJgX",
+  "measured": {
+   "date": "2026-10-16",
+   "sharpe": 1.78,
+   "fitness": 1.38,
+   "turnover": 0.16,
+   "pnlcorr_max": 0.555,
+   "vs": "9qWW69M9",
+   "others": "kqJb5XOL 0.542, vR2xOrRz 0.508",
+   "note": "PRIMARY for 10-17 first-of-day (bar 0.68). Composite of netdebt flag + news vwap reaction + (-skew). Backup 2rjQkeV5 bvps+newsvwap+epsyield 1.42/1.24 max 0.659 (marginal)."
+  },
+  "status": "ready"
  }
 ]
