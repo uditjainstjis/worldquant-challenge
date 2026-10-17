@@ -945,3 +945,79 @@ Udit: "submit todays autonomusly mine all points"
 - 00:16 IST O5: no-flag+debt/assets 1.57/1.17 max 0.326 (kqJb); ivskew90+half EY 58j33Q2o 1.71/1.39 max 0.286; v2 d12 e76gg9qO 1.67/1.38 max 0.275. Floor of the wide-composite construction ~0.27. DECISION: submit bl8VV5Qq (sib8_newskeep d10, 1.67/1.37 TO0.42, max-corr 0.273 vs QPKq3a2Q) now as the milestone entry (third 10-16 alpha; EST day still 10-16 at 14:46 EDT).
 - 00:17 IST POST /alphas/bl8VV5Qq/submit 201; checks PASS (1.67/1.37, TO0.4214, sub-universe 1.04, SELF_CORRELATION 0.3002, two UNITS warnings on power()). Platform value = mine + 0.027.
 - 00:18 IST bl8VV5Qq status ACTIVE, dateSubmitted 2026-10-16T14:45:54-04:00. 10-16 = THREE alphas (RRAL7X6b, kqJb5XOL, bl8VV5Qq). 3qj3WJgX re-measured vs 16: max 0.555, < 0.42 vs bl8VV5Qq -> still PRIMARY for 10-17. Tab closed 00:18. Tonight: 19 sims for the milestone.
+- [2026-10-17 09:46]
+  > sorry wrong chat for worldquant forget, go to amazon, flipkart, mine deals for other things u havent said to me, where we are getting awesome price drop, all the sectors examine, i would have fun or like to have
+
+- [2026-10-17 10:02]
+  > so far my list 
+  > 
+  > <pasted_content id="33ab">
+  > purchasing list
+  > - [ ] spike guard with surge protection
+  > - [ ] 39inch 4k curved monitor oled
+  > - [ ] keyboard mouse
+  > - [ ] smartwatch for breathe monitoring
+  > - [ ]  Memory foam seat cushion
+  > - [ ] Lumbar back cushion with strap
+  > - [ ] footrest
+  > - [ ] mousepad/desk mat
+  > - [ ] silicon suction mobile
+  > - [ ] usb hub
+  > - [ ] speakers/alexa
+  > - [ ] anti glare mac film
+  > - [ ] lamp
+  > - [ ] room lights, for behind monitor
+  > - [ ] kalimba
+  > - [ ] Dr Physio massage gun:
+  > </pasted_content id="33ab">
+  > 
+  > , i can add things which are under 2k, and if under 1k then more, if under 500 then even more, suggest moree where are price drops and awesome
+
+- [2026-10-17 10:19]
+  >  something i can keep on desk on hang on room or wall something which can reduce my space taking and flooding of desk, pin anything like chargers even or things to wall, any toy i can play alone or keep, i need amazing lightning like on my study table there is one tubelight of white color which is toooo bright, if i close room lights maybe around edges of monitor or behind mointor i keep colorful evenly distributed lights making environment and moof of room and work table, some lamp or thing for room too
+
+- [2026-10-17 10:30]
+  > also my mac has only 8gb ram check ompute and ram usage right now, it becomes laggy any solution to it, and wont streaming to 39inch 4k monitor fuck it up totally then, what are sols
+
+- [2026-10-17 10:33]
+  > i mean, how much this macbook cud be replaced at apple store for u think, and currenlty am facing ram or compute overload, having mac mini thing or new mac , something drastically changing things, wud cost how much
+
+- [2026-10-17 12:30]
+  > what's are lowest lowest self-correlation alphas which is evaluated
+
+- [2026-10-17 12:32]
+  > signed in
+
+- [2026-10-17 12:33]
+  > bro smeone sent live leaderboad 
+  > 
+  > <pasted_content id="45f8">
+  > 👋 *Hello everyone!*
+  > 
+  > We're back with an *announcement* 📢
+  > 
+  > First, let's celebrate our *Top 10 Potential Achievers* in the *Self-Correlation Challenge* 🎉 Your consistency and creativity are showing, keep it up! 👏
+  > 
+  > And here's the big one: the *Top 3 will win a JBL SPEAKER* 🔊🔥 And that's just the start, *bigger rewards are on the way* 👀🎁
+  > 
+  > The competition is *still LIVE*, so this is your reminder to *climb the leaderboard and grab your reward!* 🧗
+  > 
+  > 📌 *How the ranking works:*
+  > In the sheet, you may see someone with just 2 alphas and a very low correlation. That won't be counted, because a low correlation on only a few alphas is easy. What really matters is *more alphas AND low correlation*.
+  > 
+  > 💡 So the path to the top is simple:
+  > ✅ Keep submitting alphas
+  > ✅ Keep each new alpha *unique*
+  > ✅ Watch your avg. self-correlation drop
+  > 
+  > 📊 The full live leaderboard is attached. Check where you stand, there's still plenty of time to move up!
+  > 
+  > Every alpha counts. Let's go! 💪💯
+  > </pasted_content id="45f8">
+  > 
+  >  /Users/uditjain/Downloads/Self-Correlation\ Challenge\ Leaderboard_2.xlsx   why we arent at 1st?
+
+
+## 2026-10-17 12:30-12:45 IST — Udit: "what's are lowest lowest self-correlation alphas which is evaluated" (verbatim). Login expired (401). Answered from recorded submit-time check values: VkdvzZa5 0.2331 (pre-window), bl8VV5Qq 0.3002 (lowest in-window), A1vMp7Al 0.45, kqJb5XOL 0.4535, RRAL7X6b 0.537, 9qWW69M9 0.6247, d51v5wpJ 0.6752; 8 values unrecorded.
+## 2026-10-17 12:33 IST — Udit: "bro smeone sent live leaderboad" + pasted announcement (Top 10 Potential Achievers; top 3 JBL; "someone with just 2 alphas and a very low correlation ... won't be counted ... What really matters is more alphas AND low correlation") + ~/Downloads/Self-Correlation Challenge Leaderboard_2.xlsx + "why we arent at 1st?" (verbatim).
+- Parsed the xlsx (584 users, 34 ranked). Eligibility inferred: >= 15 alphas (ranked min 15 / unranked max 14); ranked list is sorted purely by Avg. Self-Correlation ascending. We: unranked ('OTHER PARTICIPANTS'), Days 9, Alphas 13, Avg 0.5404, BRAIN score 17467.9. #1 Gokul VKS 0.3597/15 alphas. Saved as milestone_lb_2026-10-16.csv. STATE SIDE GOAL block rewritten with the rule, the math (12-18 near-zero alphas needed for <= 0.30) and the construction list. Strategy change: milestone is won by MANY near-zero self-corr alphas, not one low one.

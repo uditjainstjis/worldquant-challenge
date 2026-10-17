@@ -1,0 +1,585 @@
+rank,name,university,days,alphas,avg_selfcorr,brain_score
+1,Gokul VKS,Rishihood University,15,15,0.3597,28175.7
+2,Agnik Misra,Rishihood University,14,18,0.4411,25091.1
+3,Mishti Agarwal,Rishihood University,10,16,0.4587,17491.7
+4,Manan Gilhotra,Rishihood University,15,21,0.5163,27816.6
+5,Surya Chalasani,Rishihood University,11,17,0.5357,21331.7
+6,Jay Sawant,Ajeenkya DY Patil University,16,16,0.5412,29627.0
+7,Ashwin Anand,Rishihood University,13,18,0.5484,24945.0
+8,Arun Arun,Rishihood University,12,16,0.5508,23090.8
+9,Rohit Kumar,Rishihood University,14,18,0.5511,25015.9
+10,Parth Jhawar,Rishihood University,11,16,0.5532,20839.4
+11,Divyansh Chaudhary,Rishihood University,9,34,0.5741000000000001,17292.3
+12,Atharva Sharma,Rishihood University,13,15,0.5799,25300.0
+13,Aarush Gupta,Rishihood University,16,19,0.5847,31454.2
+14,Tushar Khemka,Rishihood University,15,32,0.5854,27880.4
+15,Shanmukha Sai Chakali,Ajeenkya DY Patil University,14,17,0.5914,26333.7
+16,Kartikey Gupta,Rishihood University,7,15,0.5989,13770.5
+17,Manas Saxena,Rishihood University,11,24,0.6002999999999999,21646.2
+18,Sambuddha Banerjee,Ajeenkya DY Patil University,14,16,0.6008,26638.0
+19,Shresth Juyal,Rishihood University,14,18,0.6156,26539.7
+20,Mitul Bhatia,Rishihood University,13,18,0.6192,25048.4
+21,Dhruvil Shah,Ajeenkya DY Patil University,12,15,0.6205000000000001,23075.3
+22,Yash Raghubanshi,Rishihood University,15,15,0.6226,28544.5
+23,Divyanshu Singh,Rishihood University,14,17,0.623,27134.5
+24,Khushal Dangar,Rishihood University,14,33,0.628,27165.7
+25,Shashvat Singh,Ajeenkya DY Patil University,8,25,0.6299,15763.4
+26,Sankalp Tripathi,Rishihood University,11,26,0.6301,21539.2
+27,Sanchit Garg,Rishihood University,11,28,0.6452,21458.2
+28,Sanath Waraikar,Rishihood University,13,15,0.6485,25305.4
+29,Aditya Mathur,Rishihood University,12,23,0.6491,23771.3
+30,Aryan Kinha,Rishihood University,8,15,0.6523,16000.0
+31,Tanish Garg,Rishihood University,10,29,0.6689000000000001,19910.6
+32,Ashutosh Singh,Rishihood University,15,39,0.6832,27686.2
+33,Hemanth Tenneti,Rishihood University,15,34,0.6895,29555.1
+34,Kabir Vashisht,Rishihood University,9,17,0.7213000000000001,17427.0
+—,Hrishabh Prajapati,Rishihood University,2,2,0.0029,3755.64
+—,Dipanshu Singh,Ajeenkya DY Patil University,1,2,0.008800000000000001,2000.0
+—,Kalpna Beniwal,Rishihood University,2,2,0.0174,3815.96
+—,Vansh Sharma,Rishihood University,2,2,0.0198,3791.0
+—,Aarpan Lohora,S-VYASA University,2,2,0.029,1898.95
+—,Suhani Gupta,Rishihood University,3,3,0.09180000000000001,5643.85
+—,Harsh Kothari,Ajeenkya DY Patil University,2,3,0.1186,3890.51
+—,Gargi Srivastava,Rishihood University,2,2,0.129,3800.65
+—,Sairam Thanniru,Rishihood University,3,3,0.1326,5732.74
+—,Abdul Mannan,S-VYASA University,2,2,0.1425,1898.95
+—,Harsh Yadav,Rishihood University,1,2,0.1484,2000.0
+—,Prince Rabadiya,S-VYASA University,1,2,0.1625,2000.0
+—,Yashkumar Nimje,Rishihood University,6,6,0.1648,11346.9
+—,Sangam PAL,Ajeenkya DY Patil University,3,3,0.1683,5748.37
+—,Akhilesh Nitharwal,S-VYASA University,2,3,0.1684,2000.0
+—,Priyansh Singla,Rishihood University,3,3,0.1798,5650.65
+—,Ojus Sood,Rishihood University,5,5,0.1846,9432.79
+—,Yash Malik,Rishihood University,3,3,0.1853,5654.9
+—,Ajeesh Amreet,Rishihood University,3,3,0.1855,5616.83
+—,Vedant Tiwari,Rishihood University,4,4,0.1864,7573.28
+—,Vanshika Soni,Ajeenkya DY Patil University,3,3,0.1873,5778.79
+—,Aarush Karva,Ajeenkya DY Patil University,2,2,0.1972,3843.81
+—,Harshita Joshi,Rishihood University,3,3,0.1975,5148.27
+—,Taranveer Singh,Ajeenkya DY Patil University,7,7,0.1988,13339.4
+—,Jeet Srivastava,Ajeenkya DY Patil University,2,2,0.2077,3789.46
+—,Ojal Akash,Rishihood University,4,4,0.2081,7585.61
+—,Tanishk Agrawal,Rishihood University,5,5,0.22,9553.27
+—,Samiksha Jangid,Rishihood University,2,2,0.2238,3741.61
+—,Prateek Shukla,Rishihood University,5,5,0.2267,9034.61
+—,Vridhi Chaudhary,Rishihood University,5,5,0.2394,9430.37
+—,Tejas Rastogi,S-VYASA University,2,3,0.2421,2000.0
+—,Ananya Narang,Rishihood University,3,3,0.2531,5711.58
+—,V M Aman Sharma,Ajeenkya DY Patil University,3,3,0.2947,5386.84
+—,Pankaj Upadhyay,Rishihood University,5,5,0.2958,9384.77
+—,Awantika Maheshwari,Rishihood University,5,6,0.3027,9533.92
+—,Simran Sobhani,Rishihood University,2,2,0.3042,3755.64
+—,Ishika Jain,S-VYASA University,2,2,0.3042,1898.95
+—,Mayank Yadav,Rishihood University,10,10,0.3045,19066.3
+—,Anuradha Raghuwanshi,Rishihood University,5,6,0.3094,9587.28
+—,Saksham Sontakke,Rishihood University,6,7,0.314,11674.0
+—,Tuhinsuvra Roy,Rishihood University,2,2,0.321,3832.98
+—,Himani Pinjani,Rishihood University,5,5,0.3235,8656.84
+—,Vishal Kumar Mishra,Rishihood University,6,7,0.3247,11487.8
+—,Jashvitha Omkaram,Rishihood University,4,4,0.3268,7584.94
+—,Abhinav Singh,Ajeenkya DY Patil University,3,3,0.3281,5309.11
+—,Darsh Rustagi,Rishihood University,2,3,0.3281,3902.24
+—,Anusha Prathapani,Rishihood University,2,2,0.3281,3832.5
+—,Devendra Bishnoi,Ajeenkya DY Patil University,2,2,0.3281,3831.36
+—,Farhana Pervin,Rishihood University,2,2,0.3281,3800.27
+—,Parth Jhawar,Rishihood University,3,3,0.3284,5763.43
+—,Harshit Dhablia,Ajeenkya DY Patil University,5,7,0.3351,9655.45
+—,Abhijeet Dey,Rishihood University,9,10,0.3381,16780.9
+—,Mani Amar Sehgal,Rishihood University,4,4,0.3388,7587.74
+—,A M Yeeshu,Rishihood University,6,7,0.3389,10945.1
+—,Saransh Singh Tomar,Rishihood University,4,4,0.3393,7102.15
+—,Raghav Kaushal,Rishihood University,5,5,0.3404,8505.72
+—,Om Mishra,Rishihood University,6,6,0.3413,11405.9
+—,Darsh Bansal,Rishihood University,12,13,0.342,20726.8
+—,Aryan Kesarkar,Ajeenkya DY Patil University,3,3,0.3439,5695.1
+—,Bala Vamsi Krishna,Rishihood University,6,7,0.3479,11445.7
+—,Anshika Verma,Ajeenkya DY Patil University,7,7,0.3506,11014.1
+—,Akshit Baliyan,Rishihood University,10,10,0.3511,18965.2
+—,Aditya Sharma,Rishihood University,6,6,0.3535,11364.6
+—,Meet Ramatri,Ajeenkya DY Patil University,3,3,0.3555,5782.69
+—,Meet Gupta,Rishihood University,3,3,0.3555,5692.04
+—,Akhilesh Kumar,Rishihood University,6,7,0.356,9571.27
+—,Swati Ghosh,Rishihood University,7,7,0.3591,12711.5
+—,Kartik Mehra,Rishihood University,5,5,0.3599,9490.38
+—,Kuldeep Singh,Ajeenkya DY Patil University,7,7,0.3606,13273.5
+—,Mahaveer Jain,S-VYASA University,1,2,0.3607,2000.0
+—,Arpit Goyal,Rishihood University,8,9,0.3651,15272.9
+—,Tarun Singh,Rishihood University,10,10,0.37,18932.8
+—,Nitin Kumar,Rishihood University,12,12,0.3701,21695.8
+—,Tanmay Dave,Rishihood University,4,4,0.372,7589.45
+—,Suhaani Garg,Rishihood University,4,4,0.3753,7557.57
+—,Barnak Das,Rishihood University,6,6,0.3769,9481.51
+—,Dev Tyagi,Rishihood University,3,3,0.3769,5732.74
+—,Kanishka Dubey,Rishihood University,3,3,0.3795,5677.15
+—,Akhil Mishra,Rishihood University,12,12,0.3799,21939.2
+—,Suraj Patil,Ajeenkya DY Patil University,8,8,0.3817,15331.6
+—,Vishal Kumar Gowda,Ajeenkya DY Patil University,11,11,0.3897,20749.6
+—,Vishaldeep,Rishihood University,11,11,0.3921,21021.3
+—,Manan Bansal,Rishihood University,2,3,0.3937,3910.58
+—,Nitanshu Goyal,Rishihood University,7,7,0.3942,13300.5
+—,Lalit Mittal,Rishihood University,7,7,0.3948,13389.3
+—,Vansh Kushwaha,Rishihood University,10,10,0.3983,17844.4
+—,Hardik Maheshwari,Rishihood University,4,4,0.3996,7494.7
+—,Shreyash Golhani,Rishihood University,9,9,0.4028,16190.2
+—,Shiva Sharma,Rishihood University,9,10,0.4053,17344.2
+—,Pihu Jaitly,Rishihood University,12,13,0.4062,22025.4
+—,Pranav Sankhyan,S-VYASA University,2,2,0.407,1898.95
+—,Palak,Rishihood University,4,5,0.4071,7096.4
+—,Suyash Bhatia,Rishihood University,5,5,0.4073,9492.55
+—,Gauri Jindal,Rishihood University,10,10,0.4074,18995.3
+—,Manav Chhajer,S-VYASA University,2,2,0.4125,1898.95
+—,Dhruv Pal,Rishihood University,5,5,0.4159,9523.58
+—,Kushagra Maheshwari,Rishihood University,7,7,0.4187,10957.2
+—,Yash Agarwal,Rishihood University,9,10,0.4191,17159.8
+—,Ashwin Kalra,Rishihood University,2,3,0.4209,3911.4
+—,Anurag Choubey,Rishihood University,11,12,0.422,20532.5
+—,Anshika Ahuja,Ajeenkya DY Patil University,5,6,0.4225,7552.89
+—,Aditi Singh,Rishihood University,8,8,0.4239,14791.2
+—,Swaraj Agarwal,Rishihood University,7,10,0.4272,13348.7
+—,Anshuman Mehta,Rishihood University,10,11,0.428,19116.8
+—,Harsha Gonela,Rishihood University,5,6,0.4294,7679.88
+—,Hrishi Dongre,Rishihood University,10,11,0.4295,17947.0
+—,Deepanshu Chaudhary,Rishihood University,7,7,0.4332,12836.6
+—,Aniruddha Dwivedi,Ajeenkya DY Patil University,12,12,0.4342,22895.7
+—,Kanhaiya Kumar,Rishihood University,11,11,0.4343,21709.0
+—,Abhay Rana,Rishihood University,8,9,0.4345,15230.9
+—,Nischal Jain,Rishihood University,7,8,0.4376,13062.3
+—,Mahin Patel,Ajeenkya DY Patil University,7,7,0.4381,13271.2
+—,Yuvansh Juneja,Rishihood University,2,2,0.4381,3736.41
+—,Aditya Panchal,Ajeenkya DY Patil University,4,4,0.4388,7615.49
+—,Deepanshu Mehta,Rishihood University,12,12,0.4413,20943.4
+—,Shaurya Pratap Singh,Rishihood University,12,12,0.4421,22847.0
+—,Harshit Shakya,Rishihood University,9,9,0.4431,17407.3
+—,Tanisha Dhiman,Rishihood University,6,6,0.4434,11335.9
+—,Anushka Tyagi,Rishihood University,5,6,0.4461,9028.69
+—,Suryansh Pandey,Rishihood University,1,3,0.4465,2000.0
+—,Prasad Kalgunde,Ajeenkya DY Patil University,13,14,0.4474,23092.7
+—,Parthraj Singh Bhati,Rishihood University,10,10,0.4476,19019.1
+—,Ansh Gupta,Rishihood University,3,4,0.4492,5793.71
+—,Tahseen Sarwar,Rishihood University,6,6,0.4508,11411.2
+—,Vansh Chaturvedi,Ajeenkya DY Patil University,7,8,0.4543,13436.6
+—,Arpit Tripathi,Rishihood University,13,13,0.4562,22498.9
+—,Amritanshu Nirjhar,Rishihood University,2,4,0.4564,3861.19
+—,Aryan Rai,Rishihood University,6,7,0.4567,11170.5
+—,Krishna Verma,Rishihood University,7,7,0.4572,13714.9
+—,Shekhar Jadhav,Ajeenkya DY Patil University,10,13,0.4579,17121.9
+—,Manas Selukar,Rishihood University,10,10,0.4594,18684.4
+—,Jatin Verma,Rishihood University,4,5,0.4606,7677.15
+—,Krishna Devan,Rishihood University,9,11,0.462,17116.9
+—,Aman Kumar,Rishihood University,4,5,0.463,5821.35
+—,Shrungar Maske,Ajeenkya DY Patil University,5,8,0.4638,7364.58
+—,Aryan Kumar,Rishihood University,10,13,0.4641,19346.1
+—,Rounak Chhablani,Rishihood University,9,9,0.4647,14631.8
+—,Krish Patil,Ajeenkya DY Patil University,8,8,0.4655,13248.4
+—,Saumya Kumar,Rishihood University,10,12,0.4656,18837.6
+—,Svarnim Gaur,Rishihood University,6,7,0.4661,11507.8
+—,Shashwat Sinha,Rishihood University,11,14,0.4681,20799.9
+—,Shivansh Gaur,Rishihood University,9,11,0.4686,17275.2
+—,Preet Madhavi,Ajeenkya DY Patil University,10,10,0.4718,17004.1
+—,Himanshu Pandey,Rishihood University,11,11,0.4725,21181.2
+—,Lakshya Bapna,Rishihood University,6,7,0.473,11528.3
+—,Satyam Kumar,Rishihood University,4,4,0.473,7556.39
+—,Shreya Suman,Rishihood University,4,4,0.4737,7673.87
+—,Kavya Saraswat,Rishihood University,7,8,0.4739,10982.3
+—,Ayush Kumar,Rishihood University,8,8,0.4744,13300.5
+—,Prince Goswami,Rishihood University,7,7,0.4744,10877.3
+—,Parth Tiwari,Rishihood University,12,14,0.4753,22461.6
+—,Sankalp,Rishihood University,7,7,0.476,13226.6
+—,Ashwin Maurya,Rishihood University,5,8,0.4781,9788.45
+—,Lalit Choudhary,Rishihood University,4,8,0.4787,8000.0
+—,Adamya Tiwari,Rishihood University,11,13,0.4805,20532.2
+—,Yash Dhankhar,Rishihood University,4,4,0.4805,7584.94
+—,Vivek Thakur,Rishihood University,5,5,0.4807,9507.78
+—,Krishiv Saini,Rishihood University,10,11,0.4811,18359.4
+—,Jatin Singh,Rishihood University,7,7,0.4832,13525.5
+—,Amit Pal,Rishihood University,3,4,0.4876,5801.19
+—,Manpreet Singh,Rishihood University,12,12,0.4889,22697.8
+—,Kapish Rohilla,Rishihood University,4,4,0.4895,7541.09
+—,Pratyush Gupta,Ajeenkya DY Patil University,10,11,0.4935,18953.6
+—,Shubham Aggarwal,Rishihood University,12,12,0.4936,22943.8
+—,Girish Sharma,Ajeenkya DY Patil University,6,8,0.4974,11245.3
+—,Aryan Raj,S-VYASA University,2,3,0.4975,1898.95
+—,Devesh Gupta,Ajeenkya DY Patil University,10,10,0.498,19193.3
+—,Anshu Yadav,Rishihood University,12,13,0.4987,22439.6
+—,Priyum DEB,Rishihood University,10,10,0.4994,16984.6
+—,Pranav Agarwal,Rishihood University,9,14,0.4994,15711.9
+—,Gayatri Jaiswal,Ajeenkya DY Patil University,6,6,0.5001,11360.5
+—,Anuj Upadhyay,Rishihood University,11,11,0.5008,20533.9
+—,Abhishek Kumar,Ajeenkya DY Patil University,10,10,0.5014,17006.7
+—,Anindya Sarkar,Rishihood University,9,11,0.5016,15278.7
+—,Het Javiya,Rishihood University,10,13,0.5026,19402.0
+—,Kritarth Patel,Rishihood University,10,10,0.5046,18410.4
+—,Bhoomi Chhikara,Rishihood University,2,2,0.5049,3819.02
+—,Abhijeet Kumar Shah,Rishihood University,10,10,0.5056,18911.1
+—,R K,Rishihood University,10,10,0.5065,18881.9
+—,Manjeet Lodha,Rishihood University,11,11,0.5069,20808.9
+—,Yogesh Mishra,Rishihood University,10,10,0.5086000000000001,18934.7
+—,Ravleen Singh,Rishihood University,4,4,0.5093,7321.43
+—,Arnav Jindal,Rishihood University,11,13,0.5096000000000001,20536.4
+—,Komal,Rishihood University,9,9,0.5097,17005.8
+—,Himank Kaushik,Rishihood University,5,6,0.5106000000000001,7608.48
+—,Mouli Srivastava,Rishihood University,8,8,0.5107,15084.8
+—,Harsh Goyal,Rishihood University,13,13,0.5112,24736.8
+—,Yashasvee Singh,Rishihood University,6,6,0.5112,10995.1
+—,Sarabjeet Singh,Rishihood University,5,5,0.512,9164.01
+—,Mayank Dhanuka,Rishihood University,5,6,0.5133,9521.72
+—,Samarth Nagpal,Rishihood University,2,2,0.5143,3800.18
+—,Piyush Sharma,Rishihood University,10,10,0.5157,18995.3
+—,Satyam Swarnakar,Rishihood University,11,11,0.5216,20838.6
+—,Srijal Srivastava,Rishihood University,6,6,0.5219,11732.1
+—,Rohan B M,S-VYASA University,2,3,0.5219,1898.95
+—,Yug Shah,Rishihood University,10,10,0.5228,18676.4
+—,Harshvardhan Dhankhar,Rishihood University,9,10,0.5243,17229.9
+—,Archit Mamodiya,Rishihood University,10,14,0.5296999999999999,19101.4
+—,Mrinal Upreti,Rishihood University,7,10,0.5296999999999999,11566.2
+—,Yash Raj,Rishihood University,7,8,0.5304,13398.3
+—,Shivansh Pandey,Rishihood University,8,9,0.5317,13469.0
+—,Keshav Rajput,Rishihood University,10,10,0.5319,18907.9
+—,Rachit Gupta,Rishihood University,8,8,0.5329,13271.2
+—,Ashu Choudhary,Ajeenkya DY Patil University,9,14,0.5339,15680.8
+—,Abhijeet Raj Singh,Rishihood University,11,12,0.5346,20943.3
+—,Chayan Leekha,Rishihood University,11,12,0.5373,19856.5
+—,Soumya Tiwari,Rishihood University,2,3,0.5386,3913.73
+—,Ishan,Rishihood University,2,3,0.539,3880.42
+—,Udit Jain,Rishihood University,9,13,0.5404,17467.9
+—,Aujasya Rajput,Rishihood University,2,2,0.5413,3753.09
+—,Piyush Tharwani,Rishihood University,13,13,0.5433,25143.9
+—,Krish Achra,Rishihood University,10,11,0.5448,19012.6
+—,Harshit Kudhial,Rishihood University,7,7,0.5458,13253.5
+—,Mayank Choudhary,Ajeenkya DY Patil University,6,7,0.5462,9677.09
+—,Divyansh Rathore,Rishihood University,6,7,0.5493,11075.3
+—,Ankur Agarwal,Rishihood University,4,4,0.5499000000000001,7605.33
+—,Riyansh Bhosale,Rishihood University,9,10,0.55,16915.8
+—,Jivika Adlakha,Rishihood University,6,6,0.5505,9484.56
+—,Manav Garg,Rishihood University,11,12,0.5514,19507.3
+—,Aryan Khalse,Ajeenkya DY Patil University,4,4,0.5518,5741.46
+—,Pooja Kumari,Rishihood University,6,7,0.5521,11553.2
+—,Satya Yadav,Rishihood University,9,9,0.5532,17178.1
+—,Vriha Dholiya,Rishihood University,7,7,0.5580000000000001,11403.9
+—,Lakshay Munjal,Rishihood University,11,11,0.5589,19765.1
+—,Riya Todi,Rishihood University,6,6,0.5590000000000001,11438.8
+—,Pritpal Singh,Ajeenkya DY Patil University,6,9,0.5592,11683.6
+—,Aman Raj Sharma,Ajeenkya DY Patil University,11,11,0.5597,20838.6
+—,Saksham Kachhawaha,Rishihood University,6,6,0.5598,9496.73
+—,Mayank Bajoria,Rishihood University,6,10,0.5617,11785.8
+—,Ayush Pandey,Ajeenkya DY Patil University,5,6,0.5625,7687.41
+—,Devansh Aggarwal,Rishihood University,11,11,0.5635,20895.9
+—,Vaibhav Chaudhary,Rishihood University,10,12,0.5635,19359.5
+—,Aditya Kumar,Rishihood University,11,12,0.5638,21234.8
+—,Dakshraj Bole,Ajeenkya DY Patil University,10,10,0.5642,19211.0
+—,Priyanshu Sharma,Rishihood University,4,5,0.5653,7683.18
+—,Anubhav Gupta,Ajeenkya DY Patil University,10,12,0.5655,19030.3
+—,Shubh Mehrotra,Rishihood University,8,8,0.5662,13256.0
+—,Anurag Kumar,Rishihood University,4,4,0.5679,7585.27
+—,Mayank Sharma,Rishihood University,8,10,0.5688,15515.8
+—,Parv Goyal,Rishihood University,10,11,0.5701000000000001,18888.2
+—,Abhigya Sachdeva,Rishihood University,12,14,0.5708,22875.4
+—,Saksham Paliwal,Rishihood University,8,8,0.5712,13300.5
+—,Mansi Agarwal,Rishihood University,8,8,0.5713,13300.5
+—,Parag Sanghavi,Ajeenkya DY Patil University,6,9,0.5733,11365.0
+—,Kushagra Kaushik,Rishihood University,3,3,0.5733,5747.52
+—,Chinmay Soni,Rishihood University,9,10,0.5739,17133.7
+—,Amartya Mishra,Ajeenkya DY Patil University,7,8,0.5752,13507.7
+—,Rajat Soni,Rishihood University,6,6,0.58,11424.4
+—,Aman Soni,Rishihood University,10,12,0.5800999999999999,19146.2
+—,Prithvi Kumar Singh,S-VYASA University,1,2,0.5826,2000.0
+—,Satyam Kumar,Rishihood University,11,12,0.5829,20642.7
+—,Arnav Gupta,Rishihood University,10,10,0.5831,19381.1
+—,Arpit Chhimpa,Rishihood University,5,5,0.5849,9455.5
+—,Samarth Sangtani,Rishihood University,9,10,0.5864,17226.1
+—,Yashaswi Gusain,Rishihood University,10,10,0.5867,16983.0
+—,Shourya Singh,Rishihood University,9,11,0.5872000000000001,16827.5
+—,Shubhanshu Dubey,Ajeenkya DY Patil University,3,5,0.5872000000000001,3890.51
+—,Bineet Keshari,Rishihood University,10,11,0.5875,17119.7
+—,Sachin Kumar,Rishihood University,8,9,0.588,15226.6
+—,Preetish Ubhrani,Rishihood University,10,10,0.5914,17640.6
+—,Abhishek Patel,Rishihood University,11,11,0.5916,18917.4
+—,Saksham Bhargava,Rishihood University,11,14,0.592,21107.0
+—,Ishita Sharma,Rishihood University,10,11,0.5941,17161.7
+—,Akash Gautam,Rishihood University,9,9,0.5942,15180.9
+—,Ainish Singh,Rishihood University,11,14,0.5943000000000001,20412.5
+—,Rishit Babbar,Rishihood University,10,11,0.5943000000000001,18990.1
+—,Shourya Pratap,Rishihood University,9,10,0.5953000000000001,17281.7
+—,Rudresh Tiwari,Rishihood University,8,9,0.599,13319.2
+—,Yashi Agarwal,Rishihood University,7,7,0.5992,13299.4
+—,Sambhav Kumar,Rishihood University,12,12,0.5994,22731.3
+—,Bhumika Beniwal,Rishihood University,4,4,0.6,7519.07
+—,Raj Singh,Rishihood University,7,8,0.6039,13322.2
+—,Aniket Kumar,Rishihood University,9,9,0.6077,16976.2
+—,Shrijan Sanidhya,Rishihood University,3,3,0.6101,5744.38
+—,Kartik Yadav,Rishihood University,12,14,0.6105,21048.1
+—,Siddharth Pareek,Ajeenkya DY Patil University,3,6,0.6108,3898.95
+—,Srijan Patel,Rishihood University,5,5,0.6114000000000001,7709.53
+—,Shivam Dixit,Rishihood University,5,5,0.6121,9604.99
+—,Vidhit T S,Ajeenkya DY Patil University,5,5,0.6135,7608.48
+—,Abhishek Sharma,Rishihood University,10,10,0.6136,18951.2
+—,Shaurya Sharma,Rishihood University,9,9,0.6169,17016.7
+—,Avneet Singh,Rishihood University,10,10,0.6176,18975.7
+—,Saksham Jaiswal,S-VYASA University,2,3,0.6176,2000.0
+—,Ansh Tomar,Rishihood University,11,11,0.6181,18917.4
+—,Parth Singla,Rishihood University,11,11,0.6185,20795.2
+—,Lakshy Kaura,Rishihood University,6,6,0.6191,11401.3
+—,Vansh Khod,Rishihood University,4,4,0.6193,7631.7
+—,Surya Singh,Rishihood University,7,9,0.6209,13508.6
+—,Aarabdh Sharma,Rishihood University,11,13,0.6212,21190.3
+—,Sudipta Kuila,S-VYASA University,2,2,0.6234,1898.95
+—,Riddhi Singhal,Rishihood University,12,13,0.6244,22790.7
+—,Kartik Madaan,Rishihood University,4,8,0.6256,6000.0
+—,Hemant Kumar,Rishihood University,11,14,0.6269,21179.3
+—,Krish Garg,Rishihood University,10,10,0.628,18917.4
+—,Atharv Bansal,Rishihood University,4,4,0.6282,7301.8
+—,Anjana Kamle,Rishihood University,9,10,0.6311,17139.9
+—,Ranvendra Pratap Singh,Rishihood University,7,7,0.6324,13474.2
+—,Om Kar Shukla,Rishihood University,7,9,0.6326000000000001,13547.2
+—,Rashmi Anand,Rishihood University,11,14,0.6366000000000001,19172.0
+—,Akhil Sharma,Rishihood University,6,7,0.6382,11485.0
+—,Raghav Agarwal,Rishihood University,4,4,0.6399,7692.04
+—,Aditya Kumar Gupta,Rishihood University,8,9,0.6424,13394.8
+—,Shivam Choubey,Rishihood University,11,13,0.6464,21738.4
+—,Kunal Gupta,Rishihood University,11,12,0.6496,20986.9
+—,Shagun Vishnoi,Rishihood University,11,13,0.6521,21097.3
+—,Aditya Raj,Rishihood University,9,9,0.6529,17004.1
+—,Jarvis Jacob,S-VYASA University,2,4,0.6546,2000.0
+—,Prince Singh,Rishihood University,6,6,0.6546999999999999,11410.1
+—,Gaurav Meena,Rishihood University,4,5,0.6561,7666.9
+—,Aditya Goyal,S-VYASA University,2,3,0.659,2000.0
+—,Krish Kothari,Ajeenkya DY Patil University,5,10,0.6595,7491.06
+—,Aryan Singh,Rishihood University,1,7,0.6608000000000001,2000.0
+—,Kushal Sarkar,Rishihood University,3,3,0.6613,5732.09
+—,Ekta Sachdev,Ajeenkya DY Patil University,4,4,0.6614,7676.27
+—,Yashmeen,Rishihood University,3,5,0.6636,5902.24
+—,Pankaj Baid,Rishihood University,6,9,0.6666,11696.7
+—,Aradhya Tiwari,Rishihood University,12,13,0.668,22837.4
+—,Dhruv Sharma,Ajeenkya DY Patil University,6,12,0.6686,11622.9
+—,Akshat Shukla,Rishihood University,7,10,0.6829,13701.1
+—,Rachit Singh,Rishihood University,10,11,0.6849,17139.9
+—,Naveen Kumar,Rishihood University,9,9,0.6879,16991.4
+—,Ankit Kumar,Rishihood University,11,11,0.6898,20795.2
+—,Yogesh Modi,Rishihood University,10,10,0.6909999999999999,18917.4
+—,Aadarsh Bhardwaj,Rishihood University,3,3,0.6937,5877.87
+—,Mausam Kumar Dwivedi,Rishihood University,6,6,0.6953,11398.3
+—,Aryan Goyal,Rishihood University,11,12,0.706,20947.7
+—,Sarthak Rai,Rishihood University,4,7,0.7069,7861.19
+—,Prince Dubey,Rishihood University,3,4,0.7117,5833.8
+—,Lakshay Dhankhar,Rishihood University,4,5,0.7372,7678.05
+—,Alisha Gupta,Rishihood University,6,6,0.7428,11392.7
+—,Anurag Sonawane,Rishihood University,5,5,0.7573,9500.04
+—,Lakshay Dhankhar,Rishihood University,4,4,0.7592,7260.57
+—,Vinayak Pachauri,Rishihood University,7,12,0.7618,13921.1
+—,N Cellina Achari,Rishihood University,2,2,0.7903,3782.66
+—,Ritik,Rishihood University,2,2,0.7976,3815.96
+—,Vaidehi Sahu,Rishihood University,1,2,0.7978,2000.0
+—,Utkarsh Jain,Rishihood University,2,2,0.8557,3763.43
+—,Yuvraj Rai,Rishihood University,2,2,0.8764999999999999,3821.99
+—,Prachi Vats,Rishihood University,3,3,0.8792,5633.51
+—,Tejas Patel,S-VYASA University,2,2,0.9112,1898.95
+—,Shivam Singh Patel,S-VYASA University,1,2,0.9669,2000.0
+—,Izaz Ahmed Sk,S-VYASA University,2,3,0.9728,2000.0
+—,Arsh Yadav,Rishihood University,2,2,0.9808,3825.13
+—,Adhithya Pandiri,S-VYASA University,1,2,0.985,2000.0
+—,Akshat Pratap Singh,S-VYASA University,1,2,0.985,2000.0
+—,Akshit Sharma,S-VYASA University,2,3,0.985,2000.0
+—,Arjun Shukla,S-VYASA University,1,2,0.985,2000.0
+—,Ayush Mahato,S-VYASA University,1,2,0.985,2000.0
+—,Charan Teja Siraspalli,S-VYASA University,1,2,0.985,2000.0
+—,Harshit Chand,S-VYASA University,1,2,0.985,2000.0
+—,Jai Vardhan Dev Kotwal,S-VYASA University,1,2,0.985,2000.0
+—,Kartik Manmode,S-VYASA University,1,2,0.985,2000.0
+—,Rishabh Samal,S-VYASA University,1,2,0.985,2000.0
+—,Samyak Jain,S-VYASA University,1,2,0.985,2000.0
+—,Saubhagya Sharma,S-VYASA University,1,2,0.985,2000.0
+—,Shaurya Shaurya,S-VYASA University,1,2,0.985,2000.0
+—,Shikhar Kumar Prasad,S-VYASA University,1,2,0.985,2000.0
+—,Shitanshu Singh,Rishihood University,2,2,—,3880.01
+—,Samar Sethi,Rishihood University,2,2,—,3833.8
+—,Jayanth Pranay Konada,Rishihood University,2,2,—,3821.35
+—,Jash Sanka,Ajeenkya DY Patil University,2,2,—,3820.69
+—,Asmit Kumar,Rishihood University,2,2,—,3817.14
+—,Bharat Sharma,Rishihood University,2,2,—,3815.96
+—,Md Junayed Jaman,Rishihood University,2,2,—,3812.47
+—,Gourav Tanwar,Rishihood University,2,2,—,3791.0
+—,Tejas Tyagi,Rishihood University,2,2,—,3789.37
+—,Shyam Verma,Rishihood University,2,2,—,3755.64
+—,Stavan Somaiya,Ajeenkya DY Patil University,2,2,—,3592.36
+—,Arsh Aryan,Rishihood University,1,2,—,2000.0
+—,Jaydeep Biswas,S-VYASA University,2,3,—,2000.0
+—,Lucky,S-VYASA University,1,2,—,2000.0
+—,Manjushree Chabbi,S-VYASA University,1,2,—,2000.0
+—,Rahil Paliwal,Rishihood University,1,2,—,2000.0
+—,Ranvendra Pratap Singh,Rishihood University,1,1,—,2000.0
+—,Sangu Venkata Jitendra,S-VYASA University,1,2,—,2000.0
+—,Vinayak Pachauri,Rishihood University,1,1,—,2000.0
+—,Harsh Goyal,Rishihood University,1,1,—,1959.44
+—,Aditya Panchal,Ajeenkya DY Patil University,1,1,—,1940.09
+—,Nishant Ekka,Ajeenkya DY Patil University,1,1,—,1932.4
+—,Yuvraj Singh,Ajeenkya DY Patil University,1,1,—,1932.4
+—,Bhavya Aswani,Rishihood University,1,1,—,1922.39
+—,Krishna Dave,Rishihood University,1,1,—,1922.39
+—,Manjeet Sandhu,Rishihood University,1,1,—,1922.39
+—,Nipun Bishnoi,Rishihood University,1,1,—,1922.39
+—,Rakshit Malik,Rishihood University,1,1,—,1922.39
+—,Yug Rastogi,Rishihood University,1,1,—,1922.39
+—,Karunesh Mahra,Rishihood University,1,1,—,1913.73
+—,Vinayak Rastogi,Rishihood University,1,1,—,1913.73
+—,Kamlesh Patade,Rishihood University,1,1,—,1913.29
+—,Deepali Aggarwal,Rishihood University,1,1,—,1911.4
+—,Mayank Sharma,Rishihood University,1,1,—,1911.4
+—,N Abhishek Kumar,Rishihood University,1,1,—,1911.4
+—,Preet Kalra,Rishihood University,1,1,—,1911.4
+—,Rishiraj Singh Rathore,Rishihood University,1,1,—,1911.4
+—,Sushant Yadav,Rishihood University,1,1,—,1911.4
+—,Varun Adwani,Rishihood University,1,1,—,1911.4
+—,Vikrant Yadav,Rishihood University,1,1,—,1911.4
+—,Abhijeet Saini,Rishihood University,1,1,—,1910.58
+—,Aman Verma,Ajeenkya DY Patil University,1,1,—,1910.58
+—,Bhavay Goyal,Rishihood University,1,1,—,1910.58
+—,Kshitiz Behera,Ajeenkya DY Patil University,1,1,—,1910.58
+—,Ritik Yadav,Rishihood University,1,1,—,1910.58
+—,Sachin Jaiswal,Rishihood University,1,1,—,1910.58
+—,Arjun Singh,Rishihood University,1,1,—,1910.1
+—,Khushi Madan,Rishihood University,1,1,—,1910.1
+—,Saksham Chauhan,Rishihood University,1,1,—,1910.1
+—,Sourav Dahiya,Ajeenkya DY Patil University,1,1,—,1910.1
+—,Kishan Sah,Rishihood University,1,1,—,1905.73
+—,Ritesh Sinha,Rishihood University,1,1,—,1905.73
+—,Swayam Kothari,Ajeenkya DY Patil University,1,1,—,1905.73
+—,Akshit Vats,Rishihood University,1,1,—,1902.24
+—,Anukalp Kumar,Rishihood University,1,1,—,1902.24
+—,Rusheel Chandra Reddy,Rishihood University,1,1,—,1902.24
+—,Sarvesh Kumar,Rishihood University,1,1,—,1902.24
+—,Utkarsh Singh,Rishihood University,1,1,—,1902.24
+—,Aadishree Joshi,S-VYASA University,1,1,—,1898.95
+—,Aayush RAJ,S-VYASA University,1,1,—,1898.95
+—,Abdul Khan,S-VYASA University,1,1,—,1898.95
+—,Abhay Tomar,S-VYASA University,1,1,—,1898.95
+—,Abhijay Pillai,S-VYASA University,1,1,—,1898.95
+—,Aditya Jha,S-VYASA University,1,1,—,1898.95
+—,Aditya Tulo,S-VYASA University,1,1,—,1898.95
+—,Aksh Wagle,S-VYASA University,1,1,—,1898.95
+—,Akshat Singh,S-VYASA University,1,1,—,1898.95
+—,Aman Gupta,S-VYASA University,1,1,—,1898.95
+—,Anindita Das,S-VYASA University,1,1,—,1898.95
+—,Anuj Preet,S-VYASA University,1,1,—,1898.95
+—,Anurag,S-VYASA University,1,1,—,1898.95
+—,Archisman Pal,S-VYASA University,1,1,—,1898.95
+—,Arham Safdari,S-VYASA University,1,1,—,1898.95
+—,Armaan Saxena,S-VYASA University,1,1,—,1898.95
+—,Arnav Sharma,S-VYASA University,1,1,—,1898.95
+—,Aryan Chauhan,S-VYASA University,1,1,—,1898.95
+—,Aryan Patel,S-VYASA University,1,1,—,1898.95
+—,Aryan Sirohi,S-VYASA University,1,1,—,1898.95
+—,Asmit Bairagi,S-VYASA University,1,1,—,1898.95
+—,Atharva Gavhane,S-VYASA University,1,1,—,1898.95
+—,Ayaan Khan,S-VYASA University,1,1,—,1898.95
+—,Ayush Nagar,S-VYASA University,1,1,—,1898.95
+—,Ayush Raj,S-VYASA University,1,1,—,1898.95
+—,Baibhav Kumar,S-VYASA University,1,1,—,1898.95
+—,Balaji Bonthu,S-VYASA University,1,1,—,1898.95
+—,Bhavesh Sharma,S-VYASA University,1,1,—,1898.95
+—,Bhavyarajsinh Amala,S-VYASA University,1,1,—,1898.95
+—,Bibhukesh Medhi,S-VYASA University,1,1,—,1898.95
+—,Bikramjiit SIL,S-VYASA University,1,1,—,1898.95
+—,Chinmaya S,S-VYASA University,1,1,—,1898.95
+—,Dhashami J,S-VYASA University,1,1,—,1898.95
+—,Dikshit Khater,S-VYASA University,1,1,—,1898.95
+—,Dilreet Kaur,S-VYASA University,1,1,—,1898.95
+—,Divyansh Pal,S-VYASA University,1,1,—,1898.95
+—,Hari Sri SasiVathana,S-VYASA University,1,1,—,1898.95
+—,Harsh Pandey,S-VYASA University,1,1,—,1898.95
+—,Harshita Dhakad,S-VYASA University,1,1,—,1898.95
+—,Himanshu Giri,S-VYASA University,1,1,—,1898.95
+—,Hridhin Varkey Joseph,S-VYASA University,1,1,—,1898.95
+—,Ishan Kumar,S-VYASA University,1,1,—,1898.95
+—,J Srushti,S-VYASA University,1,1,—,1898.95
+—,Jaidev Basandrai,S-VYASA University,1,1,—,1898.95
+—,Jatin Kumar,Rishihood University,1,1,—,1898.95
+—,K Chethan Chowdhary,S-VYASA University,1,1,—,1898.95
+—,Kakul Deka,S-VYASA University,1,1,—,1898.95
+—,Kartik Sharma,S-VYASA University,1,1,—,1898.95
+—,Kavin Rau,S-VYASA University,1,1,—,1898.95
+—,Khushi Batra,Rishihood University,1,1,—,1898.95
+—,Lasya Krishna Kuncham,S-VYASA University,1,1,—,1898.95
+—,Lay Shah,S-VYASA University,1,1,—,1898.95
+—,Mahaswi Kuttuboyina,S-VYASA University,1,1,—,1898.95
+—,Manasvini Punuru,S-VYASA University,1,1,—,1898.95
+—,Manav Dugar,S-VYASA University,1,1,—,1898.95
+—,Mohit Dangi,S-VYASA University,1,1,—,1898.95
+—,Moksh Bansal,Rishihood University,1,1,—,1898.95
+—,Naincy Meravi,S-VYASA University,1,1,—,1898.95
+—,Namah Omprakash,S-VYASA University,1,1,—,1898.95
+—,Nayan RAJ,S-VYASA University,1,1,—,1898.95
+—,Neeraj Kumar Sahu,S-VYASA University,1,1,—,1898.95
+—,Nihar Akshai Bandi,S-VYASA University,1,1,—,1898.95
+—,Nikhil Aryan,S-VYASA University,1,1,—,1898.95
+—,Nishpray Singh Thakur,S-VYASA University,1,1,—,1898.95
+—,Nithyaraj Mudhaliyar,S-VYASA University,1,1,—,1898.95
+—,Om Shukla,S-VYASA University,1,1,—,1898.95
+—,Pankaj Kumar,S-VYASA University,1,1,—,1898.95
+—,Prantik Sarkar,S-VYASA University,1,1,—,1898.95
+—,Prashant Saini,S-VYASA University,1,1,—,1898.95
+—,Prateek Gupta,S-VYASA University,1,1,—,1898.95
+—,Prince Sharma,S-VYASA University,1,1,—,1898.95
+—,Raaj Patre,S-VYASA University,1,1,—,1898.95
+—,Raghav Sharma,S-VYASA University,1,1,—,1898.95
+—,Rajnish Pathak,S-VYASA University,1,1,—,1898.95
+—,Ravi Sharma,S-VYASA University,1,1,—,1898.95
+—,Ruthvik V,S-VYASA University,1,1,—,1898.95
+—,Sagir Alam Sk,S-VYASA University,1,1,—,1898.95
+—,Sainy Verma,S-VYASA University,1,1,—,1898.95
+—,Sathwik K,S-VYASA University,1,1,—,1898.95
+—,Saurabh Kumar,S-VYASA University,1,1,—,1898.95
+—,Shaaz Hemani,S-VYASA University,1,1,—,1898.95
+—,Shambhavi Sharma,S-VYASA University,1,1,—,1898.95
+—,Shaurya Agarwal,S-VYASA University,1,1,—,1898.95
+—,Shivam Kumar,S-VYASA University,1,1,—,1898.95
+—,Sk Firdous,S-VYASA University,1,1,—,1898.95
+—,Snehal Shankargouda Nidgundi,S-VYASA University,1,1,—,1898.95
+—,Soham Muhury,S-VYASA University,1,1,—,1898.95
+—,Srija Sikly,S-VYASA University,1,1,—,1898.95
+—,Srishti,S-VYASA University,1,1,—,1898.95
+—,Sujal Swaraj,S-VYASA University,1,1,—,1898.95
+—,Sushant Kumar,S-VYASA University,1,1,—,1898.95
+—,Swastik Katiyar,S-VYASA University,1,1,—,1898.95
+—,Trishan Ghosh,S-VYASA University,1,1,—,1898.95
+—,Twinkle,S-VYASA University,1,1,—,1898.95
+—,Umair Shaikh,S-VYASA University,1,1,—,1898.95
+—,Vaishnavi Choudhary,S-VYASA University,1,1,—,1898.95
+—,Varun Pateriya,S-VYASA University,1,1,—,1898.95
+—,Vedish Bansal,S-VYASA University,1,1,—,1898.95
+—,Venkata Vishaleswar Reddy Kandula,S-VYASA University,1,1,—,1898.95
+—,Vidhaath Pillai,Rishihood University,1,1,—,1898.95
+—,Vinay Bichchali,S-VYASA University,1,1,—,1898.95
+—,Vineesh SS,S-VYASA University,1,1,—,1898.95
+—,Viraat Chandel,S-VYASA University,1,1,—,1898.95
+—,Yash Panchal,S-VYASA University,1,1,—,1898.95
+—,Yashwanth Raj,S-VYASA University,1,1,—,1898.95
+—,Hardik Hathwal,Rishihood University,1,1,—,1890.51
+—,Vaibhav Jindal,Rishihood University,1,1,—,1890.51
+—,Anshul Pandey,Rishihood University,1,1,—,1890.07
+—,Prathviraj Singh Bhadouriya,Ajeenkya DY Patil University,1,1,—,1890.07
+—,Amogh Bhardwaj,Rishihood University,1,1,—,1880.42
+—,Ashish Singh,Rishihood University,1,1,—,1880.42
+—,Khushi Jain,Rishihood University,1,1,—,1880.42
+—,Kushal Yadav,Rishihood University,1,1,—,1880.42
+—,Lakshya Yadav,Rishihood University,1,1,—,1880.42
+—,Pragam Sharma,Rishihood University,1,1,—,1880.42
+—,Tanmay Singh,Rishihood University,1,1,—,1880.42
+—,Aditya Raj,Rishihood University,1,1,—,1877.87
+—,Akshat Kumar,Rishihood University,1,1,—,1877.87
+—,Navodit Sharma,Rishihood University,1,1,—,1877.87
+—,Siddhant Srivastava,Rishihood University,1,1,—,1877.87
+—,Ayush Gupta,Ajeenkya DY Patil University,1,1,—,1876.08
+—,Harsha Gonela,Rishihood University,1,1,—,1876.08
+—,Riya Garg,Rishihood University,1,1,—,1876.08
+—,Saksham Narotra,Rishihood University,1,1,—,1876.08
+—,Aaryan Yadav,Rishihood University,1,1,—,1875.22
+—,Aryan Deshmukh,Ajeenkya DY Patil University,1,1,—,1875.22
+—,Gauransh Gautam,Rishihood University,1,1,—,1875.22
+—,Manav Swarnkar,Rishihood University,1,1,—,1875.22
+—,Srijan Kumar,Rishihood University,1,1,—,1875.22
+—,Aditya Harsh,Rishihood University,1,1,—,1861.19
+—,Agrim Malhotra,Rishihood University,1,1,—,1861.19
+—,Anant Raj,Rishihood University,1,1,—,1861.19
+—,Pratham Malhotra,Rishihood University,1,1,—,1861.19
+—,Samarth Khera,Rishihood University,1,1,—,1861.19
+—,Namya Sahu,S-VYASA University,1,1,—,1369.52
