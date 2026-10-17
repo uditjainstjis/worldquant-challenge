@@ -635,5 +635,96 @@
    "note": "MILESTONE entry (lowest self-corr). 8-lane sibling composite."
   },
   "status": "submitted:bl8VV5Qq:2026-10-16"
+ },
+ {
+  "tag": "SHELF:eychg_nv_term_iv30_d20",
+  "expr": "group_rank(est_eps/close-ts_mean(est_eps/close,60),subindustry)+group_rank(ts_backfill(news_eod_vwap/close,20),subindustry)+group_rank(ts_mean(implied_volatility_call_60-implied_volatility_call_30,10),subindustry)+group_rank(ts_mean(implied_volatility_call_30-implied_volatility_put_30,10),subindustry)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 20,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "alpha_id": "npAo5KkE",
+  "measured": {
+   "date": "2026-10-17",
+   "sharpe": 1.53,
+   "fitness": 1.12,
+   "turnover": 0.12,
+   "pnlcorr_max": 0.301,
+   "vs": "kqJb5XOL",
+   "others": "A1vMp7Al 0.249, 3qj3WJgX 0.247",
+   "note": "SUBMITTED 10-17 ~04:25 EDT (13:55 IST) as second-of-day. Checks all PASS: 1.53/1.12, TO 0.1185, sub-universe 0.79/0.66, SELF_CORRELATION 0.299 (mine 0.301). Lowest in-window value so far.",
+   "platform_selfcorr": 0.299
+  },
+  "status": "submitted:npAo5KkE:2026-10-17"
+ },
+ {
+  "tag": "SHELF:nv_iv30_d25",
+  "expr": "group_rank(ts_backfill(news_eod_vwap/close,20),subindustry)+group_rank(ts_mean(implied_volatility_call_30-implied_volatility_put_30,10),subindustry)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 25,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "alpha_id": "pwvEkoAo",
+  "measured": {
+   "date": "2026-10-17",
+   "sharpe": 1.6,
+   "fitness": 1.04,
+   "turnover": 0.13,
+   "pnlcorr_max": 0.422,
+   "vs": "RRAL7X6b",
+   "others": "A1vMp7Al 0.418, kqJb5XOL 0.367",
+   "note": "2-lane uncrowded; passes all checks; backup first-of-day for 10-18 (bar 0.68). Sibling of npAo5KkE -> measure vs it before use."
+  },
+  "status": "ready"
+ },
+ {
+  "tag": "SHELF:eychg_nv_iv30_d20",
+  "expr": "group_rank(est_eps/close-ts_mean(est_eps/close,60),subindustry)+group_rank(ts_backfill(news_eod_vwap/close,20),subindustry)+group_rank(ts_mean(implied_volatility_call_30-implied_volatility_put_30,10),subindustry)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 20,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "alpha_id": "9qEK3nz9",
+  "measured": {
+   "date": "2026-10-17",
+   "sharpe": 1.46,
+   "fitness": 1.03,
+   "turnover": 0.12,
+   "pnlcorr_max": 0.411,
+   "vs": "RRAL7X6b",
+   "others": "kqJb5XOL 0.352",
+   "note": "passes all checks; sibling of npAo5KkE (shares 3 of 4 terms) -> likely 0.8+ vs it; backup only."
+  },
+  "status": "ready-sibling"
  }
 ]
