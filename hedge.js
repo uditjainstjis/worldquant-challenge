@@ -90,8 +90,10 @@ if (typeof window !== 'undefined') {
         catch (e) { return { err: t.slice(0, 120) }; } }
       await new Promise(res => setTimeout(res, 3000)); }
     return { pending: true }; };
-  window.__opts = async () => { const r = await fetch(API + '/simulations', { method: 'OPTIONS', credentials: 'include' }); const j = await r.json();
+  window.__opts = async () => { const r = await fetch(API + '/simulations', { method: 'OPTIONS', credentials: 'include' }); const t = await r.text();
+    let j = null; try { j = JSON.parse(t); } catch (e) { return { raw: t.slice(0, 600) }; }
     const s = j.actions && j.actions.POST && j.actions.POST.settings && j.actions.POST.settings.children; const out = {};
     if (s) for (const [k, v] of Object.entries(s)) out[k] = (v.choices || []).map(c => (c && c.value !== undefined) ? c.value : c).slice(0, 40);
+    if (!Object.keys(out).length) { localStorage.setItem('wq_opts_raw', t.slice(0, 20000)); return { raw: t.slice(0, 600) }; }
     return out; };
 }
