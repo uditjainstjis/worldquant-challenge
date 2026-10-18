@@ -726,5 +726,36 @@
    "note": "passes all checks; sibling of npAo5KkE (shares 3 of 4 terms) -> likely 0.8+ vs it; backup only."
   },
   "status": "ready-sibling"
+ },
+ {
+  "tag": "SHELF:dta_ivz20_d20",
+  "expr": "group_rank(ts_backfill(deferred_tax_assets_net_value,60)/assets,subindustry)+group_rank(ts_zscore(ts_backfill(implied_volatility_mean_30,5),20),subindustry)",
+  "settings": {
+   "instrumentType": "EQUITY",
+   "region": "USA",
+   "universe": "TOP3000",
+   "delay": 1,
+   "decay": 20,
+   "neutralization": "SUBINDUSTRY",
+   "truncation": 0.08,
+   "pasteurization": "ON",
+   "unitHandling": "VERIFY",
+   "nanHandling": "OFF",
+   "language": "FASTEXPR",
+   "visualization": false
+  },
+  "alpha_id": "xA1PJpWl",
+  "measured": {
+   "date": "2026-10-18",
+   "sharpe": 1.54,
+   "fitness": 1.03,
+   "turnover": 0.097,
+   "pnlcorr_max": 0.392,
+   "vs": "786zkWWv",
+   "others": "QPKbbpbG 0.352, QPKq3a2Q 0.297",
+   "platform_selfcorr": 0.4055,
+   "note": "NEW FAMILY: deferred-tax-assets/assets (untilted, 1.26/0.70 alone, 0.42 vs QPKbbpbG) + IV30 20d z-score (1.28/0.60 alone, 0.35 vs XgJ). Submitted 10-18 13:08 IST as first-of-day after ~95 sims found no passer below 0.39."
+  },
+  "status": "submitted:xA1PJpWl:2026-10-18"
  }
 ]
