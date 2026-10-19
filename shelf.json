@@ -757,5 +757,22 @@
    "note": "NEW FAMILY: deferred-tax-assets/assets (untilted, 1.26/0.70 alone, 0.42 vs QPKbbpbG) + IV30 20d z-score (1.28/0.60 alone, 0.35 vs XgJ). Submitted 10-18 13:08 IST as first-of-day after ~95 sims found no passer below 0.39."
   },
   "status": "submitted:xA1PJpWl:2026-10-18"
+ },
+ {
+  "tag": "B2:pair_guard",
+  "alpha_id": "KPmbm0X8",
+  "status": "submitted:KPmbm0X8:2026-10-19",
+  "expr": "0.935*G(H(2rjRxQbJ nv_iv30 PW expr,40)) - 1.000*G(H(season2y LL5bQE81 expr,20)); H=scale(group_neutralize(ts_decay_linear(x,d),subindustry)), G=if_else(is_nan(x),0,x); decay 0 SUBINDUSTRY TOP3000",
+  "measured": {
+   "date": "2026-10-19",
+   "sharpe": 1.43,
+   "fitness": 1.01,
+   "turnover": 0.1089,
+   "returns": 0.0629,
+   "platform_selfcorr": 0.2004,
+   "vs": "QPKq3a2Q",
+   "min": -0.1061,
+   "note": "positive-weight blend of low-corr components; the NaN guard was required (unguarded twin QPYaK37K S0.99)"
+  }
  }
 ]
