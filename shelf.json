@@ -725,7 +725,7 @@
    "others": "kqJb5XOL 0.352",
    "note": "passes all checks; sibling of npAo5KkE (shares 3 of 4 terms) -> likely 0.8+ vs it; backup only."
   },
-  "status": "ready-sibling"
+  "status": "dead:selfcorr=0.748 vs npAo5KkE:2026-10-18"
  },
  {
   "tag": "SHELF:dta_ivz20_d20",
