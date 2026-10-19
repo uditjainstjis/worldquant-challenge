@@ -131,3 +131,21 @@ Today's ask was the lowest possible self-correlation. About 100 simulations late
 5. **Today's alpha**: `group_rank(ts_backfill(deferred_tax_assets_net_value,60)/assets) + group_rank(ts_zscore(ts_backfill(implied_volatility_mean_30,5),20))`, decay 20, subindustry. Sharpe 1.54, fitness 1.03, self-correlation 0.4055. The two terms are from datasets no active combines, and the pair passes where either alone fails fitness.
 
 Open question for the next lesson: the board's uniquenessScore rose again (0.71 -> 0.73) after two uncrowded-data submissions, so it is not our own self-correlation and not "textbook data". Treat it as unknown until a controlled test isolates it.
+
+## Lesson 21 (2026-10-19) — mixing beats hedging: how we got self-correlation down to 0.20 and 0.13
+
+Udit asked for submissions "into 0.0 something". About 70 simulations later we have two new alphas: **0.2004 and 0.1255**, our lowest ever (the previous best was 0.2331). What happened:
+
+1. **The self-correlation check takes the SIGNED maximum.** Our alpha 2rj7GQk8 is -0.175 correlated with one alpha and +0.1255 with another; the submit check printed 0.1255. Strong negative correlation costs nothing, so a component that moves *against* our existing alphas is a free gift.
+2. **Style factors were not the cause (bet lost).** Market, beta, volatility and momentum explain only 15% (median) of our alphas' daily PnL. Stripping them from an alpha left it 0.94 correlated with the original. The overlap is in what the signals *say*, not in their risk factors.
+3. **Subtracting look-alike alphas ("hedging") does not survive the simulator.** On paper, alpha minus 0.8 x its near-twin had Sharpe 1.6 and correlation 0.17. Simulated: Sharpe 0.78 and concentrated weights. The platform rescales your total position to full size every day; when two near-identical signals cancel, the small leftover gets blown up by noise.
+4. **Adding unrelated signals (a "blend") does survive the simulator.** The blend's real PnL matched the paper prediction at 0.96 correlation, but only after one fix: wrap each sparse piece in `if_else(is_nan(x), 0, x)`. Without that, a missing value in one piece deletes the stock for every piece (Sharpe 0.99 instead of 1.43).
+5. **Today's two alphas:**
+   - **KPmbm0X8**: the news/implied-vol signal plus *minus* two-year seasonality. Seasonality reversed in 2019-23, and that reversed version runs against our implied-vol alphas, so it cancels their correlation. Sharpe 1.43, fitness 1.01, correlation 0.2004.
+   - **2rj7GQk8**: small-cap intraday reversal plus a news-minutes change signal, run in TOP1000 instead of TOP3000. Sharpe 2.03, fitness 1.31, correlation 0.1255.
+6. **The checks that bite are fitness and sub-universe Sharpe, not plain Sharpe.**
+   - Fitness = Sharpe x sqrt(returns / turnover), so fast signals such as implied-vol change fail it even with Sharpe 1.5.
+   - The sub-universe check re-scores the alpha on the 1000 biggest stocks. Small-cap signals fail it; running the alpha in TOP1000 both passes it and roughly halves the correlation with our TOP3000 alphas.
+   - Dropping the short-interest piece lifted the TOP1000 blend from Sharpe 1.57 to 2.03.
+
+Next for near-zero: blends only work with **new** pieces. Each new alpha "uses up" its components, because any later blend containing them correlates with it. So the factory has to keep producing fresh, weakly-correlated components, in 2-3 families per day.

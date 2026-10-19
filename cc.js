@@ -1,5 +1,5 @@
 // pnl-corr helpers; inject with tick.js after every navigation. Cache in localStorage so reloads keep it.
-window.__ACT=['XgJ5e7w5','A1vMp7Al','QPKq3a2Q','vR2xOrRz','3qVAPoYQ','786zkWWv','d51bjNxX','QPKbbpbG','KPrr6rr8','9qWW69M9','d51v5wpJ','VkdvzZa5','LL5Vgolv','RRAL7X6b','kqJb5XOL','bl8VV5Qq','3qj3WJgX','npAo5KkE','xA1PJpWl'];
+window.__ACT=['XgJ5e7w5','A1vMp7Al','QPKq3a2Q','vR2xOrRz','3qVAPoYQ','786zkWWv','d51bjNxX','QPKbbpbG','KPrr6rr8','9qWW69M9','d51v5wpJ','VkdvzZa5','LL5Vgolv','RRAL7X6b','kqJb5XOL','bl8VV5Qq','3qj3WJgX','npAo5KkE','xA1PJpWl','KPmbm0X8','2rj7GQk8'];
 window.__getpnl = async id => { const c=localStorage.getItem('wq_pnl_'+id); if (c) return JSON.parse(c);
   let j=null; for (let i=0;i<6;i++){ const r=await fetch('https://api.worldquantbrain.com/alphas/'+id+'/recordsets/pnl',{credentials:'include'}); const t=await r.text(); if(t.length>20){ j=JSON.parse(t); break;} await new Promise(res=>setTimeout(res,2000)); }
   if(!j) return null;
