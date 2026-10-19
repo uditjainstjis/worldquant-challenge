@@ -774,5 +774,23 @@
    "min": -0.1061,
    "note": "positive-weight blend of low-corr components; the NaN guard was required (unguarded twin QPYaK37K S0.99)"
   }
+ },
+ {
+  "tag": "D3:km_T1000_nosi",
+  "alpha_id": "2rj7GQk8",
+  "status": "submitted:2rj7GQk8:2026-10-19",
+  "expr": "0.559*H(kqJ5VMjk: -(gr(close/open-1)+gr(close/vwap-1))*rank(-adv20)*rank(ts_std_dev(returns,20)), d5) + 0.389*G(H(gr(ts_backfill(news_mins_10_chg,20)), d20)); universe TOP1000, decay 0, SUBINDUSTRY",
+  "measured": {
+   "date": "2026-10-19",
+   "sharpe": 2.03,
+   "fitness": 1.31,
+   "turnover": 0.3203,
+   "returns": 0.133,
+   "subU": "1.7/1.08",
+   "platform_selfcorr": 0.1255,
+   "vs": "VkdvzZa5",
+   "min": -0.1753,
+   "note": "SUBMIT CHECK = 0.1255 while |min| = 0.1753 -> the SELF_CORRELATION check is the SIGNED max (confirmed on the value that feeds JBL)."
+  }
  }
 ]
