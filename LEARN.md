@@ -149,3 +149,6 @@ Udit asked for submissions "into 0.0 something". About 70 simulations later we h
    - Dropping the short-interest piece lifted the TOP1000 blend from Sharpe 1.57 to 2.03.
 
 Next for near-zero: blends only work with **new** pieces. Each new alpha "uses up" its components, because any later blend containing them correlates with it. So the factory has to keep producing fresh, weakly-correlated components, in 2-3 families per day.
+
+## Lesson 22 (2026-10-20): low correlation is cheap, fitness is not
+Mixing seven weak, unrelated signals gave our lowest-ever self-correlation (0.04-0.07) at Sharpe 1.5-1.8 — and failed the fitness check (0.52-0.63). Fitness = Sharpe × sqrt(returns / turnover). Blending many weak legs cancels their risk, so the return per dollar falls to ~4%/yr; the check needs ~8%+ at normal turnover. A near-zero alpha has to be built from a few STRONG legs (high return per dollar) that happen to be unrelated to the book, not from many weak ones.

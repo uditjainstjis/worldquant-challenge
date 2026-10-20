@@ -806,5 +806,53 @@
    "vs": "d51v5wpJ",
    "pred_mx": 0.2
   }
+ },
+ {
+  "tag": "BLEND7:t0.05",
+  "alpha_id": "Vkd7961V",
+  "status": "research:fails-fitness",
+  "measured": {
+   "sharpe": 1.78,
+   "fitness": 0.63,
+   "selfcorr_platform": 0.0659,
+   "fails": "LOW_FITNESS,LOW_SUB_UNIVERSE 0.66/0.77",
+   "date": "2026-10-20"
+  }
+ },
+ {
+  "tag": "BLEND7:t0.05_hump0.0001",
+  "alpha_id": "j2ejb25Q",
+  "status": "research:fails-fitness",
+  "measured": {
+   "sharpe": 1.77,
+   "fitness": 0.71,
+   "turnover": 0.265,
+   "fails": "LOW_FITNESS,LOW_SUB_UNIVERSE",
+   "date": "2026-10-20"
+  }
+ },
+ {
+  "tag": "BLEND7:t0.05_hump0.0003",
+  "alpha_id": "MP07RYAL",
+  "status": "research:fails-fitness",
+  "measured": {
+   "sharpe": 1.57,
+   "fitness": 0.71,
+   "turnover": 0.18,
+   "fails": "LOW_FITNESS only",
+   "date": "2026-10-20"
+  }
+ },
+ {
+  "tag": "BLEND7:t0.02",
+  "alpha_id": "npA7J7r3",
+  "status": "research:fails-fitness",
+  "measured": {
+   "sharpe": 1.47,
+   "fitness": 0.52,
+   "selfcorr_platform": 0.0428,
+   "fails": "LOW_FITNESS,LOW_SUB_UNIVERSE 0.12/0.64",
+   "date": "2026-10-20"
+  }
  }
 ]
