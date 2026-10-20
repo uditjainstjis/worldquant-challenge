@@ -877,5 +877,32 @@
    "sharpe": 1.92,
    "fitness": 1.16
   }
+ },
+ {
+  "tag": "BLEND6:fitU_t20",
+  "alpha_id": "A1QlKAzg",
+  "status": "submitted:A1QlKAzg:2026-10-20",
+  "measured": {
+   "date": "2026-10-20",
+   "selfcorr_platform": 0.2037
+  }
+ },
+ {
+  "tag": "BLEND4:slow4_t21",
+  "alpha_id": "gJWjzbPO",
+  "status": "submitted:gJWjzbPO:2026-10-20",
+  "measured": {
+   "date": "2026-10-20",
+   "selfcorr_platform": 0.2181
+  }
+ },
+ {
+  "tag": "BLEND5:t20_h1e4",
+  "alpha_id": "npA70JqM",
+  "status": "submitted:npA70JqM:2026-10-20",
+  "measured": {
+   "date": "2026-10-20",
+   "selfcorr_platform": 0.22
+  }
  }
 ]
