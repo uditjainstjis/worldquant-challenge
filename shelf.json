@@ -695,7 +695,7 @@
    "others": "A1vMp7Al 0.418, kqJb5XOL 0.367",
    "note": "2-lane uncrowded; passes all checks; backup first-of-day for 10-18 (bar 0.68). Sibling of npAo5KkE -> measure vs it before use."
   },
-  "status": "ready"
+  "status": "backup:selfcorr~0.505 vs KPmbm0X8 (10-20 local)"
  },
  {
   "tag": "SHELF:eychg_nv_iv30_d20",
@@ -791,6 +791,20 @@
    "vs": "VkdvzZa5",
    "min": -0.1753,
    "note": "SUBMIT CHECK = 0.1255 while |min| = 0.1753 -> the SELF_CORRELATION check is the SIGNED max (confirmed on the value that feeds JBL)."
+  }
+ },
+ {
+  "tag": "BLEND:ivgz_epsrev_clv_rw_dec3",
+  "alpha_id": "N1e71Jgp",
+  "status": "submitted:N1e71Jgp:2026-10-20",
+  "measured": {
+   "date": "2026-10-20",
+   "sharpe": 1.93,
+   "fitness": 1.03,
+   "turnover": 0.2857,
+   "selfcorr_platform": 0.2175,
+   "vs": "d51v5wpJ",
+   "pred_mx": 0.2
   }
  }
 ]
