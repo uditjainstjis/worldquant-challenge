@@ -854,5 +854,28 @@
    "fails": "LOW_FITNESS,LOW_SUB_UNIVERSE 0.12/0.64",
    "date": "2026-10-20"
   }
+ },
+ {
+  "tag": "BLEND6:fit_t16",
+  "alpha_id": "d5KjAzlK",
+  "status": "submitted:d5KjAzlK:2026-10-20",
+  "measured": {
+   "date": "2026-10-20",
+   "sharpe": 2.14,
+   "fitness": 1.15,
+   "turnover": 0.1821,
+   "selfcorr_platform": 0.1897,
+   "vs": "QPKq3a2Q"
+  }
+ },
+ {
+  "tag": "BLEND6:fit_t16_hump",
+  "alpha_id": "2rjlbXe5",
+  "status": "dead:twin-of-d5KjAzlK",
+  "measured": {
+   "date": "2026-10-20",
+   "sharpe": 1.92,
+   "fitness": 1.16
+  }
  }
 ]
