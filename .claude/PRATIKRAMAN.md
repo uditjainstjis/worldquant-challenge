@@ -47,6 +47,10 @@ Would prove it wrong: if 60 rare probes give 0 fields with S≥0.8 and |book cor
 - G7 proxy found: IS = 2019-2023, BRAIN OS starts 2024 but all OS checks PENDING. 9 of 26 actives decayed in 2023 (L12m < 0.8). Gate new submissions at L12m >= 1.0.
 - Pool frontier depleted after 5 submissions: t0.23 now S2.07 (was 2.68). New sources are the only lever; 83 single-field probes gave 1 clean (p5).
 
+- Industry-level legs under MARKET neutralization are orthogonal by construction: ind_epsrev S0.70 (mx 0.27, book 0.04), ind_recchg S0.51 (mx 0.13, book -0.08), ind_p5 0.16, sec_ivc3 ~0. Weak alone, but they are the first legs whose correlation with the book is ~0 AND whose return is not the short of a held premium. Blends anchored on them (IB:) predicted S1.35-1.97 at mx 0.10-0.18.
+- Agent's anti-book tilts: every one is the short of a held premium (P1 -0.85, P3 -1.55, rows 1-3 ~0 or flipped-reversal). Rule: 'anti-book' must come from a different ORGANISATION of the cross-section (industry level, large-cap), not from reversing a signal.
+
 ## F. Reflection log
+- 10-21 13:22 · Found: G2 at -0.15-vs-every-active needs an S~5 source (shorting the book to -0.15 max costs ~2 S); told Udit, asked whether to restate G2 · Changed: stopped anti-book-tilt sims; moved to industry-level + large-cap legs.
 - 10-21 12:50 · Found: agent launched on G2 (committed-heretic brief); frontier depleted; fitness model wrong for low-R legs · Changed: L12m gate added; stop expecting ≤0.1 from the old pool.
 - 10-21 12:30 · Found: told Udit nothing about the goal board I wrote; fitness model badly optimistic on low-return legs · Changed: reply with goals now; stop trusting F~ above 1.2 for low-R mixes.
