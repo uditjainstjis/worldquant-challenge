@@ -1,8 +1,10 @@
 # PRATIKRAMAN — worldquant
 interval: 60m
 
-## Goal (Udit's words)
-"i need rank one it, u wokr autonomsly and get me" (10-01) · "make todays submissions, into 0.0 something" (10-19) · "submit today's alpha, it only goes in negative, u can do it" (10-20) · "set goals which are unreasonable ... not move below that" (10-21) · "hard hooks ... to not submit below our target" (10-21) → today's result: an ACTIVE alpha with platform self-corr ≤ 0.10 (hook-enforced), stretch ≤ −0.15.
+## Goal (Udit's words, verbatim)
+"i need rank one it, u wokr autonomsly and get me" (10-01) · "make todays submissions, into 0.0 something" (10-19) · "submit today's alpha, it only goes in negative, u can do it" (10-20) · "set goals which are unreasonable ... not move below that or push things (unless last hour if day dies for streak)" (10-21) · "so we have hard hooks or things to not submit below our target with us right" (10-21) · "achieve today's target" (10-21).
+### Claude's translation (mine, not his; he has not confirmed the number): submit bar = platform self-corr ≤ 0.10 for every Challenge submission, hook-enforced; stretch ≤ −0.15. Open question to Udit (asked 10-22 00:30): does the bar govern every Challenge submission, or only the correlation sheet?
+### Official scorer (read 10-21 23:58): Total = mean of country RANKS of (IS MERGE performance, uniqueness "original and diverse", submission days in past 60). Our row 10-21: rank 184/798, isScore 8731, uniq 0.74 (worst in top 100), 14 days.
 
 ## Factor map (counts from wq_results2 tags, 803 sims as of 10-21 20:05; "0" = untried)
 | factor | tried | best | untried cells |
@@ -19,7 +21,7 @@ interval: 60m
 | hedging against actives in PnL space | 2 (greedy 10-20, k-path 10-21) | S falls faster than corr: dead | — |
 | anti-book tilts / agent constructions | 19 | every one = short of a held premium | — |
 | regime gating | 3 | dead (book and p5 both high-vol earners) | — |
-| heretic forks (HA slow fundamentals / HB trade_when event-gated / HC vector_neut+between-group) | 3 complete (assetgrowth 0.29, netissue 0.38, turnover250 -0.29), 33 running 23:40 | — | results 00:21 |
+| heretic forks (HA slow fundamentals / HB trade_when event-gated / HC between-group, MARKET/INDUSTRY neutral) | 21 complete, 11 errors | ovn_vs_intra20 S1.20 ccp0.55; btw_ind_sector_epsy S1.15 ccp0.43; slow fundamentals |S|<=0.64; event gates |S|<=0.66 | SECTOR-neutral still 0; single-source alpha from a never-used dataset (uniqueness test) |
 | delay 0 | 5 | S0.18–0.65, TO>0.75; news12 absent at delay 0 — DEAD | — |
 | neutralization NONE/MARKET/SECTOR at stock level | 0 | — | SECTOR-neutral copies: between-subindustry bets, orthogonal by construction |
 | momentum 12/6/3-1 | 3 | S −0.02/−0.02/−0.52 — DEAD in 2019-23 | — |
