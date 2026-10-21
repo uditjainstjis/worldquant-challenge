@@ -10,7 +10,9 @@ PreToolUse : blocks every POST /alphas/<id>/submit unless that id has a record n
 Blackout 06:30-12:30 IST always (platform day flips inside it; STATE 10-19).
 Exception "unless last hour if day dies for streak" (Udit 10-21): 05:30-06:30 IST, no allowed submit yet for
   that ET day, no FAIL -> allowed above the bar, logged EXCEPTION.
-NOT covered: a Submit button clicked through the UI (no string to match). Rule: never submit by UI click.
+Chrome tool inputs: the word "submit" may appear ONLY inside the literal URL (dynamic API+'/submit', helpers, UI clicks -> blocked).
+The probe must poll until SELF_CORRELATION carries a numeric value: a PENDING entry has none (verified 10-21 transcript) -> no record.
+NOT covered: a Submit button clicked through the UI via coordinates. Rule: never submit by UI click.
 Test: python3 wq-gate.py selftest"""
 import json, os, re, sys
 from datetime import datetime, timedelta, timezone
@@ -55,7 +57,10 @@ def post(d):   # record the platform's own check response
 def pre(d):
     tool = d.get("tool_name", ""); ti = d.get("tool_input", {})
     inp = ti.get("command", "") if tool == "Bash" else json.dumps(ti)
-    ids = set(re.findall(r"/alphas/([A-Za-z0-9]{6,12})/submit", inp))
+    lit = re.findall(r"https://api\.worldquantbrain\.com/alphas/([A-Za-z0-9]{6,12})/submit", inp)
+    if tool != "Bash" and len(re.findall(r"submit", inp, re.I)) > len(lit):   # fail closed: no dynamic URLs, helpers or UI clicks
+        block("'submit' appears outside the literal https://api.worldquantbrain.com/alphas/<id>/submit URL; only that literal form is allowed")
+    ids = set(lit) if tool != "Bash" else set(re.findall(r"/alphas/([A-Za-z0-9]{6,12})/submit", inp))
     if not ids or "post" not in inp.lower(): return
     if tool == "Bash" and "worldquantbrain" not in inp.lower(): return
     if 390 <= hm < 750: block(f"blackout 06:30-12:30 IST (now {stamp}); the platform day flips inside it")
@@ -109,6 +114,8 @@ def selftest():
     run("post", chk("EEEEEEEE", 0.05, "FAIL"), "2026-10-23T14:00:00+05:30")
     t("10 FAIL check -> block", run("pre", sub("EEEEEEEE"), "2026-10-23T14:01:00+05:30")[0], 2)
     t("11 GET poll of /submit (no POST) -> pass through", run("pre", js("fetch('https://api.worldquantbrain.com/alphas/EEEEEEEE/submit')"))[0], 0)
+    t("12 dynamic URL POST -> block", run("pre", js("fetch(API+'/alphas/'+id+'/submit',{method:'POST'})"))[0], 2)
+    t("13 helper __submit(id) -> block", run("pre", js("__submit('AAAAAAAA')"))[0], 2)
     for r in res: print(*r)
     sys.exit(1 if any(r[1] == "FAIL" for r in res) else 0)
 
