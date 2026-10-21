@@ -1,0 +1,126 @@
+[
+ {
+  "tag": "HA:assetgrowth",
+  "expr": "-group_rank(ts_delta(assets,252)/ts_delay(assets,252), subindustry)",
+  "settings": {},
+  "predS": 1.1,
+  "predTO": 0.04,
+  "predF": 0.75,
+  "mechanism": "Asset-growth anomaly (Cooper-Gulen-Schill): YoY balance-sheet expansion predicts low returns; a CHANGE, not a level.",
+  "whyOrth": "Book holds sales/assets and debt/assets LEVELS and short reversal/news; YoY growth is a different stream, TO~0.04 so no AV booster exposure."
+ },
+ {
+  "tag": "HA:netissue",
+  "expr": "-group_rank(ts_delta(cap/close,252)/ts_delay(cap/close,252), subindustry)",
+  "settings": {},
+  "predS": 1.2,
+  "predTO": 0.05,
+  "predF": 0.85,
+  "mechanism": "Net share issuance (Pontiff-Woodgate): cap/close = shares outstanding; issuers underperform, buybacks outperform.",
+  "whyOrth": "No active touches share count; corporate-finance timing is unrelated to analyst flags, IV, or 3-day reversal."
+ },
+ {
+  "tag": "HA:fwdroa_resid",
+  "expr": "group_rank(regression_neut(regression_neut(est_eps*cap/(close*assets), est_eps/close), sales/assets), subindustry)",
+  "settings": {},
+  "predS": 1.0,
+  "predTO": 0.08,
+  "predF": 0.65,
+  "mechanism": "Forward ROA (expected earnings / assets) = profitability premium, residualized cross-sectionally on earnings yield and asset turnover.",
+  "whyOrth": "The two held parents (est_eps/close, sales/assets) are regressed out before ranking, so the residual is orthogonal to them by construction."
+ },
+ {
+  "tag": "HA:turnover250",
+  "expr": "-group_rank(ts_mean(volume/(cap/close),250), subindustry)",
+  "settings": {},
+  "predS": 1.0,
+  "predTO": 0.05,
+  "predF": 0.7,
+  "mechanism": "Turnover anomaly (Datar-Naik-Radcliffe): chronic high share turnover = attention/over-valuation, low returns; 250-day level.",
+  "whyOrth": "The book's AV booster is a 5/60-day abnormal-volume ratio (fast); a 250-day turnover LEVEL is a slow, mostly static tilt; its small negative size tilt is anti-book, which only helps the signed max."
+ },
+ {
+  "tag": "HA:amihud",
+  "expr": "group_rank(ts_mean(abs(returns)/(volume*vwap),250), subindustry)",
+  "settings": {},
+  "predS": 0.8,
+  "predTO": 0.05,
+  "predF": 0.55,
+  "mechanism": "Amihud illiquidity premium: long stocks with high |return| per dollar traded (within subindustry).",
+  "whyOrth": "Long-illiquid is the opposite of the book's rank(adv20)/AV tilt; expect NEGATIVE correlation with 10+ actives, which is free under signed max."
+ },
+ {
+  "tag": "HA:ltrev",
+  "expr": "-group_rank(ts_delay(ts_sum(returns,500),250), subindustry)",
+  "settings": {},
+  "predS": 0.9,
+  "predTO": 0.06,
+  "predF": 0.6,
+  "mechanism": "Long-term reversal (De Bondt-Thaler): returns from 3y-ago to 1y-ago, skipping the last year.",
+  "whyOrth": "Book reversal is 3-day; 1-3y reversal is a distinct horizon with near-zero daily overlap."
+ },
+ {
+  "tag": "HA:seasonal",
+  "expr": "group_rank(ts_delay(ts_mean(returns,21),241)+ts_delay(ts_mean(returns,21),493)+ts_delay(ts_mean(returns,21),745), subindustry)",
+  "settings": {
+   "decay": 20
+  },
+  "predS": 0.9,
+  "predTO": 0.2,
+  "predF": 0.5,
+  "mechanism": "Heston-Sadka return seasonality: same calendar month 1, 2, 3 years ago predicts this month.",
+  "whyOrth": "Calendar-lagged returns share nothing with any contemporaneous field; orthogonal by construction."
+ },
+ {
+  "tag": "HA:dispersion",
+  "expr": "-group_rank((anl4_afv4_eps_high-anl4_afv4_eps_low)/abs(anl4_afv4_eps_mean), subindustry)",
+  "settings": {},
+  "predS": 1.0,
+  "predTO": 0.1,
+  "predF": 0.65,
+  "mechanism": "Diether-Malloy-Scherbina: analyst forecast dispersion (high-low range / |mean|) predicts low returns (short-sale constrained optimism).",
+  "whyOrth": "21 actives use the eps_mean LEVEL or its short change; the normalized RANGE is a second moment, cross-sectionally ~uncorrelated with the level rank."
+ },
+ {
+  "tag": "HA:coverage",
+  "expr": "-group_rank(anl4_afv4_eps_number, subindustry)",
+  "settings": {},
+  "predS": 0.7,
+  "predTO": 0.02,
+  "predF": 0.5,
+  "mechanism": "Neglected-firm effect: fewer analysts covering = higher expected return; near-static tilt like the country-code probe (S0.8 at TO0.018).",
+  "whyOrth": "Coverage count is static; its only shared exposure is a negative size tilt (anti-book), harmless under signed max."
+ },
+ {
+  "tag": "HA:accruals",
+  "expr": "-group_rank((income-cashflow_op)/assets, subindustry)",
+  "settings": {},
+  "unverified": true,
+  "predS": 1.0,
+  "predTO": 0.06,
+  "predF": 0.65,
+  "mechanism": "Sloan accruals: earnings not backed by operating cash flow revert.",
+  "whyOrth": "Cash-vs-accrual quality is untouched by every active; slow quarterly updates."
+ },
+ {
+  "tag": "HA:capex",
+  "expr": "-group_rank(ts_delta(capex,252)/ts_delay(assets,252), subindustry)",
+  "settings": {},
+  "unverified": true,
+  "predS": 0.8,
+  "predTO": 0.06,
+  "predF": 0.55,
+  "mechanism": "Abnormal capital investment (Titman-Wei-Xie): YoY capex increase scaled by assets predicts low returns.",
+  "whyOrth": "Investment flow is a change variable; the book holds balance-sheet ratio levels only."
+ },
+ {
+  "tag": "HA:slowstack5",
+  "expr": "-group_rank(ts_delta(assets,252)/ts_delay(assets,252), subindustry)-group_rank(ts_delta(cap/close,252)/ts_delay(cap/close,252), subindustry)-group_rank(ts_mean(volume/(cap/close),250), subindustry)-group_rank(ts_delay(ts_sum(returns,500),250), subindustry)+group_rank(regression_neut(regression_neut(est_eps*cap/(close*assets), est_eps/close), sales/assets), subindustry)",
+  "settings": {},
+  "predS": 1.6,
+  "predTO": 0.06,
+  "predF": 1.0,
+  "mechanism": "Equal-weight stack of five verified slow legs; at the TO floor fitness is 2.83*S*sqrt(R), so sqrt-K Sharpe gain is NOT taxed by turnover.",
+  "whyOrth": "Every leg is a slow corporate-finance/liquidity/long-horizon stream the book does not hold; mutual leg correlations expected ~0.1-0.3."
+ }
+]

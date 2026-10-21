@@ -1,0 +1,154 @@
+[
+ {
+  "tag": "HB:gap_volclass",
+  "expr": "trade_when(abs((open/ts_delay(close,1)-1))>0.03, if_else(volume>2*adv20,1,-1)*(rank((open/ts_delay(close,1)-1))-0.5), ts_sum(abs((open/ts_delay(close,1)-1))>0.03,10)<1)",
+  "settings": {
+   "neutralization": "MARKET",
+   "decay": 3
+  },
+  "predS": 1.1,
+  "predTO": 0.25,
+  "predF": 0.7,
+  "mechanism": "gap>3%: with volume = informed -> continue; without volume = liquidity -> fade; hold 10d",
+  "whyOrth": "only ~5% of names/day carry positions and the volume-gap arm is anti-reversal; RRAL7X6b is always-on close/open"
+ },
+ {
+  "tag": "HB:iv_collapse_surprise",
+  "expr": "trade_when(ts_delta((implied_volatility_mean_10-implied_volatility_mean_60),1)<-0.03, group_rank(returns/ts_delay(implied_volatility_mean_10,1),subindustry)-0.5, ts_sum(ts_delta((implied_volatility_mean_10-implied_volatility_mean_60),1)<-0.03,20)<1)",
+  "settings": {
+   "decay": 5
+  },
+  "predS": 1.3,
+  "predTO": 0.15,
+  "predF": 0.9,
+  "mechanism": "earnings day found by term-structure collapse; PEAD sized by realized move / implied move, 20d hold",
+  "whyOrth": "no eps field, no level; positions exist only post-event; drift stream, not reversal, not eps rank"
+ },
+ {
+  "tag": "HB:range_exp_clv",
+  "expr": "trade_when((((high-low)/close)>2*ts_mean(((high-low)/close),20))*(volume>1.5*adv20), group_rank((close-low)/(high-low),subindustry)-0.5, ts_sum((((high-low)/close)>2*ts_mean(((high-low)/close),20))*(volume>1.5*adv20),5)<1)",
+  "settings": {
+   "neutralization": "MARKET",
+   "decay": 3
+  },
+  "predS": 0.9,
+  "predTO": 0.4,
+  "predF": 0.5,
+  "mechanism": "range-expansion + volume day: close location (CLV) continues (breakout bar), hold 5d",
+  "whyOrth": "gJWjzbPO holds -CLV on LOW volume; this is +CLV on expansion/high-volume days -> negative corr"
+ },
+ {
+  "tag": "HB:filing_fund_surprise",
+  "expr": "trade_when(abs(ts_delta(assets,1))>0, group_rank(ts_delta(sales/assets,1),subindustry)-0.5, ts_sum(abs(ts_delta(assets,1))>0,40)<1)",
+  "settings": {
+   "decay": 10
+  },
+  "predS": 0.8,
+  "predTO": 0.1,
+  "predF": 0.7,
+  "mechanism": "quarterly update day (assets changes) -> trade the CHANGE in asset turnover for 40d (fundamental momentum)",
+  "whyOrth": "3qVAPoYQ holds the LEVEL sales/assets x AV x adv20; a change stream re-entered 4x/yr shares little PnL"
+ },
+ {
+  "tag": "HB:min3pct_loss_cont",
+  "expr": "trade_when(minutes_to_3pct_loss>0, rank(minutes_to_3pct_loss)-1, ts_sum(minutes_to_3pct_loss>0,10)<1)",
+  "settings": {
+   "neutralization": "MARKET",
+   "decay": 5
+  },
+  "predS": 0.8,
+  "predTO": 0.2,
+  "predF": 0.6,
+  "mechanism": "news day with a 3% intraday loss: faster loss = more violent = continuation; short those names 10d",
+  "whyOrth": "p5 (akVxYxZw) is 5-min post-news sign; this fires only on loss events with a speed weight, short-only side"
+ },
+ {
+  "tag": "HB:breakout_52w",
+  "expr": "trade_when((close>ts_max(ts_delay(close,1),250))+(close<ts_min(ts_delay(close,1),250))>0, if_else(close>ts_max(ts_delay(close,1),250),1,-1)*rank(volume/adv20), ts_sum((close>ts_max(ts_delay(close,1),250))+(close<ts_min(ts_delay(close,1),250))>0,20)<1)",
+  "settings": {
+   "neutralization": "MARKET",
+   "decay": 5
+  },
+  "predS": 0.7,
+  "predTO": 0.15,
+  "predF": 0.5,
+  "mechanism": "52w high/low breach on volume -> anchoring underreaction, 20d hold",
+  "whyOrth": "unconditional momentum is dead (S~0) so no held momentum stream; breach days only"
+ },
+ {
+  "tag": "HB:news_sent_vs_price",
+  "expr": "trade_when(abs(pct_change_10min_post_news)>0, group_rank(mean_equity_sentiment_score,subindustry)-group_rank(pct_change_10min_post_news,subindustry), ts_sum(abs(pct_change_10min_post_news)>0,5)<1)",
+  "settings": {
+   "neutralization": "MARKET",
+   "decay": 3
+  },
+  "predS": 0.9,
+  "predTO": 0.4,
+  "predF": 0.5,
+  "mechanism": "news day: sentiment text vs 10-min price reaction disagreement -> price corrects toward sentiment, 5d",
+  "whyOrth": "the p5/p10 reaction enters with NEGATIVE sign (anti-akVxYxZw); sentiment leg unheld"
+ },
+ {
+  "tag": "HB:buzz_no_move",
+  "expr": "trade_when((ts_zscore(snt_buzz_ret,60)>2)*(abs(returns)<0.01), group_rank(scl12_sentvec,subindustry)-0.5, ts_sum((ts_zscore(snt_buzz_ret,60)>2)*(abs(returns)<0.01),5)<1)",
+  "settings": {
+   "neutralization": "MARKET",
+   "decay": 3
+  },
+  "predS": 0.7,
+  "predTO": 0.4,
+  "predF": 0.4,
+  "mechanism": "social buzz spike with no price move = delayed reaction; bet on sentiment direction 5d",
+  "whyOrth": "socialmedia12 fields are unheld; gate removes the days that overlap price-based book"
+ },
+ {
+  "tag": "HB:ivjump_skewchg",
+  "expr": "trade_when((ts_delta(log(implied_volatility_mean_30),1)>0.15)*(abs(returns)<0.01), group_rank(ts_delta(implied_volatility_call_30-implied_volatility_put_30,1),subindustry)-0.5, ts_sum((ts_delta(log(implied_volatility_mean_30),1)>0.15)*(abs(returns)<0.01),10)<1)",
+  "settings": {
+   "decay": 5
+  },
+  "predS": 0.9,
+  "predTO": 0.3,
+  "predF": 0.6,
+  "mechanism": "IV jumps while price flat = informed option demand; direction from same-day skew change, 10d",
+  "whyOrth": "N1e71Jgp is unconditional iv30 change; A1vMp7Al is skew60 level; this is skew30 CHANGE on jump days only"
+ },
+ {
+  "tag": "HB:pre_event_window",
+  "expr": "trade_when((implied_volatility_mean_10-implied_volatility_mean_60)>0.05, group_rank((implied_volatility_mean_10-implied_volatility_mean_60),subindustry), ts_delta((implied_volatility_mean_10-implied_volatility_mean_60),1)<-0.03)",
+  "settings": {
+   "decay": 3
+  },
+  "predS": 0.7,
+  "predTO": 0.3,
+  "predF": 0.4,
+  "mechanism": "inverted IV term structure = scheduled event ahead; earnings-announcement premium: long richest names until collapse",
+  "whyOrth": "term structure single was S-0.24 unconditional; window-only positions, exits at the event"
+ },
+ {
+  "tag": "HB:gap_confirmed",
+  "expr": "trade_when((abs((open/ts_delay(close,1)-1))>0.03)*((close/open-1)*(open/ts_delay(close,1)-1)>0), rank(close/ts_delay(close,1)-1)-0.5, ts_sum((abs((open/ts_delay(close,1)-1))>0.03)*((close/open-1)*(open/ts_delay(close,1)-1)>0),10)<1)",
+  "settings": {
+   "neutralization": "MARKET",
+   "decay": 3
+  },
+  "predS": 1.0,
+  "predTO": 0.25,
+  "predF": 0.6,
+  "mechanism": "gap that holds intraday (close moves with the gap) = confirmed information; continue 10d",
+  "whyOrth": "confirmed-gap continuation is the mirror of close/open reversal (RRAL7X6b, 2rj7GQk8) -> negative corr"
+ },
+ {
+  "tag": "HB:post_event_2d",
+  "expr": "trade_when(ts_delay(((abs((open/ts_delay(close,1)-1))>0.03)+(volume>3*adv20)),2)>0, rank(ts_sum(returns,2))-0.5, ts_sum(ts_delay(((abs((open/ts_delay(close,1)-1))>0.03)+(volume>3*adv20)),2)>0,10)<1)",
+  "settings": {
+   "neutralization": "MARKET",
+   "decay": 3
+  },
+  "predS": 0.8,
+  "predTO": 0.25,
+  "predF": 0.5,
+  "mechanism": "two days AFTER a gap/volume event, trade the sign of the post-event 2d return (second reaction), 10d",
+  "whyOrth": "skips day 0 entirely, so the day-0 reversal/p5 streams are not in the PnL"
+ }
+]

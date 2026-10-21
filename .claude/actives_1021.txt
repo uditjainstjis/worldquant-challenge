@@ -1,0 +1,30 @@
+# 28 ACTIVE alphas (2026-10-21 20:15 IST). Platform SELF_CORRELATION = SIGNED max PnL corr vs these. Submit bar: sc <= 0.10 (hook-enforced).
+XgJ5e7w5|rank(-ts_delta(close,3))*rank(ts_mean(volume,5)/ts_mean(volume,60))
+A1vMp7Al|group_rank(ts_mean((implied_volatility_call_60-implied_volatility_put_60),10),subindustry)*rank(ts_mean(volume,5)/ts_mean(volume,60))
+QPKq3a2Q|group_rank(est_eps/close,industry)*rank(ts_mean(volume,5)/ts_mean(volume,60))*rank(adv20)
+vR2xOrRz|group_rank(-ts_mean(power(returns,3),60)/power(ts_std_dev(returns,60),3),subindustry)*rank(AV)*rank(adv20)   [AV = ts_mean(volume,5)/ts_mean(volume,60)]
+3qVAPoYQ|group_rank(sales/assets,subindustry)*rank(AV)*rank(adv20)
+786zkWWv|group_rank(debt/assets,subindustry)*rank(AV)*rank(adv20)
+d51bjNxX|group_rank(anl4_bvps_flag,subindustry)*rank(adv20)
+QPKbbpbG|group_rank(anl4_totassets_flag,subindustry)
+KPrr6rr8|group_rank(anl4_ptp_flag,subindustry)
+9qWW69M9|group_rank(anl4_netdebt_flag,subindustry)
+d51v5wpJ|group_rank(ts_backfill(mdl77_shortsentimentfactor_dmd_supply,20),subindustry)*power(rank(adv20),0.5)
+VkdvzZa5|group_rank(ts_backfill(news_mins_10_chg,10),subindustry)*rank(AV)
+LL5Vgolv|group_rank(ts_backfill(news_eod_vwap/close-1,20),subindustry)*power(rank(AV),0.5)
+RRAL7X6b|-(group_rank(close/open-1,subindustry)+group_rank(ts_sum(returns,3)/ts_std_dev(returns,20),subindustry))
+kqJb5XOL|group_rank(anl4_totassets_flag,subindustry)-1.5*group_rank(ts_corr(close,volume,10),subindustry)-group_rank(close/open-1,subindustry)
+bl8VV5Qq|0.5*group_rank(anl4_netdebt_flag,subindustry)+group_rank(ts_backfill(news_mins_10_chg,10),subindustry)+group_rank(ts_backfill(news_eod_vwap/close,20),subindustry)...
+3qj3WJgX|group_rank(anl4_netdebt_flag,subindustry)+group_rank(ts_backfill(news_eod_vwap/close,20),subindustry)-group_rank(ts_mean(power(returns,3),60)...,subindustry)
+npAo5KkE|group_rank(est_eps/close-ts_mean(est_eps/close,60),subindustry)+group_rank(ts_backfill(news...),subindustry)+ iv30 term leg
+xA1PJpWl|deferred_tax/assets leg + implied_volatility zscore 20 leg (dta_ivz20_d20)
+KPmbm0X8|blend: news_eod_vwap/close + iv mean 30 legs (pair_guard)
+2rj7GQk8|-(group_rank(close/open-1,subindustry)+group_rank(close/vwap-1,subindustry))*rank(-adv20)*rank(...)  TOP1000 variant
+N1e71Jgp|group_zscore(winsorize(ts_delta(ts_backfill(implied_volatility_mean_30,5),3),std=...)) blend (ivgz_epsrev_clv_rw)
+d5KjAzlK|blend6: -0.214*pv13_custretsig_retsig leg + 0.478*... (fit_t16: eps_mean, iv30, news vwap, clv legs)
+A1QlKAzg|blend6 variant of d5KjAzlK (fitU_t20)
+gJWjzbPO|blend4 slow: -(close-low)/(high-low) x rank(-AV) + ... (slow4_t21)
+npA70JqM|hump(blend5: 0.696*implied_volatility_call_30 leg + ...) (t20_h1e4)
+akVxYxZw|blend6 p5rep: pct_change_5min_post_news leg + eps_mean + iv30 + news vwap legs (sc 0.22 at submit)
+A1QvJJ2e|blend6 IM_t0.1_mkt: industry-level MARKET-neutral legs (sc 0.31 at submit)
+# Seat map (fields already held, count of actives): anl4_afv4_eps_mean 21, implied_volatility_mean_30 7, assets 6, news_eod_vwap 6, implied_volatility_call_30 6, est_eps 4, news_mins_10_chg 4, implied_volatility_put_30 4, netdebt_flag 3, deferred_tax 3, call_60/put_60 1, pct_change_5min_post_news 2, mean_equity_sentiment_score 1, event_sentiment_score 1, pv13_custretsig_retsig 2, close/open reversal 4, AV booster rank(ts_mean(volume,5)/ts_mean(volume,60)) ~12, adv20 ~8.

@@ -1,0 +1,152 @@
+[
+ {
+  "tag": "HC:asset_growth_rnAV",
+  "expr": "-regression_neut(regression_neut(group_rank(ts_delta(assets,250)/ts_delay(assets,250),subindustry),rank(ts_mean(volume,5)/ts_mean(volume,60))),rank(adv20))",
+  "settings": {
+   "decay": 20
+  },
+  "predS": 1.3,
+  "predTO": 0.15,
+  "predF": 1.0,
+  "mechanism": "asset-growth anomaly (Cooper-Gulen-Schill): short fast balance-sheet growers within subindustry",
+  "whyOrth": "new signal; AV and adv20 loadings (the book's shared multipliers) removed cross-sectionally by regression_neut"
+ },
+ {
+  "tag": "HC:gross_profit_rn_turnover",
+  "expr": "regression_neut(group_rank((sales-cogs)/assets,subindustry),group_rank(sales/assets,subindustry))",
+  "settings": {
+   "decay": 20
+  },
+  "predS": 1.2,
+  "predTO": 0.12,
+  "predF": 0.9,
+  "unverified": true,
+  "mechanism": "Novy-Marx gross profitability, long high GP/assets",
+  "whyOrth": "held asset-turnover (3qVAPoYQ sales/assets) regressed out; no AV/size multiplier"
+ },
+ {
+  "tag": "HC:buyback_rn_size",
+  "expr": "-regression_neut(group_rank(ts_delta(sharesout,120)/ts_delay(sharesout,120),subindustry),rank(adv20))",
+  "settings": {
+   "decay": 20
+  },
+  "predS": 1.1,
+  "predTO": 0.1,
+  "predF": 0.8,
+  "unverified": true,
+  "mechanism": "net share issuance: short issuers, long buybacks (Pontiff-Woodgate)",
+  "whyOrth": "field absent from the book; size loading regressed out"
+ },
+ {
+  "tag": "HC:ovn_vs_intra20",
+  "expr": "group_rank(ts_mean(open/ts_delay(close,1)-1,20)-ts_mean(close/open-1,20),subindustry)",
+  "settings": {
+   "decay": 5
+  },
+  "predS": 1.0,
+  "predTO": 0.35,
+  "predF": 0.6,
+  "mechanism": "Lou-Polk-Skouras tug of war: 20d overnight returns persist, 20d intraday returns reverse",
+  "whyOrth": "book holds 1-day close/open reversal only; 20d contrast of two return clocks is a different axis"
+ },
+ {
+  "tag": "HC:eps_surprise_tsresid",
+  "expr": "group_rank(ts_regression(ts_delta(anl4_afv4_eps_mean,5)/close,ts_sum(returns,5),120,lag=0,rettype=0),subindustry)",
+  "settings": {
+   "decay": 5
+  },
+  "predS": 1.2,
+  "predTO": 0.4,
+  "predF": 0.8,
+  "mechanism": "revisions NOT explained by the stock's own recent returns = genuine analyst information; drift follows",
+  "whyOrth": "time-series residual strips the price-driven part of revisions, which is what co-moves with held reversal/eps legs"
+ },
+ {
+  "tag": "HC:btw_sub_sector_skew_mkt",
+  "expr": "group_zscore(ts_mean(implied_volatility_call_60-implied_volatility_put_60,10)-group_neutralize(ts_mean(implied_volatility_call_60-implied_volatility_put_60,10),subindustry),sector)",
+  "settings": {
+   "neutralization": "MARKET",
+   "decay": 10
+  },
+  "predS": 0.9,
+  "predTO": 0.2,
+  "predF": 0.6,
+  "mechanism": "subindustry-level option skew rotation inside each sector",
+  "whyOrth": "A1vMp7Al holds within-subindustry skew; its SUBINDUSTRY neutralization deletes exactly this subindustry-mean component"
+ },
+ {
+  "tag": "HC:btw_ind_sector_epsy_mkt",
+  "expr": "group_zscore(est_eps/close-group_neutralize(est_eps/close,industry),sector)",
+  "settings": {
+   "neutralization": "MARKET",
+   "decay": 20
+  },
+  "predS": 0.8,
+  "predTO": 0.1,
+  "predF": 0.6,
+  "mechanism": "industry-level earnings-yield rotation within sector (cheap industries)",
+  "whyOrth": "QPKq3a2Q/A1QvJJ2e rank eps yield WITHIN industry; the industry-mean component is disjoint"
+ },
+ {
+  "tag": "HC:btw_sub_ind_news_ind",
+  "expr": "group_zscore(ts_backfill(news_eod_vwap/close-1,20)-group_neutralize(ts_backfill(news_eod_vwap/close-1,20),subindustry),industry)",
+  "settings": {
+   "neutralization": "INDUSTRY",
+   "decay": 10
+  },
+  "predS": 0.9,
+  "predTO": 0.3,
+  "predF": 0.6,
+  "mechanism": "subindustry-wide news-day vwap gap rotation inside industry",
+  "whyOrth": "6 actives hold news_eod_vwap within subindustry; the between-subindustry component is removed from all of them"
+ },
+ {
+  "tag": "HC:amihud_rev_booster",
+  "expr": "group_rank(ts_mean(abs(returns)/(volume*close+1),20),subindustry)*(1-rank(ts_mean(volume,5)/ts_mean(volume,60)))",
+  "settings": {
+   "decay": 20
+  },
+  "predS": 0.7,
+  "predTO": 0.25,
+  "predF": 0.4,
+  "mechanism": "illiquidity premium on names with cooling volume",
+  "whyOrth": "anti-book by construction: long illiquid (book is +0.5 adv20 tilt) and reversed AV booster -> expected NEGATIVE corr, free under signed max"
+ },
+ {
+  "tag": "HC:eps_vendor_spread_rn",
+  "expr": "regression_neut(group_rank((anl4_afv4_eps_mean-est_eps)/close,subindustry),group_rank(est_eps/close-ts_mean(est_eps/close,60),subindustry))",
+  "settings": {
+   "decay": 10
+  },
+  "predS": 1.0,
+  "predTO": 0.3,
+  "predF": 0.7,
+  "mechanism": "two consensus vendors update at different speeds; fresher one leads the staler",
+  "whyOrth": "pair/spread of two held fields is a new axis; held 60d revision leg regressed out"
+ },
+ {
+  "tag": "HC:skew_vol_2nd_moment",
+  "expr": "-group_rank(ts_std_dev(implied_volatility_call_30-implied_volatility_put_30,20)/ts_mean(implied_volatility_mean_30,20),subindustry)",
+  "settings": {
+   "decay": 10
+  },
+  "predS": 0.9,
+  "predTO": 0.25,
+  "predF": 0.6,
+  "mechanism": "unstable skew = churning informed option flow = uncertainty premium; short",
+  "whyOrth": "second moment of held first-moment fields; level exposure not shared"
+ },
+ {
+  "tag": "HC:industry_momentum_mkt",
+  "expr": "group_zscore(ts_delay(ts_sum(returns-group_neutralize(returns,industry),120),20),market)",
+  "settings": {
+   "neutralization": "MARKET",
+   "decay": 20
+  },
+  "predS": 0.9,
+  "predTO": 0.15,
+  "predF": 0.7,
+  "mechanism": "Moskowitz-Grinblatt industry momentum, 6-1 months, long winning industries",
+  "whyOrth": "stock momentum is dead here and absent from the book; industry-level return factor is held nowhere (A1QvJJ2e legs are eps/reversal/iv)"
+ }
+]
