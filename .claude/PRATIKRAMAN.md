@@ -19,6 +19,7 @@ interval: 60m
 | hedging against actives in PnL space | 2 (greedy 10-20, k-path 10-21) | S falls faster than corr: dead | — |
 | anti-book tilts / agent constructions | 19 | every one = short of a held premium | — |
 | regime gating | 3 | dead (book and p5 both high-vol earners) | — |
+| heretic forks (HA slow fundamentals / HB trade_when event-gated / HC vector_neut+between-group) | 3 complete (assetgrowth 0.29, netissue 0.38, turnover250 -0.29), 33 running 23:40 | — | results 00:21 |
 | delay 0 | 5 | S0.18–0.65, TO>0.75; news12 absent at delay 0 — DEAD | — |
 | neutralization NONE/MARKET/SECTOR at stock level | 0 | — | SECTOR-neutral copies: between-subindustry bets, orthogonal by construction |
 | momentum 12/6/3-1 | 3 | S −0.02/−0.02/−0.52 — DEAD in 2019-23 | — |
