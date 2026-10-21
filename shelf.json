@@ -957,5 +957,30 @@
    "l12m": 3.13,
    "note": "re-measure vs A1QvJJ2e before use; first-of-day fallback for 10-22 (bar 0.68)"
   }
+ },
+ {
+  "tag": "BLEND6:V2_t0.25_h1e4",
+  "alpha_id": "j2e8W6EE",
+  "status": "fallback-only:L12m0.31",
+  "measured": {
+   "date": "2026-10-21",
+   "sharpe": 2.29,
+   "fitness": 1.33,
+   "turnover": 0.1844,
+   "selfcorr_platform": 0.2675,
+   "vs": "KPmbm0X8",
+   "l12m": 0.31,
+   "note": "decayed-family mix; streak fallback in the last hour only"
+  }
+ },
+ {
+  "tag": "BLEND6:V2_t0.22_h1e4",
+  "alpha_id": "GrgOYGnQ",
+  "status": "dead:LOW_SUB_UNIVERSE",
+  "measured": {
+   "date": "2026-10-21",
+   "sharpe": 2.16,
+   "fitness": 1.16
+  }
  }
 ]
