@@ -16,9 +16,15 @@ interval: 60m
 | hedging against actives in PnL space | 2 (greedy 10-20, k-path 10-21) | S falls faster than corr: dead | — |
 | anti-book tilts / agent constructions | 19 | every one = short of a held premium | — |
 | regime gating | 3 | dead (book and p5 both high-vol earners) | — |
-| delay 0 | 0 → 5 queued 17:40 | — | everything |
+| delay 0 | 5 | S0.18–0.65, TO>0.75; news12 absent at delay 0 — DEAD | — |
 | neutralization NONE/MARKET/SECTOR at stock level | 0 | — | SECTOR-neutral copies: between-subindustry bets, orthogonal by construction |
-| momentum 12-1 (different premium) | 0 (M tags = 3, unclear) | — | as blend leg with p5 + industry legs |
+| momentum 12/6/3-1 | 3 | S −0.02/−0.02/−0.52 — DEAD in 2019-23 | — |
+| concentration (signed_power 2/3) | 4 | fitness FELL (0.66→0.55) — DEAD | — |
+| model16 derivative ranks | 5 | one source S0.80 TO0.12, corr 0.80 with 9qWW69M9 — consumed | fscore_bfl_* (38% cov) |
+| option8 skew/term/vrp/ivchg/hv | 14 | sk90m S1.81 F1.04 TO0.20 passes S+F, fails subU; corr 0.64 with A1vMp7Al | subU fix (TOP1000 run queued); skew × large-cap tilt |
+| news18 sentiment (100 dense fields) | 26 queued 20:20 | — | 74 more fields; sentiment × event novelty |
+| socialmedia12 | 0 | — | 18 fields |
+| slow fundamentals (value/accruals/investment) | 0 | — | composite leg |
 
 Most repeated choice since 13:00: positive-weight blend from the pool (fitSearch) — 17 of 60 outputs on 10-21; frontier now empty → stop repeating it. Next block: 3 of 5 outputs on untried rows (delay 0, SECTOR-neutral, industry reversal).
 

@@ -982,5 +982,17 @@
    "sharpe": 2.16,
    "fitness": 1.16
   }
+ },
+ {
+  "id": "YPxxPK1W",
+  "tag": "O8:sk90m",
+  "expr": "-rank(ts_mean((implied_volatility_put_90-implied_volatility_call_90),10))",
+  "settings": "TOP3000 SUBINDUSTRY decay0 delay1",
+  "S": 1.81,
+  "F": 1.04,
+  "TO": 0.1993,
+  "status": "research:passes-S-F,fails-LOW_SUB_UNIVERSE(0.32 vs 0.79),sc~0.6 predicted (sk60m corr 0.64 A1vMp7Al)",
+  "date": "2026-10-21",
+  "note": "skew family: sk60m S1.77 F0.92, sk3t S1.78 F0.96, sk60m20 S1.55 F0.97 TO0.14, skd10g S1.65 CONCENTRATED; hedged vs top-3 actives S0.32 -> not an open seat"
  }
 ]
