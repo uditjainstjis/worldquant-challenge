@@ -928,5 +928,34 @@
    "fitness": 0.66,
    "selfcorr_platform": 0.0961
   }
+ },
+ {
+  "tag": "BLEND6:IM_t0.1_mkt",
+  "alpha_id": "A1QvJJ2e",
+  "status": "submitted:A1QvJJ2e:2026-10-21",
+  "measured": {
+   "date": "2026-10-21",
+   "sharpe": 1.9,
+   "fitness": 1.36,
+   "turnover": 0.16,
+   "selfcorr_platform": 0.3097,
+   "l12m": 1.18
+  }
+ },
+ {
+  "tag": "BLEND6:IM_t0.14_mkt",
+  "alpha_id": "MP03l9Za",
+  "status": "ready",
+  "expr_note": "industry-eps anchor + intraday rev + ivz; settings MARKET decay 0",
+  "measured": {
+   "date": "2026-10-21",
+   "sharpe": 2.49,
+   "fitness": 1.69,
+   "turnover": 0.3455,
+   "selfcorr_platform": 0.4083,
+   "vs": "RRAL7X6b",
+   "l12m": 3.13,
+   "note": "re-measure vs A1QvJJ2e before use; first-of-day fallback for 10-22 (bar 0.68)"
+  }
  }
 ]

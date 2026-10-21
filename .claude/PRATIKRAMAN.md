@@ -27,8 +27,13 @@ Would prove it wrong: if 60 rare probes give 0 fields with S≥0.8 and |book cor
 | blends TOP3000 (F/G/H) | 2–7 legs, hump, cube, decay | 70 sims, 13 pass | d5KjAzlK S2.14 F1.15 sc0.19 | TOP1000-native blends (L1 library 16/30 done) |
 | between-group (BG) | subindustry/industry means | 6 | S0.74 | sector-level with real factor fields |
 | universe (U1) | TOP1000/500/SP500 | 3 queued | — | TOP200 |
-| negative construction | anti-book tilt, hedges | ~8 | 0.0428 (fails F) | strong-leg anti-book (needs S≥2 independent source) |
+| negative construction | anti-book tilt, hedges, agent's 15 (8 simmed), regime gating (3) | ~19 | 0.0428 (fails F); every tilt = short of a held premium | industry/sector spreads with NO stock-level reversal leg |
+| industry-level legs (IG/IB/IM) | group_mean at industry/sector, MARKET-neutral | 10 | A1QvJJ2e S1.90 F1.36 sc0.31 (first transferable industry-anchored passer) | 2+ industry legs without a reversal leg; analyst-breadth at sector level |
+| universe (LC/U1) | TOP200/500/1000 copies of held families | 7 | S1.42 but corr 0.84 with the original | — (dead: same signal stays correlated) |
+| new fields (RF/F6/OP/SM) | news12 rare, fundamental6, option9 pcr, socialmedia8 | 27 done | p5 only (S0.91) | ~40 RF still queued; fundamental6 fields read as empty |
 | OS/hold-out test (G7) | — | 0 | — | everything |
+
+Most repeated choice since 13:00: '__fitSearch blend + hump variant' skeleton — 17 of 60 outputs. Next block split: 2 exploit (re-test the IM fix on a fresh pair, confirm effW rule) / 1 explore per 3 (industry-only blends, sector analyst breadth, p5@TOP1000 inside an industry blend).
 
 ## D. Rules I've learned
 - Self-corr = SIGNED max (evidence: 2rj7GQk8 check 0.1255 vs |min| 0.1753). kill-if: a submit check ever reports |min| as value.
@@ -37,6 +42,10 @@ Would prove it wrong: if 60 rare probes give 0 fields with S≥0.8 and |book cor
 - isScore ≈ 2350 × Sharpe(sum of actives) (evidence: 4 points + pre-reg 8,700 vs real 8,731). kill-if: next delta off by >400.
 - Uniqueness ≠ our own corr (evidence: own max-corr fell, board uniq rose) — HYPOTHESIS, not fact.
 - Never git add LEDGER (Udit; public repo). Never touch his password (Udit).
+
+- KILLED: 'fitness model 0.85·√K' (wrong for low-R legs; 10-21). MARKED ASSUMPTION: 'G2 needs an S~5 source' is arithmetic on a one-factor book model, not measured.
+- Blend settings neutralization must match the coarsest leg (MARKET when any group_mean leg) — evidence: effW 0.01 → 0.85 after the change.
+- If this list didn't exist I would: build one alpha per INDUSTRY-level dataset view (news flow, revisions, IV) and submit them as a family, since the board has none.
 
 ## E. Jottings
 - p5 field is 1,233-stock coverage: TOP1000 version may be denser → better fitness. Queued.
@@ -51,6 +60,7 @@ Would prove it wrong: if 60 rare probes give 0 fields with S≥0.8 and |book cor
 - Agent's anti-book tilts: every one is the short of a held premium (P1 -0.85, P3 -1.55, rows 1-3 ~0 or flipped-reversal). Rule: 'anti-book' must come from a different ORGANISATION of the cross-section (industry level, large-cap), not from reversing a signal.
 
 ## F. Reflection log
+- 10-21 13:33 · Found: industry legs transfer only under MARKET settings; realized blends are 1.6x more reversal-heavy than paper; A1QvJJ2e = first industry-anchored passer (sc 0.31) · Changed: submitting it as #2; next block 1-in-3 explore = industry-only blends. Interval stays 60m.
 - 10-21 13:22 · Found: G2 at -0.15-vs-every-active needs an S~5 source (shorting the book to -0.15 max costs ~2 S); told Udit, asked whether to restate G2 · Changed: stopped anti-book-tilt sims; moved to industry-level + large-cap legs.
 - 10-21 12:50 · Found: agent launched on G2 (committed-heretic brief); frontier depleted; fitness model wrong for low-R legs · Changed: L12m gate added; stop expecting ≤0.1 from the old pool.
 - 10-21 12:30 · Found: told Udit nothing about the goal board I wrote; fitness model badly optimistic on low-return legs · Changed: reply with goals now; stop trusting F~ above 1.2 for low-R mixes.
