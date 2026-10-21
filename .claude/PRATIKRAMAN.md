@@ -44,5 +44,9 @@ Would prove it wrong: if 60 rare probes give 0 fields with S≥0.8 and |book cor
 - Fitness wall: R ≈ 0.04 for diversified mixes. Return per dollar needs concentrated winners → try trade_when gating on p5 extremes.
 - OS test never run (G7). Should run before 11-06 claims.
 
+- G7 proxy found: IS = 2019-2023, BRAIN OS starts 2024 but all OS checks PENDING. 9 of 26 actives decayed in 2023 (L12m < 0.8). Gate new submissions at L12m >= 1.0.
+- Pool frontier depleted after 5 submissions: t0.23 now S2.07 (was 2.68). New sources are the only lever; 83 single-field probes gave 1 clean (p5).
+
 ## F. Reflection log
+- 10-21 12:50 · Found: agent launched on G2 (committed-heretic brief); frontier depleted; fitness model wrong for low-R legs · Changed: L12m gate added; stop expecting ≤0.1 from the old pool.
 - 10-21 12:30 · Found: told Udit nothing about the goal board I wrote; fitness model badly optimistic on low-return legs · Changed: reply with goals now; stop trusting F~ above 1.2 for low-R mixes.

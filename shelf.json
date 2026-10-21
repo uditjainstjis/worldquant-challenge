@@ -904,5 +904,29 @@
    "date": "2026-10-20",
    "selfcorr_platform": 0.22
   }
+ },
+ {
+  "tag": "BLEND6:p5rep",
+  "alpha_id": "akVxYxZw",
+  "status": "submitted:akVxYxZw:2026-10-21",
+  "measured": {
+   "date": "2026-10-21",
+   "sharpe": 1.91,
+   "fitness": 1.01,
+   "turnover": 0.19,
+   "selfcorr_platform": 0.2217,
+   "l12m": 1.03
+  }
+ },
+ {
+  "tag": "BLEND6:p5mix_t08",
+  "alpha_id": "6XAKX98K",
+  "status": "research:0.0961-real-fails-fitness",
+  "measured": {
+   "date": "2026-10-21",
+   "sharpe": 1.4,
+   "fitness": 0.66,
+   "selfcorr_platform": 0.0961
+  }
  }
 ]
