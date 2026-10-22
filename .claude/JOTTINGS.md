@@ -17,3 +17,7 @@
 - ZERO-SUBMISSION TEST (first thing after login): GET /competitions/challenge/boards/leader?limit=100&offset=0 WITHOUT aggregate=user (and with aggregate=alpha) → per-alpha isScore/uniquenessScore rows settle sum-vs-mean and permanent-vs-recomputed.
 - Discriminating one-alpha test: a single-source passer from a never-used dataset (socialmedia12/model16/model51): F2 predicts 0.72, F3 0.74. For isScore: a low-Sharpe (~1.3) passer NEGATIVELY correlated with the book: mean model → −130, Sharpe-of-sum → rises.
 - If F2/F3 hold, the lever for top-decile uniqueness (≤0.58 from 0.74) is ~8-10 alphas new vs the POOL or anti-book, not orthogonal to our own 28. The ≤0.10 bar stays the QCAP-sheet lever (mean submit-time self-corr).
+
+- 10-22 08:58: pv13 has 165 fields that are mostly CUSTOM SECTOR MAPS (h_*_sector, hierarchy_*_sector, *_513_sector, scibr levels) → a never-used neutralization/grouping axis: group_rank(x, pv13_hierarchy_f2_sector) or group_neutralize by a pv13 map. Uniqueness lever ('different approaches') and possibly lower corr with our GICS-subindustry book. Untried.
+- 10-22 08:58: /check anomaly: SELF_CORRELATION result PASS at value 0.9636 (vROjgQQv) but FAIL at 0.9959 (P0M7eWNJ). Hypothesis: result cached from an earlier check, value live. Test: re-check vROjgQQv tomorrow; if still PASS, the submit endpoint may accept twins — do NOT exploit (uniqueness), but note for the scorer model.
+- 10-22 08:58: Chrome renderer dies when the BRAIN tab holds >~100 PnL series + a large <pre>; export in ≤20 KB pieces and clear the DOM at once.
