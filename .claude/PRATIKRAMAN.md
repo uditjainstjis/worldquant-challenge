@@ -28,6 +28,7 @@ interval: 60m
 | concentration (signed_power 2/3) | 4 | fitness FELL (0.66→0.55) — DEAD | — |
 | model16 derivative ranks | 5 | one source S0.80 TO0.12, corr 0.80 with 9qWW69M9 — consumed | fscore_bfl_* (38% cov) |
 | option8 skew/term/vrp/ivchg/hv/parkinson | 24 (hv/pk 10: best pk_term S1.03 F0.5, hv_chg5 S0.93; vrp_z/term ~0) | sk90m S1.81 F1.04 TO0.20 passes S+F, fails subU; corr 0.64 with A1vMp7Al | subU fix (TOP1000 run queued); skew × large-cap tilt |
+| GPU local screener (box, yfinance, calibrated Spearman 0.889 vs BRAIN on 119) → template/GP search for price-volume legs with book-corr ≤ 0.10 | 0 on BRAIN (1 local passer at 10:25: pred S2.05 F1.55 TO0.04 corr0.084 OS1.07) | — | simulate every local passer on BRAIN; pv13 custom-sector grouping |
 | slow fundamentals (value/accruals/investment) | 10 (HA forks) | all \|S\| <= 0.64 at TOP3000/SUBINDUSTRY | in LOW-vol regime; SECTOR-neutral |
 
 Most repeated choice since 13:00: positive-weight blend from the pool (fitSearch) — 17 of 60 outputs on 10-21; frontier now empty → stop repeating it. Next block: 3 of 5 outputs on untried rows (delay 0, SECTOR-neutral, industry reversal).
