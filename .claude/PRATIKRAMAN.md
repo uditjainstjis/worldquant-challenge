@@ -6,7 +6,7 @@ interval: 60m
 ### Claude's translation (mine, not his; he has not confirmed the number): submit bar = platform self-corr ≤ 0.10 for every Challenge submission, hook-enforced; stretch ≤ −0.15. Open question to Udit (asked 10-22 00:30): does the bar govern every Challenge submission, or only the correlation sheet?
 ### Official scorer (read 10-21 23:58): Total = mean of country RANKS of (IS MERGE performance, uniqueness "original and diverse", submission days in past 60). Our row 10-21: rank 184/798, isScore 8731, uniq 0.74 (worst in top 100), 14 days.
 
-## Factor map (counts from wq_results2 tags, 803 sims as of 10-21 20:05; "0" = untried)
+## Factor map (counts from wq_results2 tags, 883 sims as of 10-22 07:55; "0" = untried)
 | factor | tried | best | untried cells |
 |---|---|---|---|
 | single new fields: news12 rare (R1–R6, RF) | 114 (RF 60 done) | p5 S0.91 mx0.05; prev_day_pct_change S1.03 but corr 0.71 w/ RRAL7X6b; pct_change_10min S1.0 corr 0.57 w/ akVxYxZw | none left |
@@ -21,21 +21,19 @@ interval: 60m
 | hedging against actives in PnL space | 2 (greedy 10-20, k-path 10-21) | S falls faster than corr: dead | — |
 | anti-book tilts / agent constructions | 19 | every one = short of a held premium | — |
 | regime gating | 3 | dead (book and p5 both high-vol earners) | — |
-| heretic forks (HA slow fundamentals / HB trade_when event-gated / HC between-group, MARKET/INDUSTRY neutral) | 21 complete, 11 errors | ovn_vs_intra20 S1.20 ccp0.55; btw_ind_sector_epsy S1.15 ccp0.43; slow fundamentals |S|<=0.64; event gates |S|<=0.66 | SECTOR-neutral still 0; single-source alpha from a never-used dataset (uniqueness test) |
+| heretic forks (HA slow fundamentals / HB trade_when event-gated / HC between-group, MARKET/INDUSTRY neutral) | 32 (21 complete, 11 errors: regression_neut+vector_neut inaccessible) | ovn_vs_intra20 S1.20 ccp0.55; btw_ind_sector_epsy S1.15 ccp0.43; slow fundamentals |S|<=0.64; event gates |S|<=0.66 | SECTOR-neutral still 0; single-source alpha from a never-used dataset (uniqueness test) |
 | delay 0 | 5 | S0.18–0.65, TO>0.75; news12 absent at delay 0 — DEAD | — |
-| neutralization NONE/MARKET/SECTOR at stock level | 0 | — | SECTOR-neutral copies: between-subindustry bets, orthogonal by construction |
+| neutralization NONE/MARKET/SECTOR at stock level | 0 (wave queued 10-22 08:00) | — | SECTOR-neutral copies: between-subindustry bets, orthogonal by construction |
 | momentum 12/6/3-1 | 3 | S −0.02/−0.02/−0.52 — DEAD in 2019-23 | — |
 | concentration (signed_power 2/3) | 4 | fitness FELL (0.66→0.55) — DEAD | — |
 | model16 derivative ranks | 5 | one source S0.80 TO0.12, corr 0.80 with 9qWW69M9 — consumed | fscore_bfl_* (38% cov) |
-| option8 skew/term/vrp/ivchg/hv | 14 | sk90m S1.81 F1.04 TO0.20 passes S+F, fails subU; corr 0.64 with A1vMp7Al | subU fix (TOP1000 run queued); skew × large-cap tilt |
-| news18 sentiment (100 dense fields) | 26 queued 20:20 | — | 74 more fields; sentiment × event novelty |
-| socialmedia12 | 0 | — | 18 fields |
-| slow fundamentals (value/accruals/investment) | 0 | — | composite leg |
+| option8 skew/term/vrp/ivchg/hv | 16 (hv 2) | sk90m S1.81 F1.04 TO0.20 passes S+F, fails subU; corr 0.64 with A1vMp7Al | subU fix (TOP1000 run queued); skew × large-cap tilt |
+| slow fundamentals (value/accruals/investment) | 10 (HA forks) | all \|S\| <= 0.64 at TOP3000/SUBINDUSTRY | in LOW-vol regime; SECTOR-neutral |
 
 Most repeated choice since 13:00: positive-weight blend from the pool (fitSearch) — 17 of 60 outputs on 10-21; frontier now empty → stop repeating it. Next block: 3 of 5 outputs on untried rows (delay 0, SECTOR-neutral, industry reversal).
 
 ## Rules from corrections (source · kill-if)
-- Submit bar sc ≤ 0.10 is MECHANICAL (wq-gate, Udit 10-21) · kill-if Udit raises it in words.
+- Submit bar sc ≤ 0.10 is MECHANICAL (wq-gate; the 0.10 is my number for Udit's '0.0 something', not his) · kill-if Udit states a different bar in words. MP03l9Za measured 0.6994 on 10-22 (dead).
 - Self-corr = SIGNED max (submit check 2rj7GQk8) · kill-if a check reports |min|.
 - Blend transfer: dense legs cov≥2300, add(filter=true), decay 0; settings neutralization = coarsest leg · kill-if pred–real gap > 0.3 S twice.
 - Fitness model is optimistic on low-R legs (pred 1.18 → real 0.84) · require pred F ≥ 1.2.
