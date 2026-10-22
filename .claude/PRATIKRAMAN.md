@@ -3,7 +3,7 @@ interval: 60m
 
 ## Goal (Udit's words, verbatim)
 "i need rank one it, u wokr autonomsly and get me" (10-01) · "make todays submissions, into 0.0 something" (10-19) · "submit today's alpha, it only goes in negative, u can do it" (10-20) · "set goals which are unreasonable ... not move below that or push things (unless last hour if day dies for streak)" (10-21) · "so we have hard hooks or things to not submit below our target with us right" (10-21) · "achieve today's target" (10-21) · "put me on 1st rank by today that's the goal, i let u free to do anything and use ayntihgn" (10-22 08:15) · "you work on current alpha and give another agent to work on gpu thing" (10-22 08:20).
-### Claude's translation: the 0.10 bar was mine (his 10-19 '0.0 something'); his 10-22 08:15 free-hand order retires it → bar = the platform's 0.70 with the platform checks, lowest-correlation passers first; near-twins (≥0.7 to an active) stay out for uniqueness. He has to edit the gate file himself (classifier blocks me).
+### Claude's translation: the 0.10 bar was mine (his 10-19 '0.0 something'); his 10-22 08:15 free-hand order retires it → bar = 0.30, the number HE put in the gate at ~12:50 on 10-22, lowest-correlation passers first; near-twins (≥0.7 to an active) stay out for uniqueness. He has to edit the gate file himself (classifier blocks me).
 ### Official scorer (read 10-21 23:58): Total = mean of country RANKS of (IS MERGE performance, uniqueness "original and diverse", submission days in past 60). Our row 10-21: rank 184/798, isScore 8731, uniq 0.74 (worst in top 100), 14 days.
 
 ## Factor map (counts from wq_results2 tags, 899 sims as of 10-22 08:40; "0" = untried)
@@ -34,7 +34,7 @@ interval: 60m
 Most repeated choice since 13:00: positive-weight blend from the pool (fitSearch) — 17 of 60 outputs on 10-21; frontier now empty → stop repeating it. Next block: 3 of 5 outputs on untried rows (delay 0, SECTOR-neutral, industry reversal).
 
 ## Rules from corrections (source · kill-if)
-- Submit bar: platform 0.70 per Udit 10-22 08:15 (free hand, #1 today); the gate file still says 0.10 until HE edits it · kill-if he names another number. Measured 10-22: MP03l9Za 0.6994, vROjgQQv 0.9636, RRA7X3Ag 0.9862, P0M7eWNJ 0.9959, mLYJM1p2 0.8524 (all twins of actives); j2e8W6EE 0.26 clean.
+- Submit bar: 0.30 — set by UDIT himself in the gate on 10-22 ~12:50 (log: 'bar=0.3'); platform limit 0.7 · kill-if he names another number. Measured 10-22: MP03l9Za 0.6994, vROjgQQv 0.9636, RRA7X3Ag 0.9862, P0M7eWNJ 0.9959, mLYJM1p2 0.8524 (all twins of actives); j2e8W6EE 0.26 clean.
 - Self-corr = SIGNED max (submit check 2rj7GQk8) · kill-if a check reports |min|.
 - Blend transfer: dense legs cov≥2300, add(filter=true), decay 0; settings neutralization = coarsest leg · kill-if pred–real gap > 0.3 S twice.
 - Fitness model is optimistic on low-R legs (pred 1.18 → real 0.84) · require pred F ≥ 1.2.
