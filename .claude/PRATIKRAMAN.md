@@ -11,6 +11,7 @@ interval: 60m
 |---|---|---|---|
 | single new fields: news12 rare (R1–R6, RF) | 114 (RF 60 done) | p5 S0.91 mx0.05; prev_day_pct_change S1.03 but corr 0.71 w/ RRAL7X6b; pct_change_10min S1.0 corr 0.57 w/ akVxYxZw | none left |
 | news18 sentiment singles raw/smoothed/vec (N18, N18d, N18v) | 31 | event_novelty_score_2 S0.87 TO0.82, corr 0.40; country_iso_4 S0.8 TO0.02 corr 0.58 | — |
+| news18 RavenPack topic sentiment rp_css_/rp_ess_ (RP tags) | 22 | css_chg_ratings S-1.16 (flip → +1.16, F~0.4, TO0.20); all others |S|≤0.70 | dead as singles; flipped chg_ratings only as blend leg |
 | model51 risk fields (M51) | 15 | all \|S\| < 0.7 | — |
 | socialmedia12 buzz/sentiment (S12) | 18 | snt_buzz_ret S0.84 TO0.32 max+corr 0.12 (clean, weak); snt_buzz_bfl S0.84 corr 0.18 | — |
 | single fields: fundamentals/analyst/option/social (N, A, O, F, S, X tags) | 179 | tax_z250 S0.48; option9 singles dead | fundamental6 newq*/newa*/pnc* all EMPTY (S0) — stop |
