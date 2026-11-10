@@ -141,3 +141,10 @@ Udit 11-09: "analyze whole website and make plan for us to win https://quant-pro
 - MASTER ($2k/qtr) Q4 thresholds (Oct 1–Dec 31): 120 signals + 30 pyramids + any combined perf ≥1. Expert 20/10/0.5, GM 220/60/2. Pyramid = region×delay×dataset category, needs 3 alphas, one alpha counts ≤2 pyramids; grouping fields never make pyramids. Caps: Master 8%, GM 2%. Tie-breaks: fewer ops/fields per alpha, more distinct ops/fields, sim streak, community. Last-month alphas may miss perf refresh. Stipend needs ≥20 submission days in last 3 months.
 - Udit NOT found on baseline/$120 boards (WebFetch; may be truncated). Verify.
 - CONSEQUENCE: our 6-leg blends (leAOXVNO etc.) VIOLATE ≤4 fields/≤8 ops — unusable. New factory: simple single/dual-field alphas on rarely-used datasets, spread over regions/delays/categories.
+
+## 11-11 01:40 IST — measured
+Udit 11-11: "idk u may spin some wakeup timer for urself, u gotta handle all the things" (= timers + continuous factory authorized)
+- Logged in. Q4 signals 30 (all USA D1, 17 submit days, last 10-23). Since Nov 7: 0. Week 1 (Nov 7–13 ET) needs submits on ALL of ET Nov 10,11,12,13 (each ET day ends 10:30 IST, EST now).
+- Account access: region USA ONLY, delay 1 and 0. Categories: analyst, fundamental, model(D1 only), news, option, pv, socialmedia → max pyramids = 7+6 = 13. MASTER (30 pyramids) NOT reachable on current access; EXPERT (20 signals/10 pyramids/perf≥0.5) is. Prod-corr endpoint 403 (not consultant) → prod corr unmeasurable by us; proxy = rare datasets (D0 datasets have 10–100x fewer alphas).
+- Submit candidate tonight: pwvoOmPq `group_rank(anl4_totassets_flag,subindustry)*rank(ts_backfill(news_eod_vwap/close,20))` S1.80 F1.41 TO0.16, all PASS, sc 0.853, 3 fields, 5 ops. Backups: ZYAb0eQn (S1.53 sc0.75, 8 ops), mLYJM1p2 (S2.07 sc0.85, 8 ops). Gate bar 0.3 blocks Claude → Udit clicks.
+- Factory: tab 834064928, auto-tick __tick(4) (BRAIN runs 3 concurrent), queue wq_queue = 435 simple sims tag N11:<a|z|d>:D<d>:<dataset>:<field> over rarest fields (wq_fields_1111). Results → wq_results2.
